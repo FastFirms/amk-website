@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compensation Lawyers Ipswich & Springfield | No Win, No Fee | AMK Lawyers</title>
+<meta name="description" content="AMK Lawyers — No Win, No Fee compensation lawyers serving Ipswich, Springfield and surrounding Queensland communities. Car accidents, WorkCover, public liability, TPD & more. Free claim check.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">amk.</a>
+    <button class="nav-burger" onclick="toggleMenu()" aria-label="Toggle menu">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-drop nav-mega">
+        <a href="services.html">How We Can Help</a>
+        <div class="mega">
+          <div class="mega-grid">
+            <div class="mega-col">
+              <span class="mega-label">Road &amp; Vehicle</span>
+              <a href="car-accidents.html">Car Accidents</a>
+              <a href="ctp-lawyer.html">CTP Claims</a>
+              <a href="not-at-fault-car-accidents.html">Not At Fault Accidents</a>
+              <a href="bike-accidents.html">Bike Accidents</a>
+            </div>
+            <div class="mega-col">
+              <span class="mega-label">Work &amp; Public Places</span>
+              <a href="workers-compensation.html">Workers Compensation</a>
+              <a href="workcover.html">WorkCover Claims</a>
+              <a href="public-liability.html">Public Liability</a>
+              <a href="slip-and-fall.html">Slip And Fall</a>
+            </div>
+            <div class="mega-col">
+              <span class="mega-label">Medical, Abuse &amp; Insurance</span>
+              <a href="medical-negligence.html">Medical Negligence</a>
+              <a href="institutional-abuse.html">Institutional Abuse</a>
+              <a href="tpd-superannuation.html">TPD &amp; Superannuation</a>
+              <a href="personal-injury.html">Personal Injury</a>
+            </div>
+          </div>
+          <div class="mega-cta">
+            <div>
+              <div class="mega-cta-title">Not Sure Where You Fit?</div>
+              <div class="mega-cta-sub">Check your claim free in under 2 minutes — no win, no fee.</div>
+            </div>
+            <div class="mega-cta-actions">
+              <a class="btn btn-butter" href="index.html#contact">Free Claim Check</a>
+              <a class="mega-all" href="services.html">All Services →</a>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li class="nav-drop">
+        <a>Court Cases</a>
+        <ul class="nav-drop-menu">
+          <li><a href="ctp-recent-cases.html">CTP Recent Cases</a></li>
+          <li><a href="public-liability-recent-cases.html">Public Liability Recent Cases</a></li>
+          <li><a href="workcover-recent-cases.html">WorkCover Recent Cases</a></li>
+        </ul>
+      </li>
+      <li><a class="nav-cta" href="index.html#contact">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<!-- SECTION 2: HERO — CONTAINED PHOTO TILE -->
+  <div class="hero-shell">
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-headline-wrap">
+          <h1 class="hero-headline">Compensation Matters.</h1>
+          <div class="hero-nwnf">
+            <span class="hero-nwnf-chip" id="heroRotator">No Win, No Fee*</span>
+          </div>
+        </div>
+        <div class="hero-cta-card">
+          <h2 class="h2">Get Your Free Injury Claim Check</h2>
+          <div class="hero-ctas">
+            <a class="btn btn-butter" href="index.html#contact">Book a Consultation</a>
+            <a class="btn btn-tonal" href="services.html">View Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SECTION 2B: FREE CLAIM CHECK WIZARD -->
+  <section class="claim-section" id="contact">
+    <div class="claim-grid">
+      <div class="claim-intro">
+        <span class="label">Free Claim Check</span>
+        <h2 class="h1">Find Out Where You Stand In Under 2 Minutes.</h2>
+        <p>Answer a few quick questions about what happened. We'll tell you what your claim could be worth — free, and with no obligation.</p>
+      </div>
+      <div class="claim-panel">
+        <div class="wizard" id="wizard">
+          <div class="wiz-progress label" id="wizProgress"></div>
+          <div id="wizBody"></div>
+          <div class="wiz-error" id="wizError" hidden>This field is required.</div>
+          <div class="wiz-nav" id="wizNav">
+            <button class="btn btn-tonal wiz-back" id="wizBack" type="button" onclick="wizBack()">Back</button>
+            <button class="btn btn-butter wiz-next" id="wizNext" type="button" onclick="wizNext()">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: STATS BAR -->
+  <section class="stats" id="why">
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num">1,000+</div>
+        <div class="stat-label">Clients represented</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years of Queensland compensation law</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1,000+</div>
+        <div class="stat-label">Claims successfully resolved</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: SERVICES INTRO + 3-COLUMN LIST -->
+  <section class="services-intro">
+    <div class="wrap">
+      <div class="services-head">
+        <span class="label">What We Handle</span>
+        <h2 class="h1">Whatever Happened, We Can Help.</h2>
+        <p>Our core services include compensation law, personal injury claims, workers compensation, public liability, and more. We're with you every step of the way.</p>
+        <p>No one expects to face an injury or accident, and working out whether you're eligible to claim can be overwhelming — especially while you're hurt. We'll help you understand if you have the right to seek compensation, and provide comprehensive legal support that simplifies the whole claims process.</p>
+        <a class="btn btn-butter" href="index.html#contact">Book a Consultation</a>
+      </div>
+      <div class="svc-tiles">
+        <div class="svc-tile" onclick="window.location.href='car-accidents.html'">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 30l3.2-9.6A4 4 0 0 1 16 17.6h16a4 4 0 0 1 3.8 2.8L39 30"/><rect x="6" y="30" width="36" height="8" rx="3"/><circle cx="14" cy="40" r="3"/><circle cx="34" cy="40" r="3"/></svg>
+          <div class="svc-tile-title">Motor Vehicle Accidents</div>
+          <p class="svc-tile-desc">Reliable help with car accident claims to secure your rightful compensation.</p>
+          <div class="svc-tile-divider"></div>
+          <a class="btn btn-ink">Check my claim</a>
+        </div>
+        <div class="svc-tile" onclick="window.location.href='workers-compensation.html'">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 28a12 12 0 0 1 24 0"/><path d="M21 17v-5h6v5"/><path d="M8 28h32v6H8z"/></svg>
+          <div class="svc-tile-title">Workplace Accidents</div>
+          <p class="svc-tile-desc">Comprehensive legal support for workplace injury claims, ensuring fair compensation.</p>
+          <div class="svc-tile-divider"></div>
+          <a class="btn btn-ink">Check my claim</a>
+        </div>
+        <div class="svc-tile" onclick="window.location.href='public-liability.html'">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8 5 40h38L24 8z"/><path d="M24 20v9"/><circle cx="24" cy="34" r="0.5" fill="currentColor"/></svg>
+          <div class="svc-tile-title">Public Liability Claims</div>
+          <p class="svc-tile-desc">Helping you get the compensation you're entitled to for injuries in public places.</p>
+          <div class="svc-tile-divider"></div>
+          <a class="btn btn-ink">Check my claim</a>
+        </div>
+        <div class="svc-tile" onclick="window.location.href='medical-negligence.html'">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="17"/><path d="M24 16v16M16 24h16"/></svg>
+          <div class="svc-tile-title">Medical Negligence</div>
+          <p class="svc-tile-desc">Premium support and guidance for medical negligence claims to secure rightful compensation.</p>
+          <div class="svc-tile-divider"></div>
+          <a class="btn btn-ink">Check my claim</a>
+        </div>
+        <div class="svc-tile" onclick="window.location.href='institutional-abuse.html'">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 9 12v10c0 10 6.4 16.8 15 20 8.6-3.2 15-10 15-20V12L24 6z"/><path d="m17.5 24 4.5 4.5 8.5-8.5"/></svg>
+          <div class="svc-tile-title">Institutional Abuse</div>
+          <p class="svc-tile-desc">Compassionate legal support for institutional abuse victims to claim fair and just compensation.</p>
+          <div class="svc-tile-divider"></div>
+          <a class="btn btn-ink">Check my claim</a>
+        </div>
+        <div class="svc-tile" onclick="window.location.href='tpd-superannuation.html'">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24C6 14 14 8 24 8s18 6 18 16"/><path d="M6 24h36"/><path d="M24 24v12a4 4 0 0 1-8 0"/></svg>
+          <div class="svc-tile-title">TPD &amp; Superannuation</div>
+          <p class="svc-tile-desc">Assistance with TPD and superannuation claims for your financial security after illness or injury.</p>
+          <div class="svc-tile-divider"></div>
+          <a class="btn btn-ink">Check my claim</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4B: STRICT TIME LIMITS -->
+  <section class="timelimit">
+    <div class="timelimit-grid">
+      <div>
+        <span class="label">Don't Wait</span>
+        <h2 class="h1">Strict Time Limits Apply For Claiming Compensation.</h2>
+      </div>
+      <div class="timelimit-body">
+        <p>Getting legal advice as soon as possible after an accident or injury is essential. Even if you're not sure about making a claim, or unsure whether you're eligible for a compensation payout, you can book a free consultation with our team.</p>
+        <p>We'll let you know your rights and time limits without any obligation, strings attached or pressure to proceed. Simply call us, or book a free case review to get started.</p>
+        <div class="timelimit-ctas">
+          <a class="btn btn-ink" href="tel:1300748297">Call 1300 748 297</a>
+          <a class="btn btn-butter" href="index.html#contact">Book a Free Case Review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: THE AMK PROCESS -->
+  <section class="process">
+    <div class="wrap">
+      <h2 class="h1">The AMK Approach</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-head"><span class="step-num">01</span></div>
+          <div class="step-img step-img-claimcheck"></div>
+          <h3 class="h2">Free Claim Check</h3>
+          <p>Tell us what happened. We'll assess your situation and tell you where you stand, at no cost.</p>
+        </div>
+        <div class="step">
+          <div class="step-head"><span class="step-num">02</span></div>
+          <div class="step-img step-img-buildcase"></div>
+          <h3 class="h2">We Build Your Case</h3>
+          <p>We gather evidence, manage the paperwork, and push back on insurers — so you don't have to.</p>
+        </div>
+        <div class="step">
+          <div class="step-head"><span class="step-num">03</span></div>
+          <div class="step-img step-img-paid"></div>
+          <h3 class="h2">You Get Paid</h3>
+          <p>We fight for the maximum you're entitled to. No result, no fee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5B: UNDERSTANDING QLD COMPENSATION LAW -->
+  <section class="learn">
+    <div class="learn-head">
+      <span class="label">Know Your Rights</span>
+      <h2 class="h1">Understanding Queensland Compensation Law.</h2>
+    </div>
+    <div class="acc">
+      <div class="why-row">
+        <div>
+          <span class="ghost-num">01</span>
+          <h3 class="why-row-title">What Are My Legal Rights Under Queensland Compensation Law?</h3>
+        </div>
+        <div class="why-row-body">
+          <p>Compensation laws exist so people can take legal action after an accident, getting sick or being hurt. In Queensland, different rules apply depending on the nature of your injury and when and where it occurred — the same type of injury can be treated very differently if it's caused by a motor vehicle accident versus happening while you're doing your job.</p>
+          <p>That's because different types of personal injury are processed under different legislation. If you're hurt at work, your claim will usually be managed as a workers' compensation claim through WorkCover. Motor vehicle accidents are handled by the CTP insurance company, while public liability claims are made through the policyholder's insurer. We'll help you understand the process under the relevant Queensland legislation, so you can make an informed decision about your matter.</p>
+        </div>
+      </div>
+      <div class="why-row">
+        <div>
+          <span class="ghost-num">02</span>
+          <h3 class="why-row-title">How Does A 'No Win, No Fee' Compensation Claim Work?</h3>
+        </div>
+        <div class="why-row-body">
+          <p>A 'no win, no fee' structure means you won't have the pressure of upfront costs — which stops some people from accessing the legal advice they need. Your legal fees are paid if and when your claim has a successful outcome.</p>
+          <p>It's important to understand that not all 'No Win, No Fee' lawyers offer the same terms — in some cases, people are left with large bills if a claim isn't successful. All costs should be disclosed in a Cost Agreement outlining what your legal team will receive when your matter is finalised. Read those terms carefully, as many have hidden costs, and get a second opinion if you need one before signing anything.</p>
+          <p>AMK Lawyers will be transparent about costs from our first meeting, keep you informed every step of the way, and ensure every aspect of your claim is comprehensively managed.</p>
+        </div>
+      </div>
+      <div class="acc-title">The claims we can help with, in detail</div>
+      <details>
+        <summary>Car Accidents &amp; CTP Claims</summary>
+        <div class="acc-body">
+          <p>In Queensland, car accident compensation claims are typically made through the Compulsory Third Party (CTP) insurance scheme, paid when people register their vehicles. CTP claims apply to drivers, passengers, pedestrians and cyclists injured on the road, across all vehicle types on Queensland roads.</p>
+          <p>If you're injured in a motor vehicle accident, you must notify the at-fault driver's CTP insurer — the Queensland Government can help you find their details if you don't have them. Claims can cover medical expenses, rehabilitation, loss of income, and pain and suffering. Strict time limits apply: an Accident Notification Form within 28 days, and a Notice of Accident Claim Form within nine months of the accident or the onset of symptoms.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Workers Compensation Claims</summary>
+        <div class="acc-body">
+          <p>Workers' compensation claims in Queensland are handled through WorkCover. If you suffer a workplace injury or illness, you must notify your employer and lodge a claim with WorkCover within six months. Claims can cover medical and rehabilitation costs, loss of wages, and permanent impairment benefits.</p>
+          <p>The process involves medical assessments and documentation of the injury. Time limits are strict and late claims may be rejected — we provide legal support and guidance throughout, ensuring your rights are protected and you receive the appropriate compensation.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Medical Negligence</summary>
+        <div class="acc-body">
+          <p>Medical negligence claims involve proving that a healthcare professional's breach of duty or negligence caused harm. They can cover medical expenses, loss of income, pain and suffering, and ongoing care costs, and typically require expert medical testimony.</p>
+          <p>The time limit for lodging a claim is three years from the date the negligence was discovered. Given the complexity of these cases, specialist advice is important to gather the necessary evidence, navigate the legal process, and ensure a fair outcome.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Public Liability Claims</summary>
+        <div class="acc-body">
+          <p>Public liability claims cover injuries sustained in public and private places due to another party's negligence — accidents in parks, shopping centres or rental properties. Compensation can cover medical expenses, loss of earnings, and pain and suffering. Claims must be lodged within three years of the incident.</p>
+          <p>The process involves gathering evidence such as incident reports and medical records, and demonstrating negligence. We'll make sure all legal requirements are met to give your claim the best chance of success.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Total &amp; Permanent Disability (TPD) Claims</summary>
+        <div class="acc-body">
+          <p>TPD claims are made through various channels including superannuation funds, WorkCover, or private insurance policies. They cover injuries or illnesses resulting in permanent impairment that prevents you from working, and compensation can include lump-sum payments and ongoing financial support.</p>
+          <p>The process requires medical evidence, including assessments of the extent of the disability. Time limits vary depending on the policy or scheme, so it's essential to act promptly — we'll help you navigate the process and make sure your claim is made in time.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- SECTION 6: EDITORIAL / BRAND STATEMENT -->
+  <section class="editorial on-dark" id="team">
+    <div class="editorial-grid">
+      <div class="editorial-media placeholder">
+        <div class="play-btn" aria-label="Watch video"></div>
+      </div>
+      <div class="editorial-copy">
+        <span class="label">About AMK</span>
+        <h2 class="headline">AMK Is A No-Nonsense Team Of Queensland Lawyers Fighting For People When They Need It Most.</h2>
+        <p>Working together, we offer clear advice, fair process, and real results — across compensation law, personal injury, and superannuation claims.</p>
+        <a class="btn btn-butter" href="index.html#contact">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: REVIEWS — FLUSH SCROLLING STRIP -->
+  <section class="reviews">
+    <div class="reviews-head">
+      <div>
+        <h2 class="h1">What People Are Saying</h2>
+        <div class="reviews-rating">
+          <span class="stars">★★★★★</span>
+          <span>Rated 5.0 from Google reviews</span>
+        </div>
+      </div>
+      <div class="carousel-arrows">
+        <button class="arrow" aria-label="Scroll reviews left" onclick="scrollReviews(-1)">←</button>
+        <button class="arrow" aria-label="Scroll reviews right" onclick="scrollReviews(1)">→</button>
+      </div>
+    </div>
+    <div class="reviews-strip" id="reviewsStrip">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Very professional with quick turnarounds</div>
+          <p class="review-text">"Have been using AMK for the last 18 months for my business, and they are very professional with quick turnarounds."</p>
+          <div class="review-name">Christian Grady</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">They handled everything</div>
+          <p class="review-text">"After my accident I didn't know where to start. AMK took over the insurer, the paperwork, all of it — and kept me in the loop the whole way through."</p>
+          <div class="review-name">Placeholder — replace with live review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Genuine, straight-talking advice</div>
+          <p class="review-text">"No jargon, no run-around. They told me exactly where I stood from the first phone call and the outcome was better than I expected."</p>
+          <div class="review-name">Placeholder — replace with live review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Made a hard time easier</div>
+          <p class="review-text">"I was off work and stressed about money. The no win no fee arrangement meant I could get proper help without risking anything upfront."</p>
+          <div class="review-name">Placeholder — replace with live review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Fought hard for my claim</div>
+          <p class="review-text">"The insurer's first offer was low and AMK pushed back hard. The final settlement made a real difference for my family."</p>
+          <div class="review-name">Placeholder — replace with live review</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Quick to respond, every time</div>
+          <p class="review-text">"Calls and emails always answered fast. I never felt like just a file number."</p>
+          <div class="review-name">Placeholder — replace with live review</div>
+        </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FEATURED CASE STUDIES -->
+  <section class="cases" id="cases">
+    <div class="cases-grid">
+      <div class="cases-head">
+        <h2 class="h1">Featured Case Studies</h2>
+        <p>Our case studies show how we handle complex compensation matters and secure life-changing outcomes for our clients.</p>
+        <a class="btn btn-ink" href="ctp-recent-cases.html">View All Court Cases →</a>
+      </div>
+      <div>
+        <div class="case-cards">
+          <div class="case-card" onclick="window.location.href='ctp-recent-cases.html'">
+            <span class="label">CTP &middot; Motor Vehicle</span>
+            <h3 class="h2">Head-On Collision, Multiple Serious Injuries — $2.49M Awarded</h3>
+            <a class="case-link">Allen v O'Donnell [2021] QSC 63 →</a>
+          </div>
+          <div class="case-card" onclick="window.location.href='public-liability-recent-cases.html'">
+            <span class="label">Public Liability</span>
+            <h3 class="h2">Duathlon Collision At Organised Sports Event — $1.06M Awarded</h3>
+            <a class="case-link">James v USM Events [2022] QSC 63 →</a>
+          </div>
+          <div class="case-card" onclick="window.location.href='workcover-recent-cases.html'">
+            <span class="label">WorkCover</span>
+            <h3 class="h2">8.8 Metre Fall At Refinery — Occupier Held 75% Liable</h3>
+            <a class="case-link">Speziali v Nortask [2023] QSC 166 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: SECONDARY CTA BANNER -->
+  <section class="cta-secondary on-dark">
+    <span class="label">Free Consultation</span>
+    <h2 class="headline">Not Sure If You Have A Claim?</h2>
+    <p>Most people don't know what they're entitled to until they ask. Our free claim check takes 10 minutes and costs nothing.</p>
+    <a class="btn btn-butter" href="index.html#contact">Check My Claim</a>
+  </section>
+
+  <!-- SECTION 9B: FAQ -->
+  <section class="faq">
+    <div class="faq-head">
+      <span class="label">FAQ</span>
+      <h2 class="h1">Frequently Asked Questions.</h2>
+    </div>
+    <div class="acc">
+      <details>
+        <summary>What is a free case review or compensation claim assessment?</summary>
+        <div class="acc-body"><p>A free case review is an initial consultation with our compensation lawyers to evaluate your personal injury claim. It involves discussing your case, reviewing any evidence, and determining the potential for a claim to go ahead. This completely free service helps you understand your legal rights and the claims process without any financial risk.</p></div>
+      </details>
+      <details>
+        <summary>How long do personal injury claims take to be finalised?</summary>
+        <div class="acc-body"><p>The timeframe varies based on the case's complexity, the extent of the injuries, and the cooperation of the parties involved. Generally, personal injury claims can take a few months to several years to reach a settlement or court decision. In a free consultation we can give you a more accurate estimate for your particular matter.</p></div>
+      </details>
+      <details>
+        <summary>What is the process for gathering evidence?</summary>
+        <div class="acc-body"><p>Gathering evidence involves collecting medical records, accident reports, witness statements and expert opinions. Our lawyers in Brisbane, Toowoomba and the Gold Coast work with you to compile all relevant information — thorough documentation supports your claim and is crucial for a successful outcome under Queensland law.</p></div>
+      </details>
+      <details>
+        <summary>What documents and information will I need to provide?</summary>
+        <div class="acc-body"><p>You'll need to provide medical records, accident reports, witness statements and any correspondence related to the incident. We may also require medical and rehabilitation treatment details, employment records and insurance information.</p></div>
+      </details>
+      <details>
+        <summary>Is filing a compensation claim worthwhile?</summary>
+        <div class="acc-body"><p>It can be — if you've suffered a personal injury due to someone else's negligence, a claim helps cover medical expenses, lost wages and other damages. We'll advise you honestly on the likelihood of success and the potential compensation you could receive.</p></div>
+      </details>
+      <details>
+        <summary>How do 'no win, no fee' lawyers make money?</summary>
+        <div class="acc-body"><p>'No win, no fee' lawyers are paid from the compensation awarded if your claim succeeds. There are no upfront costs — you only pay legal fees if you win. This reduces the financial risk of seeking compensation, letting you work with an experienced team without losing time or money on claims that aren't valid or properly lodged.</p></div>
+      </details>
+      <details>
+        <summary>What determines the assessment of a whiplash injury?</summary>
+        <div class="acc-body"><p>Medical evaluations — physical examinations and diagnostic tests — determine the assessment. We may work with medical experts to document the extent of the injury, with factors like pain levels, mobility limitations and the impact on daily life all considered.</p></div>
+      </details>
+      <details>
+        <summary>Where are your offices located in Queensland?</summary>
+        <div class="acc-body"><p>AMK Lawyers is a Queensland-based firm with offices in Brisbane (near Goodna), on the Gold Coast, and in Toowoomba. If you can't make it into our offices, we can have one of our legal team visit you at home, or organise a telephone or video call.</p></div>
+      </details>
+      <details>
+        <summary>Do I have to pay legal fees if my claim is unsuccessful?</summary>
+        <div class="acc-body"><p>No. Under a 'no win, no fee' arrangement with AMK, you do not pay legal fees if your claim is unsuccessful — you can seek compensation without financial risk.</p></div>
+      </details>
+      <details>
+        <summary>What is the typical timeframe for processing a claim?</summary>
+        <div class="acc-body"><p>It varies with the complexity of the case and the cooperation of the parties involved — generally from several months to years. We can provide a more precise estimate based on your circumstances and guide you through the process.</p></div>
+      </details>
+      <details>
+        <summary>What legal costs will be deducted from my compensation award?</summary>
+        <div class="acc-body"><p>Deductions may include legal fees, disbursements, and expenses incurred during the claim — such as medical reports and expert witness fees. We provide a detailed breakdown of these costs, ensuring transparency so you understand the financial side of your claim.</p></div>
+      </details>
+    </div>
+  </section>
+
+    <!-- GUARANTEE BAND -->
+  <section class="pull-band">
+    <div class="pull-band-inner">
+      <span class="label">Our Guarantee</span>
+      <div class="statement">Unless You Receive Compensation, We Do Not Charge You A Cent.</div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: READY CTA -->
+  <section class="cta-ready">
+    <span class="logo">amk.</span>
+    <h2 class="headline">Ready To Take The Next Step?</h2>
+    <p>Partner with a team who'll fight for what you're owed. Talk to us today — it's free.</p>
+    <a class="btn btn-butter" href="index.html#contact">Book a Consultation</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div>
+      <a class="logo" href="index.html">amk.</a>
+      <div class="footer-tag">compensation matters.</div>
+    </div>
+    <div class="footer-contact">
+      <div><a href="tel:0731363287">07 3136 3287</a></div>
+      <div><a href="tel:1300748297">1300 748 297 · AVAILABLE 24/7</a></div>
+      <div><a href="mailto:info@amklawyers.com.au">INFO@AMKLAWYERS.COM.AU</a></div>
+    </div>
+  </div>
+
+  <div class="footer-mid">
+    <div class="footer-col">
+      <span class="label">Motor Vehicle &amp; Road</span>
+      <ul>
+        <li><a href="car-accidents.html">Car Accidents</a></li>
+        <li><a href="car-accidents.html">Truck Accidents</a></li>
+        <li><a href="car-accidents.html">Motorcycle Accidents</a></li>
+        <li><a href="not-at-fault-car-accidents.html">Passenger Claims</a></li>
+        <li><a href="car-accidents.html">Rideshare Accidents</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <span class="label">Workplace &amp; Liability</span>
+      <ul>
+        <li><a href="workcover.html">WorkCover Claims</a></li>
+        <li><a href="workers-compensation.html">Workplace Injury</a></li>
+        <li><a href="public-liability.html">Public Liability</a></li>
+        <li><a href="slip-and-fall.html">Slip &amp; Fall</a></li>
+        <li><a href="workers-compensation.html">Contractor Injuries</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <span class="label">Medical &amp; Institutional</span>
+      <ul>
+        <li><a href="medical-negligence.html">Medical Negligence</a></li>
+        <li><a href="institutional-abuse.html">Institutional Abuse</a></li>
+        <li><a href="tpd-superannuation.html">TPD Claims</a></li>
+        <li><a href="tpd-superannuation.html">Superannuation</a></li>
+        <li><a href="personal-injury.html">Psychological Injury</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <span class="label">Quick Links</span>
+      <ul>
+        <li><a href="services.html">All Services</a></li>
+        <li><a href="why-choose-us.html">Why Choose Us</a></li>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="ctp-recent-cases.html">Court Cases</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-legal">
+    <div class="footer-legal-inner">
+      <span>© 2026 AMK Lawyers Pty Ltd</span>
+      <span>
+        <a>Privacy Policy</a>
+        <a>Terms of Use</a>
+        <a>Disclaimer</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
