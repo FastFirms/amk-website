@@ -1216,3 +1216,17 @@ a.team-card{text-decoration:none;}
 .team-photo-kassie{background-image:url("assets/team-kassie.jpg");}
 .team-photo-jennifer{background-image:url("assets/team-jennifer.jpg");}
 .team-photo-micaela{background-image:url("assets/team-micaela.jpg");}
+
+/* ── State selector modal ── */
+#amk-state-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;}
+.ssm-overlay{position:absolute;inset:0;background:rgba(0,0,0,.65);}
+.ssm-box{position:relative;background:#242424;color:#fff;border-radius:14px;padding:2.25rem 2rem 1.75rem;max-width:500px;width:calc(100% - 2rem);z-index:1;}
+.ssm-box h2{font-family:var(--font-display);font-size:1.35rem;font-weight:800;margin:0 0 .5rem;color:#fff;}
+.ssm-box>p{color:#b0b0b0;font-size:.9rem;margin:0 0 1.5rem;}
+.ssm-btns{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.25rem;}
+.ssm-btn{background:#fff;color:#111;border:none;border-radius:8px;padding:1rem;font-family:var(--font-display);font-size:1.05rem;font-weight:800;letter-spacing:.06em;cursor:pointer;transition:background .12s,transform .1s;}
+.ssm-btn:hover{background:#f0f0f0;transform:translateY(-1px);}
+.ssm-note{color:#666;font-size:.78rem;text-align:center;margin:0;}
+/* ── State badge ── */
+.state-badge{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:.28rem .7rem;font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:background .12s;margin-left:.5rem;white-space:nowrap;}
+.state-badge:hover{background:rgba(255,255,255,.22);}
