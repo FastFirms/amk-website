@@ -43,18 +43,20 @@
   }
 
   function addBadge() {
-    var nav = document.querySelector('.nav-inner');
-    if (!nav) return;
+    var links = document.querySelector('.nav-links');
+    if (!links) return;
     var old = document.getElementById('amk-state-badge');
     if (old) old.remove();
     var s = getState() || 'qld';
+    var li = document.createElement('li');
     var btn = document.createElement('button');
     btn.id = 'amk-state-badge';
     btn.className = 'state-badge';
     btn.setAttribute('aria-label', 'Change state');
     btn.innerHTML = (s === 'nsw' ? 'NSW' : 'QLD') + ' <span aria-hidden="true">&#9662;</span>';
     btn.onclick = function () { showModal(true); };
-    nav.appendChild(btn);
+    li.appendChild(btn);
+    links.appendChild(li);
   }
 
   function showModal(allowClose) {
