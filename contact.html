@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Free Consultation | AMK Lawyers Queensland</title>
+<meta name="description" content="Book a free, no-obligation consultation with AMK Lawyers. No win, no fee. We'll tell you where you stand — motor vehicle, WorkCover, public liability, TPD and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"AMK Lawyers","description":"Personal injury compensation lawyers in Queensland. No Win, No Fee.","telephone":"+61731363287","url":"https://www.amklawyers.com.au/","areaServed":"Queensland, Australia","address":{"@type":"PostalAddress","streetAddress":"15/20 Success Circuit","addressLocality":"Augustine Heights","addressRegion":"QLD","postalCode":"4300","addressCountry":"AU"},"priceRange":"No Win No Fee"}</script>
+<style>
+.contact-hero{background:var(--ink);padding:96px 0 80px;}
+.contact-hero-inner{max-width:1280px;margin:0 auto;padding:0 var(--pad-x);}
+.contact-hero .label{color:#b9b8b2;display:block;margin-bottom:20px;}
+.contact-hero .headline{font-family:var(--font-display);font-weight:800;font-size:clamp(44px,5.5vw,76px);letter-spacing:-0.04em;line-height:0.96;color:var(--butter);margin-bottom:24px;}
+.contact-hero p{font-size:18px;color:var(--paper);max-width:52ch;}
+.contact-body{background:var(--bone);padding:80px 0 110px;}
+.contact-grid{max-width:1280px;margin:0 auto;padding:0 var(--pad-x);display:grid;grid-template-columns:1fr 440px;gap:80px;align-items:start;}
+.contact-info{padding-top:8px;}
+.contact-info h2{font-family:var(--font-display);font-weight:800;font-size:28px;letter-spacing:-0.03em;margin-bottom:28px;}
+.contact-detail{display:flex;flex-direction:column;gap:20px;margin-bottom:48px;}
+.contact-item{display:flex;gap:16px;align-items:flex-start;}
+.contact-icon{flex:0 0 40px;height:40px;background:var(--tonal);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.contact-item-label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-bottom:4px;}
+.contact-item-value{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--ink);}
+.contact-item-value a{color:var(--ink);text-decoration:none;}
+.contact-item-value a:hover{text-decoration:underline;}
+.contact-promise{background:var(--paper);border-radius:16px;padding:28px 28px 24px;}
+.contact-promise-title{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.02em;margin-bottom:16px;}
+.contact-promise ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.contact-promise li{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-soft);}
+.contact-promise li::before{content:"✓";font-weight:800;color:var(--ink);flex:0 0 auto;margin-top:1px;}
+.contact-form-wrap{background:var(--paper);border-radius:20px;padding:40px 36px 36px;}
+.contact-form-wrap h2{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-0.03em;margin-bottom:6px;}
+.form-sub{font-size:14px;color:var(--ink-soft);margin-bottom:28px;}
+.cform{display:flex;flex-direction:column;gap:16px;}
+.cform-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.cfield{display:flex;flex-direction:column;gap:6px;}
+.cfield label{font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);}
+.cfield input,.cfield select,.cfield textarea{font-family:var(--font-body);font-size:14px;color:var(--ink);background:var(--bone);border:1px solid var(--tonal);border-radius:10px;padding:13px 15px;outline:none;width:100%;appearance:none;-webkit-appearance:none;transition:border-color .2s;}
+.cfield select{background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%234A4A48'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;cursor:pointer;}
+.cfield textarea{resize:vertical;min-height:100px;}
+.cfield input:focus,.cfield select:focus,.cfield textarea:focus{border-color:var(--ink);}
+.cfield input::placeholder,.cfield textarea::placeholder{color:#aaa;}
+.cfield input.error,.cfield select.error,.cfield textarea.error{border-color:#c0392b;}
+.cform-consent{display:flex;gap:12px;align-items:flex-start;cursor:pointer;}
+.cform-consent input[type="checkbox"]{appearance:none;-webkit-appearance:none;flex:0 0 18px;height:18px;margin-top:2px;background:var(--bone);border:1px solid var(--ink-soft);border-radius:0;cursor:pointer;}
+.cform-consent input[type="checkbox"]:checked{background:var(--ink);border-color:var(--ink);}
+.cform-consent input[type="checkbox"]:checked::after{content:"\2713";color:var(--bone);font-size:11px;line-height:1;display:block;text-align:center;margin-top:3px;}
+.cform-consent span{font-size:12px;color:var(--ink-soft);line-height:1.5;}
+.cform-submit{width:100%;padding:18px;font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:.04em;background:var(--ink);color:var(--butter);border:none;border-radius:12px;cursor:pointer;transition:background .2s,transform .1s;}
+.cform-submit:hover{background:#111;transform:translateY(-1px);}
+.cform-note{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:4px;}
+.cform-success{display:none;background:var(--bone);border-radius:12px;padding:32px;text-align:center;}
+.cform-success-title{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-0.03em;margin-bottom:12px;}
+.cform-success p{font-size:15px;color:var(--ink-soft);}
+@media(max-width:960px){
+  .contact-grid{grid-template-columns:1fr;}
+  .contact-info{order:2;}
+  .contact-form-wrap{order:1;}
+  .contact-form-wrap{padding:32px 24px;}
+}
+@media(max-width:600px){.cform-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">amk.</a>
+    <button class="nav-burger" onclick="toggleMenu()" aria-label="Toggle menu">Menu</button>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-drop nav-mega">
+        <a href="services.html">How We Can Help</a>
+        <div class="mega"><div class="mega-grid">
+          <div class="mega-col"><span class="mega-label">Road &amp; Vehicle</span><a href="car-accidents.html">Car Accidents</a><a href="ctp-lawyer.html">CTP Claims</a><a href="not-at-fault-car-accidents.html">Not At Fault Accidents</a><a href="bike-accidents.html">Bike Accidents</a></div>
+          <div class="mega-col"><span class="mega-label">Work &amp; Public Places</span><a href="workers-compensation.html">Workers Compensation</a><a href="workcover.html">WorkCover Claims</a><a href="public-liability.html">Public Liability</a><a href="slip-and-fall.html">Slip And Fall</a></div>
+          <div class="mega-col"><span class="mega-label">Medical, Abuse &amp; Insurance</span><a href="medical-negligence.html">Medical Negligence</a><a href="institutional-abuse.html">Institutional Abuse</a><a href="tpd-superannuation.html">TPD &amp; Superannuation</a><a href="personal-injury.html">Personal Injury</a></div>
+        </div><div class="mega-cta"><div><div class="mega-cta-title">Not Sure Where You Fit?</div><div class="mega-cta-sub">Check your claim free in under 2 minutes — no win, no fee.</div></div><div class="mega-cta-actions"><a class="btn btn-butter" href="contact.html">Free Claim Check</a><a class="mega-all" href="services.html">All Services →</a></div></div></div>
+      </li>
+      <li><a href="why-choose-us.html">Why Choose Us</a></li><li><a href="resources.html">Resources</a></li><li><a href="our-team.html">Our Team</a></li>
+      <li class="nav-drop"><a>Court Cases</a><ul class="nav-drop-menu"><li><a href="ctp-recent-cases.html">CTP Recent Cases</a></li><li><a href="public-liability-recent-cases.html">Public Liability Recent Cases</a></li><li><a href="workcover-recent-cases.html">WorkCover Recent Cases</a></li></ul></li>
+      <li><a class="nav-cta" href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<section class="contact-hero">
+  <div class="contact-hero-inner">
+    <span class="label">Free Consultation · No Obligation · No Win, No Fee</span>
+    <h1 class="headline">Book A Free Consultation.</h1>
+    <p>Tell us what happened. We'll tell you where you stand — for free, with no pressure and no obligation to proceed.</p>
+  </div>
+</section>
+
+<section class="contact-body">
+  <div class="contact-grid">
+
+    <div class="contact-info">
+      <h2>Get in touch</h2>
+      <div class="contact-detail">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <span class="contact-item-label">Phone</span>
+            <div class="contact-item-value"><a href="tel:0731363287">07 3136 3287</a></div>
+            <div class="contact-item-value" style="margin-top:4px;"><a href="tel:1300748297">1300 748 297</a> <span style="font-size:13px;font-weight:400;color:var(--ink-soft);">· Available 24/7</span></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <span class="contact-item-label">Email</span>
+            <div class="contact-item-value"><a href="mailto:info@amklawyers.com.au">info@amklawyers.com.au</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <span class="contact-item-label">Office</span>
+            <div class="contact-item-value" style="font-size:15px;line-height:1.5;">15/20 Success Circuit<br>Augustine Heights QLD 4300</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <span class="contact-item-label">Office Hours</span>
+            <div class="contact-item-value" style="font-weight:400;font-size:14px;line-height:1.7;">Mon – Fri: 8:30am – 5:30pm<br>Phone line available 24/7</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-promise">
+        <div class="contact-promise-title">What to expect</div>
+        <ul>
+          <li>A senior lawyer reviews your matter personally</li>
+          <li>Free, no-obligation assessment of your claim</li>
+          <li>Plain-English advice — no jargon</li>
+          <li>Home visits and video consultations available</li>
+          <li>We only get paid if your claim succeeds</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap" id="book">
+      <h2>Book a free consultation</h2>
+      <p class="form-sub">We'll get back to you within one business day.</p>
+      <form class="cform" id="contactForm" action="https://formspree.io/f/REPLACE_WITH_FORMSPREE_ID" method="POST" novalidate>
+        <div class="cform-row">
+          <div class="cfield">
+            <label for="cf-fname">First Name *</label>
+            <input type="text" id="cf-fname" name="first_name" placeholder="Jane" required>
+          </div>
+          <div class="cfield">
+            <label for="cf-lname">Last Name *</label>
+            <input type="text" id="cf-lname" name="last_name" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="cform-row">
+          <div class="cfield">
+            <label for="cf-phone">Phone Number *</label>
+            <input type="tel" id="cf-phone" name="phone" placeholder="04XX XXX XXX" required>
+          </div>
+          <div class="cfield">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="jane@email.com">
+          </div>
+        </div>
+        <div class="cfield">
+          <label for="cf-state">State *</label>
+          <select id="cf-state" name="state" required>
+            <option value="" disabled selected>Select your state</option>
+            <option value="QLD">Queensland (QLD)</option>
+            <option value="NSW">New South Wales (NSW)</option>
+          </select>
+        </div>
+        <div class="cfield">
+          <label for="cf-type">Type of claim *</label>
+          <select id="cf-type" name="claim_type" required>
+            <option value="" disabled selected>What happened to you?</option>
+            <option value="car-accident">Car / Motor Vehicle Accident</option>
+            <option value="motorcycle">Motorcycle Accident</option>
+            <option value="workcover">WorkCover / Workplace Injury</option>
+            <option value="public-liability">Public Liability (Slip, Trip or Fall)</option>
+            <option value="medical-negligence">Medical Negligence</option>
+            <option value="tpd">TPD / Superannuation Claim</option>
+            <option value="institutional-abuse">Institutional Abuse</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="cfield">
+          <label for="cf-date">Approximate date of incident</label>
+          <input type="date" id="cf-date" name="incident_date">
+        </div>
+        <div class="cfield">
+          <label for="cf-message">Briefly describe what happened *</label>
+          <textarea id="cf-message" name="message" placeholder="A few sentences is enough — we'll cover the details in your consultation." required></textarea>
+        </div>
+        <div class="cfield">
+          <label for="cf-time">Best time to contact you</label>
+          <select id="cf-time" name="preferred_contact_time">
+            <option value="" disabled selected>Select a time</option>
+            <option value="morning">Morning (8:30am – 12pm)</option>
+            <option value="afternoon">Afternoon (12pm – 5pm)</option>
+            <option value="evening">Evening (5pm – 7pm)</option>
+            <option value="anytime">Any time</option>
+          </select>
+        </div>
+        <div class="cfield">
+          <label for="cf-heard">How did you hear about us?</label>
+          <select id="cf-heard" name="referral_source">
+            <option value="" disabled selected>Select an option</option>
+            <option value="google">Google Search</option>
+            <option value="referral">Friend or Family Referral</option>
+            <option value="lawyer-referral">Referred by a Lawyer</option>
+            <option value="social">Social Media</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <label class="cform-consent">
+          <input type="checkbox" name="consent" id="cf-consent" required>
+          <span>I consent to AMK Lawyers contacting me about my claim. I understand this is a free, no-obligation consultation and my information is handled in accordance with the Privacy Act 1988.</span>
+        </label>
+        <button type="submit" class="cform-submit">Send My Details — It's Free</button>
+        <p class="cform-note">No win, no fee. Strictly confidential. We never share your details.</p>
+      </form>
+      <div class="cform-success" id="formSuccess">
+        <div class="cform-success-title">We've received your details.</div>
+        <p>A member of our team will be in touch within one business day. If your matter is urgent, call us now on <a href="tel:1300748297">1300 748 297</a> — we're available 24/7.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div><a class="logo" href="index.html">amk.</a><div class="footer-tag">compensation matters.</div></div>
+    <div class="footer-contact">
+      <div><a href="tel:0731363287">07 3136 3287</a></div>
+      <div><a href="tel:1300748297">1300 748 297 · AVAILABLE 24/7</a></div>
+      <div><a href="mailto:info@amklawyers.com.au">INFO@AMKLAWYERS.COM.AU</a></div>
+    </div>
+  </div>
+  <div class="footer-mid">
+    <div class="footer-col"><span class="label">Motor Vehicle &amp; Road</span><ul><li><a href="car-accidents.html">Car Accidents</a></li><li><a href="not-at-fault-car-accidents.html">Passenger Claims</a></li><li><a href="bike-accidents.html">Bike Accidents</a></li></ul></div>
+    <div class="footer-col"><span class="label">Workplace &amp; Liability</span><ul><li><a href="workcover.html">WorkCover Claims</a></li><li><a href="workers-compensation.html">Workplace Injury</a></li><li><a href="public-liability.html">Public Liability</a></li><li><a href="slip-and-fall.html">Slip &amp; Fall</a></li></ul></div>
+    <div class="footer-col"><span class="label">Medical &amp; Institutional</span><ul><li><a href="medical-negligence.html">Medical Negligence</a></li><li><a href="institutional-abuse.html">Institutional Abuse</a></li><li><a href="tpd-superannuation.html">TPD Claims</a></li><li><a href="personal-injury.html">Personal Injury</a></li></ul></div>
+    <div class="footer-col"><span class="label">Quick Links</span><ul><li><a href="services.html">All Services</a></li><li><a href="why-choose-us.html">Why Choose Us</a></li><li><a href="our-team.html">Our Team</a></li><li><a href="contact.html">Book a Consultation</a></li></ul></div>
+  </div>
+  <div class="footer-legal"><div class="footer-legal-inner"><span>© 2026 AMK Lawyers Pty Ltd</span><span><a>Privacy Policy</a><a>Terms of Use</a><a>Disclaimer</a></span></div></div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  var required = form.querySelectorAll('[required]');
+  var valid = true;
+  required.forEach(function(el) {
+    if ((el.type === 'checkbox' && !el.checked) || (el.type !== 'checkbox' && !el.value.trim())) {
+      el.classList.add('error');
+      valid = false;
+    } else {
+      el.classList.remove('error');
+    }
+  });
+  if (!valid) return;
+  fetch(form.action, {method:'POST', body: new FormData(form), headers:{'Accept':'application/json'}})
+    .then(function(r) {
+      if (r.ok) { form.style.display='none'; document.getElementById('formSuccess').style.display='block'; }
+    }).catch(function(){});
+});
+</script>
+<script src="script.js"></script>
+<script src="state-selector.js"></script>
+</body>
+</html>
