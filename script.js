@@ -307,11 +307,22 @@ wizRender();
 function wizFinish(){
   wizDone = true;
   document.getElementById('wizProgress').textContent = 'Free Claim Check \u00B7 Complete';
+  document.getElementById('wizNav').style.display = 'none';
+  document.getElementById('wizError').hidden = true;
+
+  var payload = Object.assign({}, wizAnswers, {
+    _subject: 'New Claim Check \u2014 ' + (wizAnswers.firstName || '') + ' ' + (wizAnswers.lastName || '')
+  });
+
+  fetch('https://formspree.io/f/mbdnlbbz', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(function(){});
+
   document.getElementById('wizBody').innerHTML =
     '<div class="wiz-done-title">Thanks, ' + esc(wizAnswers.firstName) + ' \u2014 your claim check is in.</div>'
     + '<p class="wiz-done-body">One of our team will review your answers and be in touch shortly to talk through what your claim could be worth. It\u2019s free, and there\u2019s no obligation.</p>';
-  document.getElementById('wizNav').style.display = 'none';
-  document.getElementById('wizError').hidden = true;
 }
 
 function scrollReviews(dir){
