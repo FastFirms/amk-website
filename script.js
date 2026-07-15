@@ -320,6 +320,7 @@ function wizFinish(){
     body: JSON.stringify(payload)
   }).catch(function(){});
 
+  window.location.href = 'thankyou.html';
   document.getElementById('wizBody').innerHTML =
     '<div class="wiz-done-title">Thanks, ' + esc(wizAnswers.firstName) + ' \u2014 your claim check is in.</div>'
     + '<p class="wiz-done-body">One of our team will review your answers and be in touch shortly to talk through what your claim could be worth. It\u2019s free, and there\u2019s no obligation.</p>';
