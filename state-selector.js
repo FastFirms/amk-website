@@ -102,10 +102,23 @@
     document.getElementById('ssm-nsw').addEventListener('click', function () { window.__amkState('nsw'); });
   }
 
+  // Swap homepage H1 to reflect selected state (no NSW homepage page exists)
+  function applyPageState(state) {
+    var page = getCurrentPage();
+    if (page !== 'index.html') return;
+    var h1 = document.querySelector('.hero-headline');
+    if (h1) {
+      h1.textContent = state === 'nsw'
+        ? 'Compensation Lawyers NSW.'
+        : 'Compensation Lawyers Queensland.';
+    }
+  }
+
   window.__amkState = function (s) {
     setState(s);
     closeModal();
     addBadge();
+    applyPageState(s);
     applyRedirect(s);
   };
 
@@ -125,5 +138,6 @@
       }
     }
     addBadge();
+    applyPageState(getState() || 'qld');
   });
 })();
