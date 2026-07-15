@@ -430,7 +430,7 @@ body{
   overflow-x:auto;
   scroll-snap-type:x mandatory;
   scroll-behavior:smooth;
-  padding:44px var(--pad-x) 12px;
+  padding:44px var(--pad-x) 44px;
   scrollbar-width:none;
 }
 .reviews-strip::-webkit-scrollbar{display:none;}
