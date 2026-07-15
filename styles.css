@@ -1222,5 +1222,19 @@ a.team-card{text-decoration:none;}
 .ssm-btn:hover{background:#f0f0f0;transform:translateY(-1px);}
 .ssm-note{color:#666;font-size:.78rem;text-align:center;margin:0;}
 /* ── State badge ── */
-.state-badge{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:.28rem .7rem;font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:background .12s;margin-left:.5rem;white-space:nowrap;}
-.state-badge:hover{background:rgba(255,255,255,.22);}
+.state-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--ink);color:var(--butter);
+  border:none;border-radius:6px;
+  padding:.35rem .75rem;
+  font-family:var(--font-display);font-size:.78rem;font-weight:800;letter-spacing:.05em;
+  cursor:pointer;white-space:nowrap;
+  transition:background .12s,transform .1s;
+  line-height:1;
+}
+.state-badge:hover{background:#000;transform:translateY(-1px);}
+.state-badge-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.state-badge-qld .state-badge-dot{background:#c8a400;}
+.state-badge-nsw .state-badge-dot{background:#4a90d9;}
+.state-badge-label{letter-spacing:.07em;}
+.state-badge-caret{font-size:.65rem;opacity:.7;}

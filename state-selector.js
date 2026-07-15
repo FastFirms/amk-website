@@ -21,8 +21,12 @@
   var reverseMap = {};
   for (var k in pageMap) { reverseMap[pageMap[k]] = k; }
 
+  // Normalise: handle /page.html and /page (Vercel clean URLs) and /
   function getCurrentPage() {
-    return window.location.pathname.split('/').pop() || 'index.html';
+    var seg = window.location.pathname.split('/').pop() || '';
+    if (!seg) return 'index.html';
+    if (!seg.endsWith('.html')) seg += '.html';
+    return seg;
   }
 
   function getState() { return localStorage.getItem('amk_state'); }
@@ -45,36 +49,57 @@
   function addBadge() {
     var links = document.querySelector('.nav-links');
     if (!links) return;
-    var old = document.getElementById('amk-state-badge');
-    if (old) old.remove();
+    var oldLi = document.getElementById('amk-state-li');
+    if (oldLi) oldLi.remove();
     var s = getState() || 'qld';
+    var isNSW = s === 'nsw';
     var li = document.createElement('li');
+    li.id = 'amk-state-li';
     var btn = document.createElement('button');
     btn.id = 'amk-state-badge';
-    btn.className = 'state-badge';
-    btn.setAttribute('aria-label', 'Change state');
-    btn.innerHTML = (s === 'nsw' ? 'NSW' : 'QLD') + ' <span aria-hidden="true">&#9662;</span>';
-    btn.onclick = function () { showModal(true); };
+    btn.className = 'state-badge' + (isNSW ? ' state-badge-nsw' : ' state-badge-qld');
+    btn.setAttribute('aria-label', 'Viewing ' + (isNSW ? 'NSW' : 'QLD') + ' — click to change state');
+    btn.innerHTML =
+      '<span class="state-badge-dot" aria-hidden="true"></span>' +
+      '<span class="state-badge-label">' + (isNSW ? 'NSW' : 'QLD') + '</span>' +
+      '<span class="state-badge-caret" aria-hidden="true">&#9662;</span>';
+    btn.addEventListener('click', function () { showModal(true); });
     li.appendChild(btn);
-    links.appendChild(li);
+    // Insert immediately before the Contact Us CTA
+    var ctaEl = links.querySelector('a.nav-cta');
+    var ctaLi = ctaEl ? ctaEl.closest('li') : null;
+    if (ctaLi) {
+      links.insertBefore(li, ctaLi);
+    } else {
+      links.appendChild(li);
+    }
   }
 
   function showModal(allowClose) {
     closeModal();
     var modal = document.createElement('div');
     modal.id = 'amk-state-modal';
-    modal.innerHTML =
-      '<div class="ssm-overlay"' + (allowClose ? ' onclick="(function(){var m=document.getElementById(\'amk-state-modal\');if(m)m.remove();})()"' : '') + '></div>' +
-      '<div class="ssm-box" role="dialog" aria-modal="true" aria-labelledby="ssm-title">' +
-        '<h2 id="ssm-title">Select your location</h2>' +
-        '<p>So we can show you the most relevant information — different laws apply by state.</p>' +
-        '<div class="ssm-btns">' +
-          '<button class="ssm-btn" onclick="window.__amkState(\'qld\')">QLD</button>' +
-          '<button class="ssm-btn" onclick="window.__amkState(\'nsw\')">NSW</button>' +
-        '</div>' +
-        '<p class="ssm-note">AMK Lawyers currently serves Queensland and New South Wales.</p>' +
-      '</div>';
+    var overlay = document.createElement('div');
+    overlay.className = 'ssm-overlay';
+    if (allowClose) overlay.addEventListener('click', closeModal);
+    var box = document.createElement('div');
+    box.className = 'ssm-box';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-labelledby', 'ssm-title');
+    box.innerHTML =
+      '<h2 id="ssm-title">Select your state</h2>' +
+      '<p>We\'ll show you the laws and process that apply to you.</p>' +
+      '<div class="ssm-btns">' +
+        '<button class="ssm-btn ssm-btn-qld" id="ssm-qld">Queensland</button>' +
+        '<button class="ssm-btn ssm-btn-nsw" id="ssm-nsw">New South Wales</button>' +
+      '</div>' +
+      '<p class="ssm-note">AMK Lawyers serves QLD and NSW clients.</p>';
+    modal.appendChild(overlay);
+    modal.appendChild(box);
     document.body.appendChild(modal);
+    document.getElementById('ssm-qld').addEventListener('click', function () { window.__amkState('qld'); });
+    document.getElementById('ssm-nsw').addEventListener('click', function () { window.__amkState('nsw'); });
   }
 
   window.__amkState = function (s) {
