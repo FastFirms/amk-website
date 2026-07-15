@@ -551,8 +551,7 @@ body{
 
 .svc-detail{background:var(--bone);padding:40px 0 0;}
 .svc-row{
-  max-width:1280px;margin:0 auto;padding:88px var(--pad-x);
-  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;
+  max-width:760px;margin:0 auto;padding:72px var(--pad-x);
   border-bottom:1px solid var(--tonal);
 }
 .svc-row:last-of-type{border-bottom:none;}
@@ -563,9 +562,6 @@ body{
   letter-spacing:-0.02em;line-height:1.2;color:var(--ink-soft);margin-bottom:20px;
 }
 .svc-row p.copy{margin-bottom:32px;max-width:52ch;}
-.svc-row .svc-media{aspect-ratio:4/3;width:100%;border-radius:20px;overflow:hidden;}
-.svc-row.flip .svc-text{order:2;}
-.svc-row.flip .svc-media{order:1;}
 
 /* No Win No Fee */
 .nwnf{background:var(--butter);padding:110px var(--pad-x);text-align:center;}
@@ -1184,9 +1180,7 @@ a.team-card{text-decoration:none;}
 
   .svc-hero{padding:80px 24px 72px;}
   .svc-hero .headline{font-size:44px;}
-  .svc-row{grid-template-columns:1fr;gap:36px;padding:64px 24px;}
-  .svc-row.flip .svc-text{order:1;}
-  .svc-row.flip .svc-media{order:2;}
+  .svc-row{padding:56px 24px;}
   .nwnf .headline{font-size:40px;}
 
   .footer-top{flex-direction:column;}
