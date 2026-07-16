@@ -695,6 +695,8 @@ body{
   letter-spacing:-0.04em;line-height:0.95;color:var(--butter);margin-bottom:24px;
 }
 .team-hero p{font-size:18px;color:var(--paper);max-width:56ch;}
+/* Answer boxes always use dark text regardless of parent hero context */
+.answer-box,.answer-box p,.answer-box span,.answer-box strong{color:var(--ink,#111111)!important;}
 
 .team-section{background:var(--bone);padding:96px 0 110px;}
 .team-grid{
