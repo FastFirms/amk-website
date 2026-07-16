@@ -554,6 +554,7 @@ body{
   max-width:760px;margin:0 auto;padding:72px var(--pad-x);
   border-bottom:1px solid var(--tonal);
 }
+.svc-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
 .svc-row:last-of-type{border-bottom:none;}
 
 .svc-row .h1{margin-bottom:14px;}
