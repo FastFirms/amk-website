@@ -1,15 +1,178 @@
 {
   "redirects": [
-    {
-      "source": "/:path*.html",
-      "destination": "/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/index",
-      "destination": "/",
-      "permanent": true
-    }
+    { "source": "/:path*.html", "destination": "/:path*", "permanent": true },
+    { "source": "/index", "destination": "/", "permanent": true },
+
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/contact-us/", "destination": "/contact", "permanent": true },
+
+    { "source": "/slip-and-fall-lawyers", "destination": "/slip-and-fall", "permanent": true },
+    { "source": "/slip-and-fall-lawyers/", "destination": "/slip-and-fall", "permanent": true },
+
+    { "source": "/not-at-fault-car-accident-lawyers", "destination": "/not-at-fault-car-accidents", "permanent": true },
+    { "source": "/not-at-fault-car-accident-lawyers/", "destination": "/not-at-fault-car-accidents", "permanent": true },
+
+    { "source": "/bike-accident-lawyer", "destination": "/bike-accidents", "permanent": true },
+    { "source": "/bike-accident-lawyer/", "destination": "/bike-accidents", "permanent": true },
+
+    { "source": "/motorcycle-accident-lawyer", "destination": "/bike-accidents", "permanent": true },
+    { "source": "/motorcycle-accident-lawyer/", "destination": "/bike-accidents", "permanent": true },
+
+    { "source": "/motor-vehicle-injury-lawyers", "destination": "/car-accidents", "permanent": true },
+    { "source": "/motor-vehicle-injury-lawyers/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/workers-compensation-lawyer", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/workers-compensation-lawyer/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/workers-compensation-lawyers-brisbane", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/workers-compensation-lawyers-brisbane/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/workers-compensation-lawyers-gold-coast", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/workers-compensation-lawyers-gold-coast/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/workcover-lawyers-brisbane", "destination": "/workcover", "permanent": true },
+    { "source": "/workcover-lawyers-brisbane/", "destination": "/workcover", "permanent": true },
+
+    { "source": "/workcover-lawyers-gold-coast", "destination": "/workcover", "permanent": true },
+    { "source": "/workcover-lawyers-gold-coast/", "destination": "/workcover", "permanent": true },
+
+    { "source": "/public-liability-lawyers", "destination": "/public-liability", "permanent": true },
+    { "source": "/public-liability-lawyers/", "destination": "/public-liability", "permanent": true },
+
+    { "source": "/public-liability-lawyers-brisbane", "destination": "/public-liability", "permanent": true },
+    { "source": "/public-liability-lawyers-brisbane/", "destination": "/public-liability", "permanent": true },
+
+    { "source": "/personal-injury-lawyers", "destination": "/personal-injury", "permanent": true },
+    { "source": "/personal-injury-lawyers/", "destination": "/personal-injury", "permanent": true },
+
+    { "source": "/personal-injury-lawyers-brisbane", "destination": "/personal-injury", "permanent": true },
+    { "source": "/personal-injury-lawyers-brisbane/", "destination": "/personal-injury", "permanent": true },
+
+    { "source": "/personal-injury-lawyers-gold-coast", "destination": "/personal-injury", "permanent": true },
+    { "source": "/personal-injury-lawyers-gold-coast/", "destination": "/personal-injury", "permanent": true },
+
+    { "source": "/personal-injury-lawyers-toowoomba", "destination": "/personal-injury", "permanent": true },
+    { "source": "/personal-injury-lawyers-toowoomba/", "destination": "/personal-injury", "permanent": true },
+
+    { "source": "/personal-injury-lawyers-ipswich", "destination": "/personal-injury", "permanent": true },
+    { "source": "/personal-injury-lawyers-ipswich/", "destination": "/personal-injury", "permanent": true },
+
+    { "source": "/no-win-no-fee-lawyers", "destination": "/no-win-no-fee", "permanent": true },
+    { "source": "/no-win-no-fee-lawyers/", "destination": "/no-win-no-fee", "permanent": true },
+
+    { "source": "/no-win-no-fee-lawyers-gold-coast", "destination": "/no-win-no-fee", "permanent": true },
+    { "source": "/no-win-no-fee-lawyers-gold-coast/", "destination": "/no-win-no-fee", "permanent": true },
+
+    { "source": "/no-win-no-fee-lawyers-ipswich", "destination": "/no-win-no-fee", "permanent": true },
+    { "source": "/no-win-no-fee-lawyers-ipswich/", "destination": "/no-win-no-fee", "permanent": true },
+
+    { "source": "/no-win-no-fee-lawyers-toowoomba", "destination": "/no-win-no-fee", "permanent": true },
+    { "source": "/no-win-no-fee-lawyers-toowoomba/", "destination": "/no-win-no-fee", "permanent": true },
+
+    { "source": "/car-accident-lawyers", "destination": "/car-accidents", "permanent": true },
+    { "source": "/car-accident-lawyers/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/car-accident-lawyers-brisbane", "destination": "/car-accidents", "permanent": true },
+    { "source": "/car-accident-lawyers-brisbane/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/car-accident-lawyers-gold-coast", "destination": "/car-accidents", "permanent": true },
+    { "source": "/car-accident-lawyers-gold-coast/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/car-accident-lawyers-ipswich", "destination": "/car-accidents", "permanent": true },
+    { "source": "/car-accident-lawyers-ipswich/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/car-accident-injury-lawyers-toowoomba", "destination": "/car-accidents", "permanent": true },
+    { "source": "/car-accident-injury-lawyers-toowoomba/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/compensation-lawyers-toowoomba", "destination": "/", "permanent": true },
+    { "source": "/compensation-lawyers-toowoomba/", "destination": "/", "permanent": true },
+
+    { "source": "/compensation-calculator", "destination": "/services", "permanent": true },
+    { "source": "/compensation-calculator/", "destination": "/services", "permanent": true },
+
+    { "source": "/workplace", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/workplace/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/blogs", "destination": "/", "permanent": true },
+    { "source": "/blogs/", "destination": "/", "permanent": true },
+
+    { "source": "/testimonials", "destination": "/", "permanent": true },
+    { "source": "/testimonials/", "destination": "/", "permanent": true },
+
+    { "source": "/terms-conditions", "destination": "/", "permanent": true },
+    { "source": "/terms-conditions/", "destination": "/", "permanent": true },
+
+    { "source": "/privacy-policy", "destination": "/", "permanent": true },
+    { "source": "/privacy-policy/", "destination": "/", "permanent": true },
+
+    { "source": "/journey-claim", "destination": "/", "permanent": true },
+    { "source": "/journey-claim/", "destination": "/", "permanent": true },
+
+    { "source": "/injured-at-work-labour-hire", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/injured-at-work-labour-hire/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/what-is-ctp-insurance", "destination": "/ctp-lawyer", "permanent": true },
+    { "source": "/what-is-ctp-insurance/", "destination": "/ctp-lawyer", "permanent": true },
+
+    { "source": "/working-from-home-know-your-rights-and-obligations", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/working-from-home-know-your-rights-and-obligations/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/what-does-a-work-cover-claim-involve", "destination": "/workcover", "permanent": true },
+    { "source": "/what-does-a-work-cover-claim-involve/", "destination": "/workcover", "permanent": true },
+
+    { "source": "/who-is-to-blame-for-trip-slip-and-falls-in-shopping-centres", "destination": "/slip-and-fall", "permanent": true },
+    { "source": "/who-is-to-blame-for-trip-slip-and-falls-in-shopping-centres/", "destination": "/slip-and-fall", "permanent": true },
+
+    { "source": "/who-do-i-claim-against-if-the-defect-in-a-vehicle-was-responsible-for-my-accident", "destination": "/car-accidents", "permanent": true },
+    { "source": "/who-do-i-claim-against-if-the-defect-in-a-vehicle-was-responsible-for-my-accident/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/when-dogs-bite-making-a-claim-as-a-result-of-a-dog-attack", "destination": "/public-liability", "permanent": true },
+    { "source": "/when-dogs-bite-making-a-claim-as-a-result-of-a-dog-attack/", "destination": "/public-liability", "permanent": true },
+
+    { "source": "/the-significance-of-the-communication-report-in-your-workcover-claim", "destination": "/workcover", "permanent": true },
+    { "source": "/the-significance-of-the-communication-report-in-your-workcover-claim/", "destination": "/workcover", "permanent": true },
+
+    { "source": "/understanding-the-importance-of-medical-evidence-mastery-in-preserving-your-workers-compensation-claim", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/understanding-the-importance-of-medical-evidence-mastery-in-preserving-your-workers-compensation-claim/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/early-case-assessment-workers-compensation-claims", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/early-case-assessment-workers-compensation-claims/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/steps-to-take-after-a-motor-vehicle-accident-in-queensland-immediate-actions-for-protecting-your-claim", "destination": "/what-to-do-after-a-car-accident-qld", "permanent": true },
+    { "source": "/steps-to-take-after-a-motor-vehicle-accident-in-queensland-immediate-actions-for-protecting-your-claim/", "destination": "/what-to-do-after-a-car-accident-qld", "permanent": true },
+
+    { "source": "/queensland-road-safety-laws-and-their-impact-on-injury-claims", "destination": "/car-accidents", "permanent": true },
+    { "source": "/queensland-road-safety-laws-and-their-impact-on-injury-claims/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/common-types-of-motor-vehicle-accident-injuries-in-queensland", "destination": "/car-accidents", "permanent": true },
+    { "source": "/common-types-of-motor-vehicle-accident-injuries-in-queensland/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/compensation-for-whiplash-injuries-in-queensland", "destination": "/car-accidents", "permanent": true },
+    { "source": "/compensation-for-whiplash-injuries-in-queensland/", "destination": "/car-accidents", "permanent": true },
+
+    { "source": "/who-is-at-fault-in-a-car-accident", "destination": "/not-at-fault-car-accidents", "permanent": true },
+    { "source": "/who-is-at-fault-in-a-car-accident/", "destination": "/not-at-fault-car-accidents", "permanent": true },
+
+    { "source": "/workers-compensation-investigations", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/workers-compensation-investigations/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/public-liability-claims", "destination": "/public-liability", "permanent": true },
+    { "source": "/public-liability-claims/", "destination": "/public-liability", "permanent": true },
+
+    { "source": "/claiming-workcover-after-resignation", "destination": "/workcover", "permanent": true },
+    { "source": "/claiming-workcover-after-resignation/", "destination": "/workcover", "permanent": true },
+
+    { "source": "/how-to-make-a-workcover-claim", "destination": "/workcover", "permanent": true },
+    { "source": "/how-to-make-a-workcover-claim/", "destination": "/workcover", "permanent": true },
+
+    { "source": "/can-i-claim-if-im-injured-on-a-bicycle", "destination": "/bike-accidents", "permanent": true },
+    { "source": "/can-i-claim-if-im-injured-on-a-bicycle/", "destination": "/bike-accidents", "permanent": true },
+
+    { "source": "/at-what-times-am-i-covered-by-workers-compensation", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/at-what-times-am-i-covered-by-workers-compensation/", "destination": "/workers-compensation", "permanent": true },
+
+    { "source": "/truck-driver-workers-compensation-claims", "destination": "/workers-compensation", "permanent": true },
+    { "source": "/truck-driver-workers-compensation-claims/", "destination": "/workers-compensation", "permanent": true }
   ],
   "rewrites": [
     {
