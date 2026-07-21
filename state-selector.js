@@ -46,17 +46,9 @@
     }
   }
 
-  function addBadge() {
-    var links = document.querySelector('.nav-links');
-    if (!links) return;
-    var oldLi = document.getElementById('amk-state-li');
-    if (oldLi) oldLi.remove();
-    var s = getState() || 'qld';
-    var isNSW = s === 'nsw';
-    var li = document.createElement('li');
-    li.id = 'amk-state-li';
+  function makeBadgeBtn(id, isNSW) {
     var btn = document.createElement('button');
-    btn.id = 'amk-state-badge';
+    btn.id = id;
     btn.className = 'state-badge' + (isNSW ? ' state-badge-nsw' : ' state-badge-qld');
     btn.setAttribute('aria-label', 'Viewing ' + (isNSW ? 'NSW' : 'QLD') + ' — click to change state');
     btn.innerHTML =
@@ -64,14 +56,33 @@
       '<span class="state-badge-label">' + (isNSW ? 'NSW' : 'QLD') + '</span>' +
       '<span class="state-badge-caret" aria-hidden="true">&#9662;</span>';
     btn.addEventListener('click', function () { showModal(true); });
-    li.appendChild(btn);
-    // Insert immediately before the Contact Us CTA
-    var ctaEl = links.querySelector('a.nav-cta');
-    var ctaLi = ctaEl ? ctaEl.closest('li') : null;
-    if (ctaLi) {
-      links.insertBefore(li, ctaLi);
-    } else {
-      links.appendChild(li);
+    return btn;
+  }
+
+  function addBadge() {
+    var s = getState() || 'qld';
+    var isNSW = s === 'nsw';
+
+    // Desktop badge — inside nav-links, before Contact Us
+    var links = document.querySelector('.nav-links');
+    if (links) {
+      var oldLi = document.getElementById('amk-state-li');
+      if (oldLi) oldLi.remove();
+      var li = document.createElement('li');
+      li.id = 'amk-state-li';
+      li.appendChild(makeBadgeBtn('amk-state-badge', isNSW));
+      var ctaEl = links.querySelector('a.nav-cta');
+      var ctaLi = ctaEl ? ctaEl.closest('li') : null;
+      if (ctaLi) { links.insertBefore(li, ctaLi); } else { links.appendChild(li); }
+    }
+
+    // Mobile badge — directly in nav-inner, before the hamburger button
+    var oldMobile = document.getElementById('amk-state-mobile');
+    if (oldMobile) oldMobile.remove();
+    var burger = document.querySelector('.nav-burger');
+    if (burger) {
+      var mobileBtn = makeBadgeBtn('amk-state-mobile', isNSW);
+      burger.parentNode.insertBefore(mobileBtn, burger);
     }
   }
 
