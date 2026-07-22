@@ -1045,7 +1045,10 @@ a.team-card{text-decoration:none;}
 .article-byline .av{width:52px;height:52px;border-radius:50%;background:var(--tonal) center/cover;flex:0 0 auto;}
 .article-byline .nm{font-family:var(--font-display);font-weight:700;font-size:16px;color:var(--ink);}
 .article-byline .rl{font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px;}
-.post-meta{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#c9c8c2;margin-top:18px;}
+.post-meta{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#c9c8c2;margin-top:18px;display:flex;align-items:center;gap:10px;}
+.post-meta-av{width:28px;height:28px;border-radius:50%;object-fit:cover;flex:0 0 auto;border:1px solid rgba(255,255,255,0.2);}
+.res-meta-author{display:flex;align-items:center;gap:8px;}
+.res-meta-av{width:20px;height:20px;border-radius:50%;object-fit:cover;flex:0 0 auto;}
 
 /* ============================================================
    TEAM MEMBER PROFILE
