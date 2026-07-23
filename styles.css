@@ -1211,15 +1211,15 @@ a.team-card{text-decoration:none;}
 /* AMK Approach step 1 photo — embedded */
 .step-img-claimcheck{background-image:url("assets/step-1.jpg");background-size:cover;background-position:center;}
 /* Team headshots — embedded */
-.team-photo-michelle{background-image:url("assets/team-michelle.jpg");}
-.team-photo-michael{background-image:url("assets/team-michael.jpg");}
-.team-photo-greg{background-image:url("assets/team-greg.jpg");}
-.team-photo-dom{background-image:url("assets/team-dom.jpg");}
-.team-photo-nathan{background-image:url("assets/team-nathan.jpg");}
-.team-photo-max{background-image:url("assets/team-max.jpg");}
-.team-photo-kassie{background-image:url("assets/team-kassie.jpg");}
-.team-photo-jennifer{background-image:url("assets/team-jennifer.jpg");}
-.team-photo-micaela{background-image:url("assets/team-micaela.jpg");}
+.team-photo-michelle{background-image:url("assets/team-michelle.jpg");background-position:center 0%;}
+.team-photo-michael{background-image:url("assets/team-michael.jpg");background-position:center 10%;}
+.team-photo-greg{background-image:url("assets/team-greg.jpg");background-position:center 0%;}
+.team-photo-dom{background-image:url("assets/team-dom.jpg");background-position:center 0%;}
+.team-photo-nathan{background-image:url("assets/team-nathan.jpg");background-position:center 0%;}
+.team-photo-max{background-image:url("assets/team-max.jpg");background-position:center 8%;}
+.team-photo-kassie{background-image:url("assets/team-kassie.jpg");background-position:center 0%;}
+.team-photo-jennifer{background-image:url("assets/team-jennifer.jpg");background-position:center 5%;}
+.team-photo-micaela{background-image:url("assets/team-micaela.jpg");background-position:center 0%;}
 
 /* ── State selector modal ── */
 #amk-state-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;}
