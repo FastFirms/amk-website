@@ -14,41 +14,69 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.ty-wrap{
-  min-height:80vh;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;text-align:center;padding:80px var(--pad-x);
+.ty-hero{
+  background:var(--ink);padding:96px var(--pad-x) 80px;text-align:center;
 }
-.ty-icon{
-  width:64px;height:64px;border-radius:50%;
-  background:var(--sage-light,#dfe6d8);display:flex;align-items:center;
-  justify-content:center;margin:0 auto 28px;font-size:28px;
+.ty-hero .label{color:var(--butter);display:block;margin-bottom:20px;}
+.ty-hero h1{
+  font-family:var(--font-display);font-weight:800;
+  font-size:clamp(36px,6vw,64px);letter-spacing:-0.04em;
+  color:var(--butter);line-height:1.0;margin:0 auto 20px;max-width:700px;
 }
-.ty-title{
-  font-family:var(--font-display);font-weight:800;font-size:clamp(28px,5vw,44px);
-  letter-spacing:-0.03em;color:var(--ink);line-height:1.1;margin:0 0 16px;
-  max-width:600px;
+.ty-hero p{
+  font-size:18px;color:rgba(255,255,255,0.65);line-height:1.6;
+  max-width:500px;margin:0 auto;
 }
-.ty-sub{
-  font-size:17px;color:var(--ink-soft);line-height:1.6;
-  max-width:480px;margin:0 auto 36px;
+.ty-steps-section{
+  background:var(--bone);padding:72px var(--pad-x);
+}
+.ty-steps-inner{
+  max-width:860px;margin:0 auto;
+}
+.ty-steps-label{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:36px;
+  display:block;
 }
 .ty-steps{
-  display:flex;gap:16px;flex-wrap:wrap;justify-content:center;
-  max-width:640px;margin:0 auto 48px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
 }
 .ty-step{
-  background:var(--cream);border:1px solid var(--tonal);
-  border-radius:10px;padding:18px 20px;text-align:left;flex:1;min-width:180px;
+  background:var(--paper);border:1px solid var(--tonal);
+  padding:28px 24px;
 }
 .ty-step-num{
-  font-family:var(--font-mono);font-size:11px;font-weight:600;
-  color:var(--sage);letter-spacing:.08em;margin-bottom:6px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;
+  display:block;
 }
-.ty-step-text{
-  font-size:14px;color:var(--ink);line-height:1.45;
+.ty-step h3{
+  font-family:var(--font-display);font-weight:700;font-size:16px;
+  letter-spacing:-0.01em;color:var(--ink);margin:0 0 8px;
+}
+.ty-step p{font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0;}
+.ty-call{
+  background:var(--butter);padding:56px var(--pad-x);text-align:center;
+}
+.ty-call h2{
+  font-family:var(--font-display);font-weight:800;font-size:clamp(24px,4vw,36px);
+  letter-spacing:-0.03em;color:var(--ink);margin:0 0 8px;
+}
+.ty-call p{font-size:16px;color:var(--ink);opacity:0.7;margin:0 0 28px;}
+.ty-call-nums{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.ty-call-nums a{
+  font-family:var(--font-display);font-weight:700;font-size:20px;
+  letter-spacing:-0.02em;color:var(--ink);text-decoration:none;
+  border-bottom:2px solid var(--ink);padding-bottom:2px;
 }
 .ty-actions{
-  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+  background:var(--bone);padding:48px var(--pad-x);
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+}
+@media(max-width:640px){
+  .ty-steps{grid-template-columns:1fr;}
+  .ty-hero{padding:72px 24px 60px;}
+  .ty-steps-section,.ty-call,.ty-actions{padding-left:24px;padding-right:24px;}
 }
 </style>
 </head>
@@ -114,30 +142,47 @@
 </nav>
 
 <main>
-  <section class="ty-wrap">
-    <div class="ty-icon">&#10003;</div>
-    <h1 class="ty-title">We've got your details.</h1>
-    <p class="ty-sub">One of our team will review your information and be in touch shortly — usually within one business day. It's free, and there's no obligation.</p>
+  <section class="ty-hero">
+    <span class="label">Claim Received</span>
+    <h1>We've Got<br>Your Details.</h1>
+    <p>One of our lawyers will review your information and call you — usually within one business day. It's free, and there's no obligation.</p>
+  </section>
 
-    <div class="ty-steps">
-      <div class="ty-step">
-        <div class="ty-step-num">NEXT — 01</div>
-        <div class="ty-step-text">We review your claim details and assess what you may be entitled to.</div>
-      </div>
-      <div class="ty-step">
-        <div class="ty-step-num">NEXT — 02</div>
-        <div class="ty-step-text">A lawyer calls you to walk through your options — no legal jargon.</div>
-      </div>
-      <div class="ty-step">
-        <div class="ty-step-num">NEXT — 03</div>
-        <div class="ty-step-text">If you proceed, we handle everything. You pay nothing unless we win.</div>
+  <section class="ty-steps-section">
+    <div class="ty-steps-inner">
+      <span class="ty-steps-label">What happens next</span>
+      <div class="ty-steps">
+        <div class="ty-step">
+          <span class="ty-step-num">Step 01</span>
+          <h3>We review your claim</h3>
+          <p>Our team assesses your details and determines what you may be entitled to under Queensland or NSW law.</p>
+        </div>
+        <div class="ty-step">
+          <span class="ty-step-num">Step 02</span>
+          <h3>A lawyer calls you</h3>
+          <p>We'll walk you through your options in plain English — no jargon, no pressure, no obligation.</p>
+        </div>
+        <div class="ty-step">
+          <span class="ty-step-num">Step 03</span>
+          <h3>No win, no fee</h3>
+          <p>If you choose to proceed, we handle everything. You pay nothing unless we win your claim.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="ty-actions">
-      <a class="btn btn-ink" href="index.html">Back to home</a>
-      <a class="btn btn-tonal" href="resources.html">Read our guides</a>
+  <section class="ty-call">
+    <h2>Want To Talk Now?</h2>
+    <p>Our team is available 24/7 — call us directly.</p>
+    <div class="ty-call-nums">
+      <a href="tel:0731363287">07 3136 3287</a>
+      <a href="tel:1300748297">1300 748 297</a>
     </div>
+  </section>
+
+  <section class="ty-actions">
+    <a class="btn btn-ink" href="index.html">Back to Home</a>
+    <a class="btn btn-tonal" href="resources.html">Read Our Guides</a>
   </section>
 </main>
 
