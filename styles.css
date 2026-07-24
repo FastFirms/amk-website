@@ -693,7 +693,7 @@ body{
 .team-hero-inner{max-width:1280px;margin:0 auto;padding:0 var(--pad-x);}
 .team-hero .label{color:#b9b8b2;display:block;margin-bottom:22px;}
 .team-hero .headline{
-  font-family:var(--font-display);font-weight:800;font-size:clamp(48px,6vw,80px);
+  font-family:var(--font-display);font-weight:800;font-size:clamp(40px,6vw,80px);
   letter-spacing:-0.04em;line-height:0.95;color:var(--butter);margin-bottom:24px;
 }
 .team-hero p{font-size:18px;color:var(--paper);max-width:56ch;}
