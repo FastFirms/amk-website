@@ -33,6 +33,9 @@
   function setState(s) { localStorage.setItem('amk_state', s); }
 
   function closeModal() {
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
     var m = document.getElementById('amk-state-modal');
     if (m) m.remove();
   }
@@ -109,6 +112,9 @@
     modal.appendChild(overlay);
     modal.appendChild(box);
     document.body.appendChild(modal);
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
     document.getElementById('ssm-qld').addEventListener('click', function () { window.__amkState('qld'); });
     document.getElementById('ssm-nsw').addEventListener('click', function () { window.__amkState('nsw'); });
   }

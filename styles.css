@@ -427,7 +427,7 @@ body{
   transition:background .2s ease;
 }
 .arrow:hover{background:var(--ink);color:var(--paper);}
-.reviews-strip{
+.reviews-strip{touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch;
   display:flex;gap:20px;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
