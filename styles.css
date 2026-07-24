@@ -1248,3 +1248,14 @@ a.team-card{text-decoration:none;}
 .state-badge-nsw .state-badge-dot{background:#4a90d9;}
 .state-badge-label{letter-spacing:.07em;}
 .state-badge-caret{font-size:.65rem;opacity:.7;}
+
+/* ── Mobile Responsive Fixes ── */
+
+@media (max-width: 900px) { /* match your existing mobile breakpoint */
+  .nav-links.open {
+    max-height: 100vh;        /* or a fixed value like calc(100vh - 60px) to account for header height */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+    overscroll-behavior: contain;      /* stop scroll from bubbling to body/page */
+  }
+}
