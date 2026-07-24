@@ -1251,11 +1251,14 @@ a.team-card{text-decoration:none;}
 
 /* ── Mobile Responsive Fixes ── */
 
-@media (max-width: 900px) { /* match your existing mobile breakpoint */
-  .nav-links.open {
-    max-height: 100vh;        /* or a fixed value like calc(100vh - 60px) to account for header height */
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
-    overscroll-behavior: contain;      /* stop scroll from bubbling to body/page */
+@media (max-width:768px){
+  .nav-links.open{
+    position:fixed;
+    top:74px;                          /* height of .nav-inner: 36px logo + 18px*2 padding + 1px border */
+    left:0;right:0;bottom:0;
+    z-index:99;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;  /* smooth momentum scroll on iOS */
+    overscroll-behavior:contain;       /* stop scroll from bubbling to body/page */
   }
 }
