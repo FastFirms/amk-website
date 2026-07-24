@@ -1262,6 +1262,6 @@ a.team-card{text-decoration:none;}
     overscroll-behavior:contain;       /* stop scroll from bubbling to body/page */
   }
   .svc-hero-inner {
-    padding: 0 24px;
+    padding: 0;
   }
 }
