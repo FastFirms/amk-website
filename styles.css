@@ -1261,4 +1261,7 @@ a.team-card{text-decoration:none;}
     -webkit-overflow-scrolling:touch;  /* smooth momentum scroll on iOS */
     overscroll-behavior:contain;       /* stop scroll from bubbling to body/page */
   }
+  .svc-hero-inner {
+    padding: 0 24px;
+  }
 }
