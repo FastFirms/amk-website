@@ -121,9 +121,26 @@
     document.getElementById('ssm-nsw').addEventListener('click', function () { window.__amkState('nsw'); });
   }
 
-  // Swap homepage H1 to reflect selected state (no NSW homepage page exists)
+  // Swap page-specific QLD text to reflect selected state (no separate NSW pages exist for these)
   function applyPageState(state) {
     var page = getCurrentPage();
+
+    if (page === 'our-team.html') {
+      var teamHeroHeadline = document.getElementById('teamHeroHeadline');
+      if (teamHeroHeadline) {
+        teamHeroHeadline.textContent = state === 'nsw'
+          ? 'Our Team — New South Wales Compensation Lawyers.'
+          : 'Our Team — Queensland Compensation Lawyers.';
+      }
+      var teamHeroP = document.getElementById('teamHeroP');
+      if (teamHeroP) {
+        teamHeroP.textContent = state === 'nsw'
+          ? "A no-nonsense team of New South Wales lawyers and support staff who treat every claim like it's the one that matters most — because to you, it is."
+          : "A no-nonsense team of Queensland lawyers and support staff who treat every claim like it's the one that matters most — because to you, it is.";
+      }
+      return;
+    }
+
     if (page !== 'index.html') return;
     var h1 = document.querySelector('.hero-headline');
     if (h1) {
