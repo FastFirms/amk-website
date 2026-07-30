@@ -131,6 +131,41 @@
         ? 'Compensation Lawyers NSW.'
         : 'Compensation Lawyers Queensland.';
     }
+    // Swap homepage QLD text content
+    var yearsStats = document.getElementById('yearsStats');
+    if (yearsStats) {
+      yearsStats.textContent = state === 'nsw'
+        ? 'Years of New South Wales compensation law'
+        : 'Years of Queensland compensation law';
+    }
+
+    var learnHeading = document.getElementById('learnHeading');
+    if (learnHeading) {
+      learnHeading.textContent = state === 'nsw'
+        ? 'Understanding New South Wales Compensation Law.'
+        : 'Understanding Queensland Compensation Law.';
+    }
+
+    var whyRowTitle1 = document.getElementById('whyRowTitle1');
+    if (whyRowTitle1) {
+      whyRowTitle1.textContent = state === 'nsw'
+        ? 'What Are My Legal Rights Under New South Wales Compensation Law?'
+        : 'What Are My Legal Rights Under Queensland Compensation Law?';
+    }
+
+    var whyRowP1 = document.getElementById('whyRowP1');
+    if (whyRowP1) {
+      whyRowP1.textContent = state === 'nsw'
+        ? "Compensation laws exist so people can take legal action after an accident, getting sick or being hurt. In New South Wales, different rules apply depending on the nature of your injury and when and where it occurred — the same type of injury can be treated very differently if it's caused by a motor vehicle accident versus happening while you're doing your job."
+        : "Compensation laws exist so people can take legal action after an accident, getting sick or being hurt. In Queensland, different rules apply depending on the nature of your injury and when and where it occurred — the same type of injury can be treated very differently if it's caused by a motor vehicle accident versus happening while you're doing your job.";
+    }
+
+    var whyRowP2 = document.getElementById('whyRowP2');
+    if (whyRowP2) {
+      whyRowP2.textContent = state === 'nsw'
+        ? "That's because different types of personal injury are processed under different legislation. If you're hurt at work, your claim will usually be managed as a workers' compensation claim through icare. Motor vehicle accidents are handled by the CTP insurance company, while public liability claims are made through the policyholder's insurer. We'll help you understand the process under the relevant New South Wales legislation, so you can make an informed decision about your matter."
+        : "That's because different types of personal injury are processed under different legislation. If you're hurt at work, your claim will usually be managed as a workers' compensation claim through WorkCover. Motor vehicle accidents are handled by the CTP insurance company, while public liability claims are made through the policyholder's insurer. We'll help you understand the process under the relevant Queensland legislation, so you can make an informed decision about your matter.";
+    }
   }
 
   window.__amkState = function (s) {
