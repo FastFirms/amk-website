@@ -166,6 +166,51 @@
         ? "That's because different types of personal injury are processed under different legislation. If you're hurt at work, your claim will usually be managed as a workers' compensation claim through icare. Motor vehicle accidents are handled by the CTP insurance company, while public liability claims are made through the policyholder's insurer. We'll help you understand the process under the relevant New South Wales legislation, so you can make an informed decision about your matter."
         : "That's because different types of personal injury are processed under different legislation. If you're hurt at work, your claim will usually be managed as a workers' compensation claim through WorkCover. Motor vehicle accidents are handled by the CTP insurance company, while public liability claims are made through the policyholder's insurer. We'll help you understand the process under the relevant Queensland legislation, so you can make an informed decision about your matter.";
     }
+
+    // --- "The claims we can help with, in detail" accordion ---
+
+    var ctpP1 = document.getElementById('ctpP1');
+    if (ctpP1) {
+      ctpP1.textContent = state === 'nsw'
+        ? "In New South Wales, car accident compensation claims are typically made through the Compulsory Third Party (CTP) insurance scheme, also known as a Green Slip, paid when people register their vehicles. CTP claims apply to drivers, passengers, pedestrians and cyclists injured on the road, across all vehicle types on New South Wales roads."
+        : "In Queensland, car accident compensation claims are typically made through the Compulsory Third Party (CTP) insurance scheme, paid when people register their vehicles. CTP claims apply to drivers, passengers, pedestrians and cyclists injured on the road, across all vehicle types on Queensland roads.";
+    }
+
+    // NOTE: ctpP2 references QLD-specific forms and deadlines (Accident Notification Form,
+    // 28 days, Notice of Accident Claim Form, nine months). NSW's scheme (Motor Accident
+    // Injuries Act 2017, via SIRA) uses different forms and timeframes — confirm the exact
+    // figures before publishing rather than relying on the placeholder wording below.
+    var ctpP2 = document.getElementById('ctpP2');
+    if (ctpP2) {
+      ctpP2.textContent = state === 'nsw'
+        ? "If you're injured in a motor vehicle accident, you must notify the at-fault driver's CTP insurer as soon as possible. Claims can cover medical expenses, rehabilitation, loss of income, and pain and suffering. Strict time limits apply under the Motor Accident Injuries Act 2017 — [CONFIRM: exact notification and claim lodgement deadlines for NSW]."
+        : "If you're injured in a motor vehicle accident, you must notify the at-fault driver's CTP insurer — the Queensland Government can help you find their details if you don't have them. Claims can cover medical expenses, rehabilitation, loss of income, and pain and suffering. Strict time limits apply: an Accident Notification Form within 28 days, and a Notice of Accident Claim Form within nine months of the accident or the onset of symptoms.";
+    }
+
+    var wcP1 = document.getElementById('wcP1');
+    if (wcP1) {
+      wcP1.textContent = state === 'nsw'
+        ? "Workers' compensation claims in New South Wales are handled through icare. If you suffer a workplace injury or illness, you must notify your employer and lodge a claim within six months. Claims can cover medical and rehabilitation costs, loss of wages, and permanent impairment benefits."
+        : "Workers' compensation claims in Queensland are handled through WorkCover. If you suffer a workplace injury or illness, you must notify your employer and lodge a claim with WorkCover within six months. Claims can cover medical and rehabilitation costs, loss of wages, and permanent impairment benefits.";
+    }
+
+    var tpdP1 = document.getElementById('tpdP1');
+    if (tpdP1) {
+      tpdP1.textContent = state === 'nsw'
+        ? "TPD claims are made through various channels including superannuation funds, icare, or private insurance policies. They cover injuries or illnesses resulting in permanent impairment that prevents you from working, and compensation can include lump-sum payments and ongoing financial support."
+        : "TPD claims are made through various channels including superannuation funds, WorkCover, or private insurance policies. They cover injuries or illnesses resulting in permanent impairment that prevents you from working, and compensation can include lump-sum payments and ongoing financial support.";
+    }
+
+    // --- FAQ section ---
+
+    // NOTE: this references specific QLD office cities (Brisbane, Toowoomba, Gold Coast).
+    // Swap in the correct NSW office locations before publishing — placeholder below.
+    var faqEvidenceP = document.getElementById('faqEvidenceP');
+    if (faqEvidenceP) {
+      faqEvidenceP.textContent = state === 'nsw'
+        ? "Gathering evidence involves collecting medical records, accident reports, witness statements and expert opinions. Our lawyers in [CONFIRM: NSW office locations] work with you to compile all relevant information — thorough documentation supports your claim and is crucial for a successful outcome under New South Wales law."
+        : "Gathering evidence involves collecting medical records, accident reports, witness statements and expert opinions. Our lawyers in Brisbane, Toowoomba and the Gold Coast work with you to compile all relevant information — thorough documentation supports your claim and is crucial for a successful outcome under Queensland law.";
+    }
   }
 
   window.__amkState = function (s) {
