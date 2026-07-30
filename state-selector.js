@@ -211,6 +211,12 @@
         ? "Gathering evidence involves collecting medical records, accident reports, witness statements and expert opinions. Our lawyers in [CONFIRM: NSW office locations] work with you to compile all relevant information — thorough documentation supports your claim and is crucial for a successful outcome under New South Wales law."
         : "Gathering evidence involves collecting medical records, accident reports, witness statements and expert opinions. Our lawyers in Brisbane, Toowoomba and the Gold Coast work with you to compile all relevant information — thorough documentation supports your claim and is crucial for a successful outcome under Queensland law.";
     }
+
+    // QLD-only office locations FAQ — no NSW equivalent yet, so hide it when NSW is selected
+    var faqOfficesQld = document.getElementById('faqOfficesQld');
+    if (faqOfficesQld) {
+      faqOfficesQld.style.display = state === 'nsw' ? 'none' : '';
+    }
   }
 
   window.__amkState = function (s) {
