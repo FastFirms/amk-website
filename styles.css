@@ -738,7 +738,7 @@ a.team-card{text-decoration:none;}
   letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);line-height:1.6;
 }
 
-.team-cta{background:var(--bone);padding:88px var(--pad-x);text-align:center;}
+.team-cta{background:var(--tonal);border-top:1px solid var(--tonal);padding:88px var(--pad-x);text-align:center;}
 .team-cta .headline{
   font-family:var(--font-display);font-weight:800;font-size:48px;
   letter-spacing:-0.035em;line-height:0.98;color:var(--ink);margin-bottom:18px;
