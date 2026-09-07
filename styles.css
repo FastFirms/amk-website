@@ -509,7 +509,7 @@ body{
 /* ============================================================
    SECTION 12: FOOTER
    ============================================================ */
-.footer{background:var(--ink);padding:88px 0 0;}
+.footer{background:var(--ink);border-top:4px solid var(--butter);padding:64px 0 0;}
 .footer-top{
   max-width:1280px;margin:0 auto;padding:0 var(--pad-x) 56px;
   display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;
@@ -738,12 +738,12 @@ a.team-card{text-decoration:none;}
   letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);line-height:1.6;
 }
 
-.team-cta{background:var(--ink);padding:120px var(--pad-x);text-align:center;}
+.team-cta{background:var(--bone);padding:88px var(--pad-x);text-align:center;}
 .team-cta .headline{
   font-family:var(--font-display);font-weight:800;font-size:48px;
-  letter-spacing:-0.035em;line-height:0.98;color:var(--butter);margin-bottom:18px;
+  letter-spacing:-0.035em;line-height:0.98;color:var(--ink);margin-bottom:18px;
 }
-.team-cta p{color:var(--paper);margin-bottom:40px;}
+.team-cta p{color:var(--ink-soft);margin-bottom:40px;}
 
 /* ============================================================
    PAGES 4-6: COURT CASES
