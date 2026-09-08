@@ -1066,10 +1066,8 @@ a { color: inherit; }
 <script>
 function submitForm(formId, thanksId, e) {
   e.preventDefault();
-  document.getElementById(formId).style.display = 'none';
-  document.getElementById(thanksId).style.display = 'block';
-  // TODO: connect to CRM or Formspree
-  // fetch('https://formspree.io/f/YOUR_FORM_ID', { method:'POST', body: new FormData(e.target) });
+  // TODO: POST to CRM/Formspree before redirect
+  window.location.href = 'thank-you.html';
 }
 
 document.getElementById('stickyFormBtn')?.addEventListener('click', function(e) {

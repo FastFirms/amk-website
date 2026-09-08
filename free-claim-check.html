@@ -937,9 +937,8 @@ function fccShowResult(strength) {
 
 function fccSubmit(e) {
   e.preventDefault();
-  document.getElementById('fccCallbackForm').style.display = 'none';
-  document.getElementById('fccCallbackThanks').style.display = 'block';
-  // TODO: POST to CRM/form handler
+  // TODO: POST to CRM/form handler before redirect
+  window.location.href = 'thank-you.html';
 }
 </script>
 </body>
