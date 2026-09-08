@@ -354,7 +354,13 @@ if(document.getElementById("wizBody")){ wizRender(); }
 /* Lawyer contact form (article sidebar) */
 function submitLawyerContact(e){
   e.preventDefault();
-  // TODO: POST to CRM/Formspree before redirect
-  window.location.href = 'thank-you.html';
+  var form = e.target;
+  fetch('https://formspree.io/f/mbdnlbbz', {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).finally(function() {
+    window.location.href = 'thank-you.html';
+  });
   return false;
 }

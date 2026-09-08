@@ -937,8 +937,20 @@ function fccShowResult(strength) {
 
 function fccSubmit(e) {
   e.preventDefault();
-  // TODO: POST to CRM/form handler before redirect
-  window.location.href = 'thank-you.html';
+  var form = e.target;
+  var data = new FormData(form);
+  // Append quiz answers captured during the checker steps
+  data.append('claim_type', fccAnswers.type || '');
+  data.append('incident_when', fccAnswers.when || '');
+  data.append('injury', fccAnswers.injured || '');
+  data.append('source', 'free-claim-check');
+  fetch('https://formspree.io/f/mbdnlbbz', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).finally(function() {
+    window.location.href = 'thank-you.html';
+  });
 }
 </script>
 </body>
