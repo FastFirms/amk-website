@@ -4,6 +4,9 @@
     { "source": "/index", "destination": "/", "permanent": true },
     { "source": "/:path+/", "destination": "/:path+", "permanent": true },
 
+    { "source": "/thankyou", "destination": "/thank-you", "permanent": true },
+    { "source": "/thankyou/", "destination": "/thank-you", "permanent": true },
+
     { "source": "/contact-us", "destination": "/contact", "permanent": true },
     { "source": "/contact-us/", "destination": "/contact", "permanent": true },
 
