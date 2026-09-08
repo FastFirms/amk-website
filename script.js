@@ -354,10 +354,7 @@ if(document.getElementById("wizBody")){ wizRender(); }
 /* Lawyer contact form (article sidebar) */
 function submitLawyerContact(e){
   e.preventDefault();
-  var form = e.target;
-  var thanks = document.getElementById('contactThanks');
-  if(thanks){ thanks.classList.add('show'); }
-  form.querySelectorAll('input,textarea,button').forEach(function(el){ el.style.display='none'; });
-  if(thanks){ thanks.style.display='block'; }
+  // TODO: POST to CRM/Formspree before redirect
+  window.location.href = 'thank-you.html';
   return false;
 }
