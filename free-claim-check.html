@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Claim Check | AMK Lawyers</title>
-  <meta name="description" content="Check if you have a compensation claim in under 2 minutes. Completely free, no obligation. Workers compensation, CTP road accidents, public liability. No Win, No Fee.">
+  <meta name="description" content="Find out if you have a compensation claim in 60 seconds. Workers compensation, CTP road accidents, public liability. No Win, No Fee. AMK Lawyers QLD &amp; NSW.">
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles.css">
   <style>
   :root { --max: 1240px; --pad: clamp(20px, 5vw, 64px); }
 
+  /* ── Page ground ───────────────────────────────────────── */
+  .fcc-page { background: var(--bone, #F4F2EA); }
+
   /* ── Hero ─────────────────────────────────────────────── */
-  .fcc-hero-wrap { background: var(--bone); }
   .fcc-hero {
     max-width: var(--max); margin: 0 auto;
     padding: 72px var(--pad) 80px;
-    display: grid; grid-template-columns: 1fr 420px;
-    gap: 72px; align-items: start;
+    display: grid; grid-template-columns: 1fr 500px;
+    gap: 80px; align-items: start;
   }
   .fcc-eyebrow-tag {
     display: inline-flex; align-items: center; gap: 8px;
@@ -25,12 +27,11 @@
     color: var(--ink-soft, #4A4A48); background: var(--tonal, #E8E5D8);
     border-radius: 3px; padding: 5px 10px; margin-bottom: 28px;
   }
-  .fcc-eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ink, #111); opacity: .35; }
   .fcc-headline {
     font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 800; font-size: clamp(38px, 5vw, 60px);
+    font-weight: 800; font-size: clamp(36px, 4.5vw, 58px);
     line-height: .95; letter-spacing: -.045em;
-    color: var(--ink, #111); text-wrap: balance; margin-bottom: 26px;
+    color: var(--ink, #111); text-wrap: balance; margin-bottom: 24px;
   }
   .fcc-headline em {
     font-style: normal; background: var(--butter, #F7F788);
@@ -38,7 +39,7 @@
   }
   .fcc-hero-body {
     font-size: 17px; color: var(--ink-soft, #4A4A48);
-    line-height: 1.65; max-width: 460px; margin-bottom: 36px;
+    line-height: 1.65; max-width: 440px; margin-bottom: 36px;
   }
   .fcc-chips { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 40px; }
   .fcc-chip {
@@ -48,73 +49,171 @@
     border: 1px solid var(--tonal, #E8E5D8); border-radius: 3px; padding: 5px 10px;
   }
   .fcc-tel-row {
-    display: flex; align-items: center; gap: 6px;
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
     font-family: var(--font-mono, monospace); font-size: 10px;
     letter-spacing: .07em; text-transform: uppercase; color: var(--ink-soft, #4A4A48);
   }
   .fcc-tel {
     font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 700; font-size: 17px; color: var(--ink, #111);
+    font-weight: 700; font-size: 18px; color: var(--ink, #111);
     text-decoration: none; letter-spacing: -.02em;
   }
   .fcc-tel:hover { opacity: .6; }
 
-  /* ── Form card ────────────────────────────────────────── */
-  .fcc-form-card {
-    background: var(--paper, #FBFAF4); border: 1px solid var(--tonal, #E8E5D8);
-    border-radius: 12px; padding: 36px 32px;
+  /* ── Checker card ─────────────────────────────────────── */
+  .fcc-checker {
+    background: var(--paper, #FBFAF4);
+    border: 1.5px solid var(--tonal, #E8E5D8);
+    border-radius: 14px; overflow: hidden;
   }
-  .fcc-form-title {
+  .fcc-checker-head {
+    background: var(--tonal, #E8E5D8);
+    border-bottom: 1px solid #D8D5C8; padding: 18px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .fcc-checker-label {
+    font-family: var(--font-mono, monospace); font-size: 10px;
+    letter-spacing: .09em; text-transform: uppercase; color: var(--ink-soft, #4A4A48);
+  }
+  .fcc-progress-track {
+    flex: 1; height: 4px; background: rgba(17,17,17,.12); border-radius: 2px; max-width: 140px;
+  }
+  .fcc-progress-fill {
+    height: 100%; background: var(--ink, #111); border-radius: 2px;
+    transition: width .35s ease;
+  }
+  .fcc-progress-text {
+    font-family: var(--font-mono, monospace); font-size: 10px;
+    letter-spacing: .07em; color: var(--ink-soft, #4A4A48);
+  }
+  .fcc-checker-body { padding: 36px 28px 28px; min-height: 300px; }
+
+  /* Steps */
+  .fcc-step { display: none; }
+  .fcc-step.active { display: block; animation: fccFadeIn .25s ease; }
+  @keyframes fccFadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform:none; } }
+
+  .fcc-step-q {
     font-family: var(--font-display, 'Inter Tight', sans-serif);
     font-weight: 800; font-size: 20px; letter-spacing: -.025em;
-    color: var(--ink, #111); margin-bottom: 4px;
+    color: var(--ink, #111); margin-bottom: 22px; line-height: 1.15; text-wrap: balance;
   }
-  .fcc-form-sub { font-size: 13px; color: var(--ink-soft, #4A4A48); margin-bottom: 28px; line-height: 1.5; }
-  .fcc-field { margin-bottom: 14px; }
+  .fcc-options { display: flex; flex-direction: column; gap: 10px; }
+  .fcc-option {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 16px; border-radius: 8px;
+    border: 1.5px solid var(--tonal, #E8E5D8); background: var(--bone, #F4F2EA);
+    cursor: pointer; transition: border-color .15s, background .15s;
+    font-family: var(--font-body, 'Inter', sans-serif); font-size: 15px;
+    color: var(--ink, #111); text-align: left; width: 100%;
+  }
+  .fcc-option:hover, .fcc-option:focus-visible {
+    border-color: var(--ink, #111); background: var(--paper, #FBFAF4); outline: none;
+  }
+  .fcc-option-icon {
+    width: 36px; height: 36px; flex-shrink: 0; border-radius: 6px;
+    background: var(--tonal, #E8E5D8); display: flex; align-items: center;
+    justify-content: center; font-size: 17px;
+  }
+  .fcc-option-text { flex: 1; font-weight: 500; }
+  .fcc-option-arrow { color: #aaa; font-size: 13px; flex-shrink: 0; }
+
+  /* Back button */
+  .fcc-back {
+    margin-top: 18px; background: none; border: none;
+    font-family: var(--font-mono, monospace); font-size: 10px;
+    letter-spacing: .07em; text-transform: uppercase;
+    color: var(--ink-soft, #4A4A48); cursor: pointer; padding: 0;
+    display: none; align-items: center; gap: 5px;
+  }
+  .fcc-back.visible { display: flex; }
+  .fcc-back:hover { color: var(--ink, #111); }
+
+  /* ── Result panel ─────────────────────────────────────── */
+  #fccResult { display: none; }
+
+  .fcc-result-head {
+    background: var(--butter, #F7F788);
+    border-bottom: 1px solid rgba(17,17,17,.1); padding: 18px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .fcc-result-head-label {
+    font-family: var(--font-mono, monospace); font-size: 10px;
+    letter-spacing: .09em; text-transform: uppercase; color: var(--ink, #111);
+  }
+  .fcc-result-inner { padding: 32px 28px 28px; }
+  .fcc-result-title {
+    font-family: var(--font-display, 'Inter Tight', sans-serif);
+    font-weight: 800; font-size: 21px; letter-spacing: -.03em;
+    color: var(--ink, #111); margin-bottom: 12px; line-height: 1.1;
+  }
+  .fcc-result-body { font-size: 14px; color: var(--ink-soft, #4A4A48); line-height: 1.7; margin-bottom: 28px; }
+
+  .fcc-cta-block { display: flex; flex-direction: column; gap: 10px; }
+  .fcc-cta-call {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    background: var(--ink, #111); color: var(--butter, #F7F788);
+    border: 2px solid var(--ink, #111); border-radius: 8px;
+    padding: 18px 24px; text-decoration: none;
+    transition: background .18s, color .18s;
+  }
+  .fcc-cta-call:hover { background: var(--butter, #F7F788); color: var(--ink, #111); }
+  .fcc-cta-call-num {
+    font-family: var(--font-display, 'Inter Tight', sans-serif);
+    font-weight: 800; font-size: 20px; letter-spacing: -.025em; display: block;
+  }
+  .fcc-cta-call-label {
+    font-family: var(--font-mono, monospace); font-size: 9px;
+    letter-spacing: .09em; text-transform: uppercase; opacity: .6;
+    display: block; line-height: 1; margin-bottom: 2px;
+  }
+  .fcc-divider {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-mono, monospace); font-size: 10px;
+    letter-spacing: .08em; text-transform: uppercase; color: #bbb;
+  }
+  .fcc-divider::before, .fcc-divider::after {
+    content: ''; flex: 1; height: 1px; background: var(--tonal, #E8E5D8);
+  }
+
+  /* Callback form */
+  .fcc-callback-form { display: flex; flex-direction: column; gap: 10px; }
+  .fcc-cb-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .fcc-field label {
     display: block; font-family: var(--font-mono, monospace);
-    font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--ink-soft, #4A4A48); margin-bottom: 5px;
+    font-size: 9px; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--ink-soft, #4A4A48); margin-bottom: 4px;
   }
-  .fcc-field input, .fcc-field select, .fcc-field textarea {
-    width: 100%; padding: 12px 14px;
+  .fcc-field input {
+    width: 100%; padding: 11px 13px;
     border: 1.5px solid var(--tonal, #E8E5D8); border-radius: 6px;
-    font-family: var(--font-body, 'Inter', sans-serif); font-size: 15px;
+    font-family: var(--font-body, 'Inter', sans-serif); font-size: 14px;
     color: var(--ink, #111); background: var(--bone, #F4F2EA);
     transition: border-color .15s; -webkit-appearance: none;
   }
-  .fcc-field input:focus, .fcc-field select:focus, .fcc-field textarea:focus {
-    outline: none; border-color: var(--ink, #111);
-  }
-  .fcc-field select {
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%234A4A48' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 14px center;
-    background-color: var(--bone, #F4F2EA); padding-right: 36px; cursor: pointer;
-  }
-  .fcc-field textarea { resize: vertical; min-height: 80px; }
-  .fcc-btn-submit {
-    width: 100%; margin-top: 10px;
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 700; font-size: 16px; padding: 16px;
+  .fcc-field input:focus { outline: none; border-color: var(--ink, #111); }
+  .fcc-btn-callback {
+    width: 100%; padding: 15px;
     background: var(--butter, #F7F788); color: var(--ink, #111);
-    border: 2px solid var(--ink, #111); border-radius: 6px;
-    cursor: pointer; transition: background .18s, color .18s;
+    border: 2px solid var(--ink, #111); border-radius: 8px;
+    font-family: var(--font-display, 'Inter Tight', sans-serif);
+    font-weight: 700; font-size: 15px; cursor: pointer;
+    transition: background .18s, color .18s;
   }
-  .fcc-btn-submit:hover { background: var(--ink, #111); color: var(--butter, #F7F788); }
-  .fcc-form-fine { margin-top: 10px; font-size: 11px; color: #aaa; text-align: center; line-height: 1.5; }
-  .fcc-thanks { display: none; text-align: center; padding: 32px 0; }
+  .fcc-btn-callback:hover { background: var(--ink, #111); color: var(--butter, #F7F788); }
+  .fcc-form-fine { font-size: 11px; color: #aaa; text-align: center; line-height: 1.5; }
+  .fcc-thanks { display: none; text-align: center; padding: 20px 0; }
   .fcc-thanks-check {
-    width: 48px; height: 48px; border-radius: 50%;
+    width: 44px; height: 44px; border-radius: 50%;
     background: var(--butter, #F7F788); border: 2px solid var(--ink, #111);
     display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 16px; font-size: 20px;
+    margin: 0 auto 14px; font-size: 18px;
   }
   .fcc-thanks-title {
     font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 800; font-size: 20px; letter-spacing: -.02em;
-    color: var(--ink, #111); margin-bottom: 8px;
+    font-weight: 800; font-size: 18px; letter-spacing: -.02em; color: var(--ink, #111); margin-bottom: 6px;
   }
-  .fcc-thanks-body { font-size: 14px; color: var(--ink-soft, #4A4A48); line-height: 1.6; }
+  .fcc-thanks-body { font-size: 13px; color: var(--ink-soft, #4A4A48); line-height: 1.6; }
 
   /* ── Reassure strip ───────────────────────────────────── */
   .fcc-reassure {
@@ -127,18 +226,18 @@
     display: grid; grid-template-columns: repeat(4, 1fr);
     border-left: 1px solid #D8D5C8;
   }
-  .fcc-reassure-item { padding: 26px 28px; border-right: 1px solid #D8D5C8; }
+  .fcc-reassure-item { padding: 24px 28px; border-right: 1px solid #D8D5C8; }
   .fcc-reassure-label {
     font-family: var(--font-mono, monospace); font-size: 10px;
     letter-spacing: .08em; text-transform: uppercase;
-    color: var(--ink-soft, #4A4A48); margin-bottom: 4px;
+    color: var(--ink-soft, #4A4A48); margin-bottom: 3px;
   }
   .fcc-reassure-value {
     font-family: var(--font-display, 'Inter Tight', sans-serif);
     font-weight: 700; font-size: 14px; color: var(--ink, #111); letter-spacing: -.01em;
   }
 
-  /* ── Section base ─────────────────────────────────────── */
+  /* ── Sections ─────────────────────────────────────────── */
   .fcc-sec { padding: 80px var(--pad); }
   .fcc-sec-inner { max-width: var(--max); margin: 0 auto; }
   .fcc-sec-eyebrow {
@@ -157,185 +256,72 @@
     line-height: 1.65; max-width: 520px; margin-bottom: 48px;
   }
 
-  /* ── Claim type cards ─────────────────────────────────── */
+  /* ── Claim cards ──────────────────────────────────────── */
   .fcc-claims { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .fcc-claim-card {
-    background: var(--paper, #FBFAF4); border: 1px solid #D8D5C8;
-    border-radius: 10px; padding: 32px 28px;
-  }
-  .fcc-claim-pill {
-    font-family: var(--font-mono, monospace); font-size: 9px;
-    letter-spacing: .1em; text-transform: uppercase;
-    color: var(--ink-soft, #4A4A48); background: var(--tonal, #E8E5D8);
-    border-radius: 3px; padding: 4px 8px; display: inline-block; margin-bottom: 14px;
-  }
-  .fcc-claim-title {
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 700; font-size: 17px; letter-spacing: -.015em;
-    color: var(--ink, #111); margin-bottom: 10px;
-  }
+  .fcc-claim-card { background: var(--paper, #FBFAF4); border: 1px solid #D8D5C8; border-radius: 10px; padding: 32px 28px; }
+  .fcc-claim-pill { font-family: var(--font-mono, monospace); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft, #4A4A48); background: var(--tonal, #E8E5D8); border-radius: 3px; padding: 4px 8px; display: inline-block; margin-bottom: 14px; }
+  .fcc-claim-title { font-family: var(--font-display, 'Inter Tight', sans-serif); font-weight: 700; font-size: 17px; letter-spacing: -.015em; color: var(--ink, #111); margin-bottom: 10px; }
   .fcc-claim-body { font-size: 13px; color: var(--ink-soft, #4A4A48); line-height: 1.65; margin-bottom: 20px; }
   .fcc-claim-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  .fcc-claim-li {
-    display: flex; align-items: flex-start; gap: 8px;
-    font-size: 13px; color: var(--ink, #111); line-height: 1.45;
-  }
-  .fcc-claim-dot {
-    width: 14px; height: 14px; border-radius: 50%;
-    background: var(--butter, #F7F788); border: 1.5px solid var(--ink, #111);
-    flex-shrink: 0; margin-top: 1px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 8px; font-weight: 700;
-  }
-  .fcc-claim-more {
-    display: inline-block; margin-top: 18px;
-    font-family: var(--font-mono, monospace); font-size: 10px;
-    letter-spacing: .07em; text-transform: uppercase;
-    color: var(--ink, #111); text-decoration: none;
-    border-bottom: 1px solid var(--ink, #111); padding-bottom: 1px;
-  }
+  .fcc-claim-li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--ink, #111); line-height: 1.45; }
+  .fcc-claim-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--butter, #F7F788); border: 1.5px solid var(--ink, #111); flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; font-size: 8px; font-weight: 700; }
+  .fcc-claim-more { display: inline-block; margin-top: 18px; font-family: var(--font-mono, monospace); font-size: 10px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink, #111); text-decoration: none; border-bottom: 1px solid var(--ink, #111); padding-bottom: 1px; }
   .fcc-claim-more:hover { opacity: .6; }
 
   /* ── Deadlines ────────────────────────────────────────── */
-  .fcc-dl-wrap {
-    background: var(--butter, #F7F788);
-    border-top: 1px solid rgba(17,17,17,.08); border-bottom: 1px solid rgba(17,17,17,.08);
-  }
+  .fcc-dl-wrap { background: var(--butter, #F7F788); border-top: 1px solid rgba(17,17,17,.08); border-bottom: 1px solid rgba(17,17,17,.08); }
   .fcc-dl { max-width: var(--max); margin: 0 auto; padding: 72px var(--pad); }
-  .fcc-dl-eyebrow {
-    font-family: var(--font-mono, monospace); font-size: 10px;
-    letter-spacing: .1em; text-transform: uppercase; color: rgba(17,17,17,.45); margin-bottom: 12px;
-  }
-  .fcc-dl-title {
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 800; font-size: clamp(26px, 3.5vw, 38px);
-    letter-spacing: -.035em; color: var(--ink, #111); text-wrap: balance; margin-bottom: 8px;
-  }
-  .fcc-dl-sub {
-    font-size: 15px; color: rgba(17,17,17,.55);
-    margin-bottom: 44px; max-width: 500px; line-height: 1.6;
-  }
+  .fcc-dl-eyebrow { font-family: var(--font-mono, monospace); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: rgba(17,17,17,.45); margin-bottom: 12px; }
+  .fcc-dl-title { font-family: var(--font-display, 'Inter Tight', sans-serif); font-weight: 800; font-size: clamp(26px, 3.5vw, 38px); letter-spacing: -.035em; color: var(--ink, #111); text-wrap: balance; margin-bottom: 8px; }
+  .fcc-dl-sub { font-size: 15px; color: rgba(17,17,17,.55); margin-bottom: 44px; max-width: 500px; line-height: 1.6; }
   .fcc-dl-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .fcc-dl-card {
-    background: rgba(255,255,255,.45); border: 1px solid rgba(17,17,17,.1);
-    border-radius: 10px; padding: 28px 24px;
-  }
-  .fcc-dl-num {
-    font-family: var(--font-mono, monospace); font-weight: 700;
-    font-size: clamp(40px, 4.5vw, 60px); line-height: 1; letter-spacing: -.05em;
-    color: var(--ink, #111); margin-bottom: 2px;
-  }
-  .fcc-dl-unit {
-    font-family: var(--font-mono, monospace); font-size: 9px;
-    letter-spacing: .1em; text-transform: uppercase; color: rgba(17,17,17,.4); margin-bottom: 14px;
-  }
-  .fcc-dl-claim {
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 700; font-size: 13px; color: var(--ink, #111); margin-bottom: 5px;
-  }
+  .fcc-dl-card { background: rgba(255,255,255,.45); border: 1px solid rgba(17,17,17,.1); border-radius: 10px; padding: 28px 24px; }
+  .fcc-dl-num { font-family: var(--font-mono, monospace); font-weight: 700; font-size: clamp(40px, 4.5vw, 60px); line-height: 1; letter-spacing: -.05em; color: var(--ink, #111); margin-bottom: 2px; }
+  .fcc-dl-unit { font-family: var(--font-mono, monospace); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: rgba(17,17,17,.4); margin-bottom: 14px; }
+  .fcc-dl-claim { font-family: var(--font-display, 'Inter Tight', sans-serif); font-weight: 700; font-size: 13px; color: var(--ink, #111); margin-bottom: 5px; }
   .fcc-dl-desc { font-size: 12px; color: rgba(17,17,17,.5); line-height: 1.6; }
 
   /* ── Process ──────────────────────────────────────────── */
-  .fcc-process {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    border: 1px solid #D8D5C8; border-radius: 12px; overflow: hidden;
-  }
-  .fcc-step {
-    background: var(--paper, #FBFAF4); padding: 36px 32px;
-    border-right: 1px solid #D8D5C8;
-  }
-  .fcc-step:last-child { border-right: none; }
-  .fcc-step-num {
-    font-family: var(--font-mono, monospace); font-weight: 700;
-    font-size: 28px; line-height: 1; color: var(--ink, #111); opacity: .1; margin-bottom: 16px;
-  }
-  .fcc-step-title {
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 700; font-size: 16px; letter-spacing: -.01em;
-    color: var(--ink, #111); margin-bottom: 8px;
-  }
+  .fcc-process { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid #D8D5C8; border-radius: 12px; overflow: hidden; }
+  .fcc-step-card { background: var(--paper, #FBFAF4); padding: 36px 32px; border-right: 1px solid #D8D5C8; }
+  .fcc-step-card:last-child { border-right: none; }
+  .fcc-step-num { font-family: var(--font-mono, monospace); font-weight: 700; font-size: 28px; line-height: 1; color: var(--ink, #111); opacity: .1; margin-bottom: 16px; }
+  .fcc-step-title { font-family: var(--font-display, 'Inter Tight', sans-serif); font-weight: 700; font-size: 16px; letter-spacing: -.01em; color: var(--ink, #111); margin-bottom: 8px; }
   .fcc-step-body { font-size: 13px; color: var(--ink-soft, #4A4A48); line-height: 1.65; }
 
   /* ── Reviews ──────────────────────────────────────────── */
-  .fcc-reviews-head {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 24px; flex-wrap: wrap; margin-bottom: 40px;
-  }
-  .fcc-stars-row { display: flex; align-items: center; gap: 12px; }
+  .fcc-reviews-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
   .fcc-stars { font-size: 18px; letter-spacing: 2px; }
   .fcc-stars-label { font-family: var(--font-display, 'Inter Tight', sans-serif); font-weight: 700; font-size: 14px; color: var(--ink, #111); }
   .fcc-stars-sub { font-size: 12px; color: var(--ink-soft, #4A4A48); }
-  .fcc-reviews-pill {
-    font-family: var(--font-mono, monospace); font-size: 10px;
-    letter-spacing: .08em; text-transform: uppercase;
-    background: var(--butter, #F7F788); color: var(--ink, #111);
-    border: 1.5px solid var(--ink, #111); border-radius: 4px; padding: 6px 14px;
-  }
+  .fcc-reviews-pill { font-family: var(--font-mono, monospace); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; background: var(--butter, #F7F788); color: var(--ink, #111); border: 1.5px solid var(--ink, #111); border-radius: 4px; padding: 6px 14px; }
   .fcc-reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .fcc-review {
-    background: var(--bone, #F4F2EA); border: 1px solid #D8D5C8;
-    border-radius: 10px; padding: 28px;
-  }
+  .fcc-review { background: var(--bone, #F4F2EA); border: 1px solid #D8D5C8; border-radius: 10px; padding: 28px; }
   .fcc-review-stars { font-size: 13px; letter-spacing: 2px; margin-bottom: 10px; }
-  .fcc-review-title {
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 700; font-size: 15px; letter-spacing: -.01em;
-    color: var(--ink, #111); margin-bottom: 10px;
-  }
+  .fcc-review-title { font-family: var(--font-display, 'Inter Tight', sans-serif); font-weight: 700; font-size: 15px; letter-spacing: -.01em; color: var(--ink, #111); margin-bottom: 10px; }
   .fcc-review-text { font-size: 13px; color: var(--ink-soft, #4A4A48); line-height: 1.7; margin-bottom: 16px; }
-  .fcc-review-name {
-    font-family: var(--font-mono, monospace); font-size: 10px;
-    letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft, #4A4A48); opacity: .65;
-  }
+  .fcc-review-name { font-family: var(--font-mono, monospace); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft, #4A4A48); opacity: .65; }
 
   /* ── FAQs ─────────────────────────────────────────────── */
   .fcc-faqs { display: flex; flex-direction: column; gap: 2px; }
   .fcc-faq { background: var(--paper, #FBFAF4); border: 1px solid #D8D5C8; border-radius: 8px; overflow: hidden; }
-  .fcc-faq summary {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 24px; cursor: pointer; list-style: none;
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 700; font-size: 15px; letter-spacing: -.01em; color: var(--ink, #111); gap: 16px;
-  }
+  .fcc-faq summary { display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; cursor: pointer; list-style: none; font-family: var(--font-display, 'Inter Tight', sans-serif); font-weight: 700; font-size: 15px; letter-spacing: -.01em; color: var(--ink, #111); gap: 16px; }
   .fcc-faq summary::-webkit-details-marker { display: none; }
   .fcc-faq-icon { font-size: 18px; flex-shrink: 0; transition: transform .2s; font-family: monospace; }
   .fcc-faq[open] .fcc-faq-icon { transform: rotate(45deg); }
   .fcc-faq-body { padding: 0 24px 20px; font-size: 14px; color: var(--ink-soft, #4A4A48); line-height: 1.7; }
 
-  /* ── CTA band ─────────────────────────────────────────── */
-  .fcc-cta-wrap { background: var(--tonal, #E8E5D8); border-top: 1px solid #D8D5C8; padding: 80px var(--pad); }
-  .fcc-cta-inner {
-    max-width: var(--max); margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 440px; gap: 72px; align-items: start;
-  }
-  .fcc-cta-title {
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 800; font-size: clamp(28px, 3.5vw, 42px);
-    letter-spacing: -.04em; line-height: .97; color: var(--ink, #111); margin-bottom: 16px;
-  }
-  .fcc-cta-body { font-size: 15px; color: var(--ink-soft, #4A4A48); line-height: 1.65; margin-bottom: 32px; }
-  .fcc-cta-phone {
-    font-family: var(--font-display, 'Inter Tight', sans-serif);
-    font-weight: 800; font-size: 26px; letter-spacing: -.025em;
-    color: var(--ink, #111); text-decoration: none; display: block; margin-bottom: 5px;
-  }
-  .fcc-cta-phone:hover { opacity: .6; }
-  .fcc-cta-phone-note {
-    font-family: var(--font-mono, monospace); font-size: 10px;
-    letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft, #4A4A48);
-  }
-  .fcc-cta-panel { background: var(--paper, #FBFAF4); border: 1px solid #D8D5C8; border-radius: 12px; padding: 36px 32px; }
-
   /* ── Responsive ───────────────────────────────────────── */
-  @media (max-width: 960px) {
+  @media (max-width: 1000px) {
     .fcc-hero { grid-template-columns: 1fr; gap: 48px; }
+  }
+  @media (max-width: 960px) {
     .fcc-claims { grid-template-columns: 1fr; }
     .fcc-dl-grid { grid-template-columns: 1fr 1fr; }
     .fcc-process { grid-template-columns: 1fr; }
-    .fcc-step { border-right: none; border-bottom: 1px solid #D8D5C8; }
-    .fcc-step:last-child { border-bottom: none; }
+    .fcc-step-card { border-right: none; border-bottom: 1px solid #D8D5C8; }
+    .fcc-step-card:last-child { border-bottom: none; }
     .fcc-reviews-grid { grid-template-columns: 1fr; }
-    .fcc-cta-inner { grid-template-columns: 1fr; }
     .fcc-reassure-inner { grid-template-columns: 1fr 1fr; border-left: none; }
   }
   @media (max-width: 600px) {
@@ -343,7 +329,7 @@
     .fcc-reassure-inner { grid-template-columns: 1fr; }
     .fcc-reassure-item { border-right: none; border-bottom: 1px solid #D8D5C8; padding-left: 0; }
     .fcc-reassure-item:last-child { border-bottom: none; }
-    .fcc-form-card, .fcc-cta-panel { padding: 24px 18px; }
+    .fcc-cb-row { grid-template-columns: 1fr; }
   }
   </style>
 
@@ -391,7 +377,7 @@
           <div class="mega-cta">
             <div>
               <div class="mega-cta-title">Not Sure Where You Fit?</div>
-              <div class="mega-cta-sub">Check your claim free in under 2 minutes — no win, no fee.</div>
+              <div class="mega-cta-sub">Check your claim free — no win, no fee.</div>
             </div>
             <div class="mega-cta-actions">
               <a class="btn btn-butter" href="free-claim-check.html">Free Claim Check</a>
@@ -419,87 +405,202 @@
 
 <main>
 
-<!-- ── Hero ─────────────────────────────────────────────── -->
-<div class="fcc-hero-wrap">
+<!-- ── Hero + Checker ─────────────────────────────────── -->
+<div class="fcc-page">
   <div class="fcc-hero">
+
+    <!-- Left: copy -->
     <div>
-      <div class="fcc-eyebrow-tag">
-        <span class="fcc-eyebrow-dot"></span>
-        No Win, No Fee &nbsp;·&nbsp; QLD &amp; NSW
-      </div>
+      <div class="fcc-eyebrow-tag">No Win, No Fee &nbsp;·&nbsp; QLD &amp; NSW</div>
       <h1 class="fcc-headline">
-        Find out if you<br>have a claim —<br><em>free, in 2 minutes.</em>
+        Get your free<br><em>injury claim check</em><br>in 60 seconds.
       </h1>
-      <p class="fcc-hero-body">You may be entitled to compensation for a workplace injury, road accident, or public place incident. Most people don't realise how much they're owed. Our free claim check tells you exactly where you stand — with no obligation to proceed.</p>
+      <p class="fcc-hero-body">Answer four quick questions and we'll tell you straight — whether you have a claim, what type, and how strong it looks. No personal details until you've seen your result.</p>
       <div class="fcc-chips">
         <span class="fcc-chip">$0 upfront. Ever.</span>
-        <span class="fcc-chip">Free &amp; confidential</span>
-        <span class="fcc-chip">QLD &amp; NSW law experts</span>
+        <span class="fcc-chip">Takes 60 seconds</span>
+        <span class="fcc-chip">Completely confidential</span>
         <span class="fcc-chip">100+ five-star reviews</span>
       </div>
       <div class="fcc-tel-row">
-        <span>Or call anytime —</span>
+        <span>Prefer to call us now —</span>
         <a class="fcc-tel" href="tel:0731363287">07 3136 3287</a>
         <span>· 24/7</span>
       </div>
     </div>
 
-    <div id="claimCheckForm">
-      <div class="fcc-form-card">
-        <div class="fcc-form-title">Start Your Free Claim Check</div>
-        <p class="fcc-form-sub">Takes two minutes. Completely confidential. No obligation.</p>
-        <form id="fccForm" onsubmit="fccSubmit(event)" novalidate>
-          <div class="fcc-field">
-            <label for="fcc-name">Your full name</label>
-            <input type="text" id="fcc-name" name="name" placeholder="First and last name" required>
+    <!-- Right: interactive checker → result -->
+    <div>
+
+      <!-- Step-by-step checker (hidden once result shown) -->
+      <div class="fcc-checker" id="fccChecker">
+        <div class="fcc-checker-head">
+          <span class="fcc-checker-label">Claim check</span>
+          <div class="fcc-progress-track">
+            <div class="fcc-progress-fill" id="fccProgressFill" style="width:25%"></div>
           </div>
-          <div class="fcc-field">
-            <label for="fcc-phone">Best phone number</label>
-            <input type="tel" id="fcc-phone" name="phone" placeholder="04__ ___ ___" required>
-          </div>
-          <div class="fcc-field">
-            <label for="fcc-email">Email address</label>
-            <input type="email" id="fcc-email" name="email" placeholder="you@email.com">
-          </div>
-          <div class="fcc-field">
-            <label for="fcc-type">Type of injury or incident</label>
-            <select id="fcc-type" name="claim_type" required>
-              <option value="" disabled selected>Select the closest match</option>
-              <option value="work-injury">Injured at work (WorkCover / workers comp)</option>
-              <option value="road-accident">Car or road accident (CTP claim)</option>
-              <option value="public-liability">Slip, trip or fall in a public place</option>
-              <option value="medical-negligence">Medical negligence or treatment error</option>
-              <option value="tpd">TPD / total permanent disability (super claim)</option>
-              <option value="other">Not sure — want general advice</option>
-            </select>
-          </div>
-          <div class="fcc-field">
-            <label for="fcc-when">When did it happen?</label>
-            <select id="fcc-when" name="when">
-              <option value="" disabled selected>Select a timeframe</option>
-              <option value="lt1m">Less than 1 month ago</option>
-              <option value="1-6m">1 to 6 months ago</option>
-              <option value="6-12m">6 to 12 months ago</option>
-              <option value="1-3y">1 to 3 years ago</option>
-              <option value="3y+">More than 3 years ago</option>
-            </select>
-          </div>
-          <div class="fcc-field">
-            <label for="fcc-detail">Brief description (optional)</label>
-            <textarea id="fcc-detail" name="detail" placeholder="A few sentences about what happened and the injury — helps us prepare for your call."></textarea>
-          </div>
-          <button type="submit" class="fcc-btn-submit">Check My Claim — Free →</button>
-          <p class="fcc-form-fine">Confidential. No obligation. We typically reply within one business day.</p>
-        </form>
-        <div class="fcc-thanks" id="fccThanks">
-          <div class="fcc-thanks-check">✓</div>
-          <div class="fcc-thanks-title">We've received your details.</div>
-          <p class="fcc-thanks-body">A member of our team will be in touch shortly. If it's urgent, call us now: <a href="tel:0731363287" style="font-weight:600;color:var(--ink,#111);">07 3136 3287</a></p>
+          <span class="fcc-progress-text" id="fccProgressText">Step 1 of 4</span>
         </div>
-      </div>
+
+        <div class="fcc-checker-body">
+
+          <!-- Step 1 -->
+          <div class="fcc-step active" id="fccStep1">
+            <div class="fcc-step-q">What happened to you?</div>
+            <div class="fcc-options">
+              <button class="fcc-option" onclick="fccNext(2,'work')">
+                <span class="fcc-option-icon">🦺</span>
+                <span class="fcc-option-text">I was injured at work</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(2,'road')">
+                <span class="fcc-option-icon">🚗</span>
+                <span class="fcc-option-text">I was in a road or vehicle accident</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(2,'public')">
+                <span class="fcc-option-icon">🏪</span>
+                <span class="fcc-option-text">I slipped, tripped or fell in a public place</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(2,'other')">
+                <span class="fcc-option-icon">❓</span>
+                <span class="fcc-option-text">Something else — I'm not sure</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="fcc-step" id="fccStep2">
+            <div class="fcc-step-q">When did this happen?</div>
+            <div class="fcc-options">
+              <button class="fcc-option" onclick="fccNext(3,'lt1m')">
+                <span class="fcc-option-icon">📅</span>
+                <span class="fcc-option-text">Less than 1 month ago</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(3,'1-6m')">
+                <span class="fcc-option-icon">📅</span>
+                <span class="fcc-option-text">1 to 6 months ago</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(3,'6-12m')">
+                <span class="fcc-option-icon">📅</span>
+                <span class="fcc-option-text">6 to 12 months ago</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(3,'1-3y')">
+                <span class="fcc-option-icon">📅</span>
+                <span class="fcc-option-text">1 to 3 years ago</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(3,'3y+')">
+                <span class="fcc-option-icon">📅</span>
+                <span class="fcc-option-text">More than 3 years ago</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+            </div>
+            <button class="fcc-back visible" onclick="fccBack(1)">← Back</button>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="fcc-step" id="fccStep3">
+            <div class="fcc-step-q">Were you physically hurt as a result?</div>
+            <div class="fcc-options">
+              <button class="fcc-option" onclick="fccNext(4,'yes')">
+                <span class="fcc-option-icon">🩹</span>
+                <span class="fcc-option-text">Yes — I was injured</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(4,'unsure')">
+                <span class="fcc-option-icon">🤔</span>
+                <span class="fcc-option-text">I'm not sure of the severity yet</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccNext(4,'psych')">
+                <span class="fcc-option-icon">🧠</span>
+                <span class="fcc-option-text">Mainly psychological — stress, anxiety, trauma</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+            </div>
+            <button class="fcc-back visible" onclick="fccBack(2)">← Back</button>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="fcc-step" id="fccStep4">
+            <div class="fcc-step-q">Did you see a doctor or receive medical treatment?</div>
+            <div class="fcc-options">
+              <button class="fcc-option" onclick="fccShowResult('strong')">
+                <span class="fcc-option-icon">✅</span>
+                <span class="fcc-option-text">Yes — I've seen a doctor</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccShowResult('likely')">
+                <span class="fcc-option-icon">🏥</span>
+                <span class="fcc-option-text">Not yet — but I plan to</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+              <button class="fcc-option" onclick="fccShowResult('possible')">
+                <span class="fcc-option-icon">💊</span>
+                <span class="fcc-option-text">I treated it myself at home</span>
+                <span class="fcc-option-arrow">›</span>
+              </button>
+            </div>
+            <button class="fcc-back visible" onclick="fccBack(3)">← Back</button>
+          </div>
+
+        </div>
+      </div><!-- /fccChecker -->
+
+      <!-- Result panel (swaps in after last question) -->
+      <div id="fccResult">
+        <div class="fcc-checker" style="border-color:var(--ink,#111);border-width:2px;">
+          <div class="fcc-result-head">
+            <span class="fcc-result-head-label">✓ &nbsp;Claim check complete</span>
+            <span style="font-family:var(--font-mono,monospace);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(17,17,17,.45);">AMK Lawyers</span>
+          </div>
+          <div class="fcc-result-inner">
+            <div class="fcc-result-title" id="fccResultTitle"></div>
+            <p class="fcc-result-body" id="fccResultBody"></p>
+
+            <div class="fcc-cta-block">
+              <a class="fcc-cta-call" href="tel:0731363287">
+                <div>
+                  <span class="fcc-cta-call-label">We're waiting — call us now</span>
+                  <span class="fcc-cta-call-num">07 3136 3287</span>
+                </div>
+              </a>
+
+              <div class="fcc-divider">or we'll call you</div>
+
+              <form class="fcc-callback-form" id="fccCallbackForm" onsubmit="fccSubmit(event)" novalidate>
+                <div class="fcc-cb-row">
+                  <div class="fcc-field">
+                    <label for="fcc-name">Your name</label>
+                    <input type="text" id="fcc-name" name="name" placeholder="First name" required>
+                  </div>
+                  <div class="fcc-field">
+                    <label for="fcc-phone">Phone number</label>
+                    <input type="tel" id="fcc-phone" name="phone" placeholder="04__ ___ ___" required>
+                  </div>
+                </div>
+                <button type="submit" class="fcc-btn-callback">Call Me Back — Today →</button>
+                <p class="fcc-form-fine">We'll call within one business hour. Free. No obligation.</p>
+              </form>
+              <div class="fcc-thanks" id="fccCallbackThanks">
+                <div class="fcc-thanks-check">✓</div>
+                <div class="fcc-thanks-title">We'll call you shortly.</div>
+                <p class="fcc-thanks-body">Or call us now: <a href="tel:0731363287" style="font-weight:600;color:var(--ink,#111);">07 3136 3287</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /fccResult -->
+
     </div>
-  </div>
-</div>
+  </div><!-- /fcc-hero -->
+</div><!-- /fcc-page -->
 
 <!-- ── Reassure strip ─────────────────────────────────── -->
 <div class="fcc-reassure">
@@ -510,7 +611,7 @@
     </div>
     <div class="fcc-reassure-item">
       <div class="fcc-reassure-label">Claim check</div>
-      <div class="fcc-reassure-value">Free · 2 minutes</div>
+      <div class="fcc-reassure-value">Free · 60 seconds</div>
     </div>
     <div class="fcc-reassure-item">
       <div class="fcc-reassure-label">Our promise</div>
@@ -523,69 +624,62 @@
   </div>
 </div>
 
-<!-- ── Claim types ────────────────────────────────────── -->
+<!-- ── What we handle ─────────────────────────────────── -->
 <section class="fcc-sec" style="background:var(--bone,#F4F2EA);">
   <div class="fcc-sec-inner">
     <div class="fcc-sec-eyebrow">What we handle</div>
     <h2 class="fcc-sec-title">We cover most types of<br>personal injury claim.</h2>
-    <p class="fcc-sec-sub">If you've been hurt through no fault of your own — or even partly your own fault — there's a good chance you have an entitlement. Here's what we specialise in.</p>
+    <p class="fcc-sec-sub">If you've been hurt through no fault of your own — or even partly your own fault — there's a good chance you have an entitlement.</p>
     <div class="fcc-claims">
-
       <div class="fcc-claim-card">
-        <div class="fcc-claim-pill">Workers Compensation · WorkCover QLD &amp; NSW</div>
+        <div class="fcc-claim-pill">Workers Compensation · WorkCover</div>
         <div class="fcc-claim-title">Injured at work</div>
-        <p class="fcc-claim-body">A workplace injury entitles you to no-fault statutory benefits — and potentially a common law lump sum if your employer was negligent. Covers offices, sites, warehouses, vehicles and beyond.</p>
+        <p class="fcc-claim-body">A workplace injury entitles you to no-fault statutory benefits and potentially a common law lump sum if your employer was negligent.</p>
         <ul class="fcc-claim-list">
           <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Weekly wage payments while you recover</span></li>
-          <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>All medical &amp; rehabilitation costs covered</span></li>
+          <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>All medical &amp; rehabilitation costs</span></li>
           <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Common law lump sum if employer was negligent</span></li>
-          <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Pain, suffering &amp; future economic loss</span></li>
         </ul>
         <a href="workers-compensation.html" class="fcc-claim-more">Learn more →</a>
       </div>
-
       <div class="fcc-claim-card">
-        <div class="fcc-claim-pill">CTP · Motor Accident Insurance Act</div>
+        <div class="fcc-claim-pill">CTP · Motor Accident Insurance</div>
         <div class="fcc-claim-title">Road accident injury</div>
-        <p class="fcc-claim-body">Every registered vehicle carries CTP insurance that protects you — as a driver, passenger, pedestrian, or cyclist. You may have a claim even if you were partly at fault.</p>
+        <p class="fcc-claim-body">Every registered vehicle carries CTP insurance. You may have a claim even if you were partly at fault — as a driver, passenger, pedestrian or cyclist.</p>
         <ul class="fcc-claim-list">
           <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Medical &amp; rehabilitation expenses</span></li>
           <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Past &amp; future lost income</span></li>
-          <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Pain, suffering &amp; loss of enjoyment of life</span></li>
-          <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Future care and domestic assistance</span></li>
+          <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Pain, suffering &amp; loss of enjoyment</span></li>
         </ul>
         <a href="car-accidents.html" class="fcc-claim-more">Learn more →</a>
       </div>
-
       <div class="fcc-claim-card">
         <div class="fcc-claim-pill">Public Liability · Occupier Liability</div>
         <div class="fcc-claim-title">Slip, fall or public place</div>
-        <p class="fcc-claim-body">Property owners have a duty to keep premises safe. If you were injured in a shop, car park, or any public space, you may have a public liability claim against the occupier.</p>
+        <p class="fcc-claim-body">Property owners have a duty to keep premises safe. If you were injured in a shop, car park, or any public space, you may have a claim.</p>
         <ul class="fcc-claim-list">
           <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Medical costs and out-of-pocket expenses</span></li>
           <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Lost income during recovery</span></li>
           <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Pain and suffering damages</span></li>
-          <li class="fcc-claim-li"><span class="fcc-claim-dot">✓</span><span>Future economic loss</span></li>
         </ul>
         <a href="public-liability.html" class="fcc-claim-more">Learn more →</a>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ── Time limits ────────────────────────────────────── -->
+<!-- ── Deadlines ──────────────────────────────────────── -->
 <div class="fcc-dl-wrap">
   <div class="fcc-dl">
     <div class="fcc-dl-eyebrow">Act now — deadlines are strict</div>
-    <h2 class="fcc-dl-title">Miss a deadline and you can<br>lose your right to claim entirely.</h2>
-    <p class="fcc-dl-sub">Queensland and NSW law sets hard cut-off dates. These are legal deadlines — not guidelines. The sooner you contact us, the safer your position.</p>
+    <h2 class="fcc-dl-title">Miss a deadline and you lose<br>your right to claim entirely.</h2>
+    <p class="fcc-dl-sub">Queensland and NSW law sets hard cut-off dates. Not guidelines — legal deadlines. The sooner you contact us, the safer your position.</p>
     <div class="fcc-dl-grid">
       <div class="fcc-dl-card">
         <div class="fcc-dl-num">28</div>
         <div class="fcc-dl-unit">days</div>
         <div class="fcc-dl-claim">QLD CTP — Early Notification</div>
-        <p class="fcc-dl-desc">Lodge an Accident Notification Form within 28 days of a road accident to access early treatment funding.</p>
+        <p class="fcc-dl-desc">Lodge an Accident Notification Form within 28 days to access early treatment funding.</p>
       </div>
       <div class="fcc-dl-card">
         <div class="fcc-dl-num">9</div>
@@ -597,13 +691,13 @@
         <div class="fcc-dl-num">6</div>
         <div class="fcc-dl-unit">months</div>
         <div class="fcc-dl-claim">QLD WorkCover</div>
-        <p class="fcc-dl-desc">WorkCover Queensland claims should be lodged within 6 months of the date of injury or diagnosis.</p>
+        <p class="fcc-dl-desc">WorkCover Queensland claims should be lodged within 6 months of the date of injury.</p>
       </div>
       <div class="fcc-dl-card">
         <div class="fcc-dl-num">3</div>
         <div class="fcc-dl-unit">years</div>
         <div class="fcc-dl-claim">Public Liability</div>
-        <p class="fcc-dl-desc">Public liability personal injury claims in Queensland and NSW must be commenced within 3 years of the incident.</p>
+        <p class="fcc-dl-desc">Public liability personal injury claims in Queensland and NSW must commence within 3 years.</p>
       </div>
     </div>
   </div>
@@ -614,22 +708,22 @@
   <div class="fcc-sec-inner">
     <div class="fcc-sec-eyebrow">How it works</div>
     <h2 class="fcc-sec-title">Simple from your very first call.</h2>
-    <p class="fcc-sec-sub">Most of our clients have never made a compensation claim before. We guide you through every step and handle all the paperwork.</p>
+    <p class="fcc-sec-sub">Most of our clients have never made a compensation claim before. We guide you through every step.</p>
     <div class="fcc-process">
-      <div class="fcc-step">
+      <div class="fcc-step-card">
         <div class="fcc-step-num">01</div>
         <div class="fcc-step-title">Free claim check</div>
-        <p class="fcc-step-body">Fill in the form or call us. We'll ask a few questions about what happened, assess your situation honestly, and tell you whether you have a claim and what it may be worth — no pressure to proceed.</p>
+        <p class="fcc-step-body">Use the tool above or call us. We'll tell you honestly whether you have a claim and what it may be worth — no obligation to proceed.</p>
       </div>
-      <div class="fcc-step">
+      <div class="fcc-step-card">
         <div class="fcc-step-num">02</div>
         <div class="fcc-step-title">We build your case</div>
-        <p class="fcc-step-body">Michael Singh handles your claim personally — not a junior. We gather evidence, manage the insurer, and handle every document and deadline so you can focus on your recovery.</p>
+        <p class="fcc-step-body">Michael Singh handles your claim personally — not a junior. We gather evidence, manage the insurer, and handle every document and deadline.</p>
       </div>
-      <div class="fcc-step">
+      <div class="fcc-step-card">
         <div class="fcc-step-num">03</div>
         <div class="fcc-step-title">You get paid</div>
-        <p class="fcc-step-body">If we win, you receive your compensation and we take our agreed fee from the settlement. If we don't win — you pay us absolutely nothing. That's the No Win, No Fee promise.</p>
+        <p class="fcc-step-body">If we win, you receive compensation and we take our agreed fee from the settlement. No win — you pay us nothing. That's the promise.</p>
       </div>
     </div>
   </div>
@@ -644,7 +738,7 @@
         <h2 class="fcc-sec-title" style="margin-bottom:0;">Real people.<br>Real outcomes.</h2>
       </div>
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <div class="fcc-stars-row">
+        <div style="display:flex;align-items:center;gap:12px;">
           <span class="fcc-stars">★★★★★</span>
           <div>
             <div class="fcc-stars-label">5.0 on Google</div>
@@ -655,35 +749,30 @@
       </div>
     </div>
     <div class="fcc-reviews-grid">
-
       <div class="fcc-review">
         <div class="fcc-review-stars">★★★★★</div>
         <div class="fcc-review-title">When I had a motor vehicle accident, I was very scared and confused</div>
-        <p class="fcc-review-text">"After I talked to Mr. Michael Singh, I knew I'd be in good hands. From day one the level of communication and guidance was really outstanding. I am eternally grateful to Michael, Michelle and the team for everything they did. Moving forward after the accident feels easy with AMK Lawyers."</p>
+        <p class="fcc-review-text">"After I talked to Mr. Michael Singh, I knew I'd be in good hands. From day one the level of communication and guidance was really outstanding. I am eternally grateful to Michael, Michelle and the team for everything they did."</p>
         <div class="fcc-review-name">Arnil Arboleda · 2 years ago</div>
       </div>
-
       <div class="fcc-review">
         <div class="fcc-review-stars">★★★★★</div>
         <div class="fcc-review-title">Compassionate, caring and over-delivered</div>
-        <p class="fcc-review-text">"I won't trust anyone else other than AMK Lawyers. They are compassionate, caring and provide a personal, human touch in tough situations. They made sure to provide the best outcome and actually over-achieved and got a better result due to their knowledge and long standing within the industry."</p>
+        <p class="fcc-review-text">"They are compassionate, caring and provide a personal, human touch in tough situations. They made sure to provide the best outcome and actually over-achieved and got a better result due to their knowledge and long standing within the industry."</p>
         <div class="fcc-review-name">Scott Martin · 5 months ago</div>
       </div>
-
       <div class="fcc-review">
         <div class="fcc-review-stars">★★★★★</div>
         <div class="fcc-review-title">In a league of their own</div>
-        <p class="fcc-review-text">"Michael Singh was an incredible help during a very difficult recovery. He was patient, kind, and professional, providing a no-nonsense assessment that honestly accounted for both the physical injuries and the mental health toll. It's rare to find a lawyer who handles every single detail personally. If we could give more than 5 stars, we would do it in a heartbeat."</p>
+        <p class="fcc-review-text">"Michael Singh was an incredible help during a very difficult recovery. Patient, kind, and professional. It's rare to find a lawyer who handles every single detail personally. If we could give more than 5 stars, we would do it in a heartbeat."</p>
         <div class="fcc-review-name">Rebecca Shah · 5 months ago</div>
       </div>
-
       <div class="fcc-review">
         <div class="fcc-review-stars">★★★★★</div>
         <div class="fcc-review-title">Very honest and humble — highly recommend</div>
-        <p class="fcc-review-text">"Michael Singh is very friendly and patient, even with my limited English background. Such amazing help with my work injury. Very, very honest and humble man. I am very grateful to him and his team for their immense help and the outcome they helped me bring about. Highly recommend for anyone needing help with work or car injuries."</p>
+        <p class="fcc-review-text">"Michael Singh is very friendly and patient, even with my limited English background. Such amazing help with my work injury. Very, very honest and humble man. Highly recommend for anyone needing help with work or car injuries."</p>
         <div class="fcc-review-name">Saiful Islam · 2 years ago</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -693,86 +782,31 @@
   <div class="fcc-sec-inner">
     <div class="fcc-sec-eyebrow">Common questions</div>
     <h2 class="fcc-sec-title">Frequently asked about<br>the free claim check.</h2>
-    <p class="fcc-sec-sub" style="margin-bottom:32px;">Honest answers to the questions most people ask before they call us.</p>
+    <p class="fcc-sec-sub" style="margin-bottom:32px;">Honest answers before you call us.</p>
     <div class="fcc-faqs">
-
-      <details class="fcc-faq">
-        <summary>What exactly is a free claim check? <span class="fcc-faq-icon">+</span></summary>
-        <div class="fcc-faq-body">A free claim check is a no-obligation assessment of your situation. We ask a few questions about the incident, your injuries, and your circumstances, then give you an honest view of whether you have a legal claim and, if so, roughly what it may be worth. There's no cost, no pressure, and no commitment to proceed.</div>
-      </details>
-
       <details class="fcc-faq">
         <summary>What does No Win, No Fee actually mean? <span class="fcc-faq-icon">+</span></summary>
-        <div class="fcc-faq-body">It means exactly what it says. If we take on your claim and we don't win, you pay us nothing — no legal fees, no disbursements, no hidden charges. Our fee comes out of the settlement amount we negotiate for you. If there's no settlement, there's no bill. This removes all financial risk from making a claim.</div>
+        <div class="fcc-faq-body">If we take on your claim and we don't win, you pay us nothing — no legal fees, no disbursements, no hidden charges. Our fee comes out of the settlement amount. If there's no settlement, there's no bill. This removes all financial risk from making a claim.</div>
       </details>
-
       <details class="fcc-faq">
         <summary>What if I was partly at fault for the accident? <span class="fcc-faq-icon">+</span></summary>
-        <div class="fcc-faq-body">Being partly at fault doesn't necessarily end your claim. In Queensland and NSW, compensation laws allow for contributory negligence — your award may be reduced by the proportion of your fault, but you can still receive meaningful compensation. Many successful claimants were partially responsible. The free claim check will tell you how this applies to your situation.</div>
+        <div class="fcc-faq-body">Being partly at fault doesn't necessarily end your claim. In Queensland and NSW, compensation laws allow for contributory negligence — your award may be reduced by your proportion of fault, but you can still receive meaningful compensation. Many successful claimants were partially responsible.</div>
       </details>
-
       <details class="fcc-faq">
         <summary>How long does a compensation claim take? <span class="fcc-faq-icon">+</span></summary>
-        <div class="fcc-faq-body">It depends on the type and complexity of your claim. Straightforward WorkCover statutory claims can resolve in weeks. Common law and CTP matters typically take 12–36 months, depending on the insurer and injury severity. We'll give you a realistic timeline once we've assessed your claim.</div>
+        <div class="fcc-faq-body">Straightforward WorkCover statutory claims can resolve in weeks. Common law and CTP matters typically take 12–36 months, depending on the insurer and injury severity. We'll give you a realistic timeline once we've assessed your claim.</div>
       </details>
-
       <details class="fcc-faq">
         <summary>I'm not sure if I have a claim — should I still contact you? <span class="fcc-faq-icon">+</span></summary>
-        <div class="fcc-faq-body">Absolutely. "Not sure" is the most common reason people contact us, and that's exactly what the free check is designed for. We'll ask the right questions and give you a straight answer. Even if you don't have a claim, we'll tell you honestly rather than string you along. You have nothing to lose by asking.</div>
+        <div class="fcc-faq-body">Absolutely. "Not sure" is the most common reason people contact us — that's exactly what the claim check is designed for. We'll ask the right questions and give you a straight answer. Even if you don't have a claim, we'll tell you honestly. You have nothing to lose by asking.</div>
       </details>
-
       <details class="fcc-faq">
         <summary>What information do I need to get started? <span class="fcc-faq-icon">+</span></summary>
-        <div class="fcc-faq-body">Very little. For the initial claim check we just need a general description of what happened, when, and the nature of your injuries. You don't need police reports, medical records, or any documents ready — we'll guide you on what to gather after we've confirmed a claim is viable. Just fill in the form or call us.</div>
+        <div class="fcc-faq-body">Very little. A general description of what happened, when, and the nature of your injuries is enough to start. You don't need police reports or medical records ready — we'll guide you on what to gather after we confirm a claim is viable.</div>
       </details>
-
     </div>
   </div>
 </section>
-
-<!-- ── Second CTA ─────────────────────────────────────── -->
-<div class="fcc-cta-wrap">
-  <div class="fcc-cta-inner">
-    <div>
-      <div class="fcc-sec-eyebrow">Ready to find out?</div>
-      <h2 class="fcc-cta-title">Your claim check<br>costs nothing.</h2>
-      <p class="fcc-cta-body">Fill in the form above or call us directly. We'll tell you honestly what your situation looks like — and if there's a claim worth pursuing, we'll be with you every step of the way on a No Win, No Fee basis.</p>
-      <a class="fcc-cta-phone" href="tel:0731363287">07 3136 3287</a>
-      <div class="fcc-cta-phone-note">Answered 24 hours · 7 days a week</div>
-    </div>
-    <div class="fcc-cta-panel">
-      <div class="fcc-form-title" style="margin-bottom:4px;">Quick callback request</div>
-      <p class="fcc-form-sub" style="margin-bottom:24px;">We'll call you within one business day.</p>
-      <form id="fccForm2" onsubmit="fccSubmit2(event)" novalidate>
-        <div class="fcc-field">
-          <label for="fcc2-name">Name</label>
-          <input type="text" id="fcc2-name" name="name" placeholder="Your name" required>
-        </div>
-        <div class="fcc-field">
-          <label for="fcc2-phone">Phone number</label>
-          <input type="tel" id="fcc2-phone" name="phone" placeholder="04__ ___ ___" required>
-        </div>
-        <div class="fcc-field">
-          <label for="fcc2-type">Type of claim</label>
-          <select id="fcc2-type" name="claim_type" required>
-            <option value="" disabled selected>Select one</option>
-            <option value="work">Work injury / WorkCover</option>
-            <option value="road">Car or road accident</option>
-            <option value="public">Slip, trip or fall</option>
-            <option value="other">Not sure — want advice</option>
-          </select>
-        </div>
-        <button type="submit" class="fcc-btn-submit">Request Callback →</button>
-        <p class="fcc-form-fine">Free. Confidential. No obligation.</p>
-      </form>
-      <div class="fcc-thanks" id="fccThanks2">
-        <div class="fcc-thanks-check">✓</div>
-        <div class="fcc-thanks-title">We'll be in touch soon.</div>
-        <p class="fcc-thanks-body">Or call now: <a href="tel:0731363287" style="font-weight:600;color:var(--ink,#111);">07 3136 3287</a></p>
-      </div>
-    </div>
-  </div>
-</div>
 
 </main>
 
@@ -793,10 +827,9 @@
       <span class="label">Motor Vehicle &amp; Road</span>
       <ul>
         <li><a href="car-accidents.html">Car Accidents</a></li>
-        <li><a href="car-accidents.html">Truck Accidents</a></li>
-        <li><a href="car-accidents.html">Motorcycle Accidents</a></li>
         <li><a href="not-at-fault-car-accidents.html">Passenger Claims</a></li>
-        <li><a href="car-accidents.html">Rideshare Accidents</a></li>
+        <li><a href="ctp-lawyer.html">CTP Claims</a></li>
+        <li><a href="bike-accidents.html">Bike Accidents</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -806,7 +839,6 @@
         <li><a href="workers-compensation.html">Workplace Injury</a></li>
         <li><a href="public-liability.html">Public Liability</a></li>
         <li><a href="slip-and-fall.html">Slip &amp; Fall</a></li>
-        <li><a href="workers-compensation.html">Contractor Injuries</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -815,8 +847,7 @@
         <li><a href="medical-negligence.html">Medical Negligence</a></li>
         <li><a href="institutional-abuse.html">Institutional Abuse</a></li>
         <li><a href="tpd-superannuation.html">TPD Claims</a></li>
-        <li><a href="tpd-superannuation.html">Superannuation</a></li>
-        <li><a href="personal-injury.html">Psychological Injury</a></li>
+        <li><a href="personal-injury.html">Personal Injury</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -842,16 +873,71 @@
 <script src="script.js"></script>
 <script src="state-selector.js"></script>
 <script>
+// ── Claim checker ──────────────────────────────────────
+var fccAnswers = { type: null, when: null, injured: null };
+var fccHistory = [1];
+
+function fccNext(step, value) {
+  var cur = fccHistory[fccHistory.length - 1];
+  if (cur === 1) fccAnswers.type = value;
+  if (cur === 2) fccAnswers.when = value;
+  if (cur === 3) fccAnswers.injured = value;
+
+  document.getElementById('fccStep' + cur).classList.remove('active');
+  fccHistory.push(step);
+  document.getElementById('fccStep' + step).classList.add('active');
+
+  var pct = Math.round((step / 4) * 100);
+  document.getElementById('fccProgressFill').style.width = pct + '%';
+  document.getElementById('fccProgressText').textContent = 'Step ' + step + ' of 4';
+}
+
+function fccBack(step) {
+  var cur = fccHistory[fccHistory.length - 1];
+  document.getElementById('fccStep' + cur).classList.remove('active');
+  fccHistory.pop();
+  document.getElementById('fccStep' + step).classList.add('active');
+
+  var pct = Math.round((step / 4) * 100);
+  document.getElementById('fccProgressFill').style.width = pct + '%';
+  document.getElementById('fccProgressText').textContent = 'Step ' + step + ' of 4';
+}
+
+function fccShowResult(strength) {
+  // Result copy by strength
+  var titles = {
+    strong: 'Based on your answers — you almost certainly have a claim.',
+    likely: 'Based on your answers — you very likely have a valid claim.',
+    possible: 'Based on your answers — there\'s a real chance you have a claim here.'
+  };
+  var bodies = {
+    strong: 'Your situation matches what we successfully pursue every day. You\'ve been injured, you\'ve had treatment — that\'s a strong foundation. The next step is a quick call with Michael. We\'re ready. We\'re waiting.',
+    likely: 'Getting medical treatment will strengthen your position — and we can advise on exactly what to do right now to protect your claim. Don\'t delay. Call us today before anything else.',
+    possible: 'Even without formal treatment, there may be a claim for lost income, pain and suffering, or future medical needs. It costs absolutely nothing to find out. Call us and we\'ll give you an honest answer in minutes.'
+  };
+
+  var urgency = '';
+  if (fccAnswers.when === '3y+') {
+    urgency = ' <strong>Your incident may be reaching a legal time limit — call us today, urgently.</strong>';
+  } else if (fccAnswers.when === '1-3y') {
+    urgency = ' Time limits apply — don\'t put this off.';
+  }
+
+  document.getElementById('fccResultTitle').textContent = titles[strength] || titles['possible'];
+  document.getElementById('fccResultBody').innerHTML = (bodies[strength] || bodies['possible']) + urgency;
+
+  // Swap checker for result
+  document.getElementById('fccChecker').style.display = 'none';
+  var r = document.getElementById('fccResult');
+  r.style.display = 'block';
+  setTimeout(function() { r.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 80);
+}
+
 function fccSubmit(e) {
   e.preventDefault();
-  document.getElementById('fccForm').style.display = 'none';
-  document.getElementById('fccThanks').style.display = 'block';
-  // TODO: fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(e.target) });
-}
-function fccSubmit2(e) {
-  e.preventDefault();
-  document.getElementById('fccForm2').style.display = 'none';
-  document.getElementById('fccThanks2').style.display = 'block';
+  document.getElementById('fccCallbackForm').style.display = 'none';
+  document.getElementById('fccCallbackThanks').style.display = 'block';
+  // TODO: POST to CRM/form handler
 }
 </script>
 </body>
