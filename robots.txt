@@ -17,4 +17,4 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://amklawyers.com.au/sitemap.xml
+Sitemap: https://www.amklawyers.com.au/sitemap.xml

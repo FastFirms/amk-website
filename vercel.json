@@ -59,8 +59,7 @@
     { "source": "/personal-injury-lawyers-toowoomba", "destination": "/personal-injury", "permanent": true },
     { "source": "/personal-injury-lawyers-toowoomba/", "destination": "/personal-injury", "permanent": true },
 
-    { "source": "/personal-injury-lawyers-ipswich", "destination": "/personal-injury", "permanent": true },
-    { "source": "/personal-injury-lawyers-ipswich/", "destination": "/personal-injury", "permanent": true },
+    { "source": "/personal-injury-lawyers-ipswich/", "destination": "/personal-injury-lawyers-ipswich", "permanent": true },
 
     { "source": "/no-win-no-fee-lawyers", "destination": "/no-win-no-fee", "permanent": true },
     { "source": "/no-win-no-fee-lawyers/", "destination": "/no-win-no-fee", "permanent": true },
@@ -68,8 +67,14 @@
     { "source": "/no-win-no-fee-lawyers-gold-coast", "destination": "/no-win-no-fee", "permanent": true },
     { "source": "/no-win-no-fee-lawyers-gold-coast/", "destination": "/no-win-no-fee", "permanent": true },
 
-    { "source": "/no-win-no-fee-lawyers-ipswich", "destination": "/no-win-no-fee", "permanent": true },
-    { "source": "/no-win-no-fee-lawyers-ipswich/", "destination": "/no-win-no-fee", "permanent": true },
+    { "source": "/no-win-no-fee-lawyers-ipswich/", "destination": "/no-win-no-fee-lawyers-ipswich", "permanent": true },
+
+    { "source": "/workers-compensation-lawyers-ipswich/", "destination": "/workers-compensation-lawyers-ipswich", "permanent": true },
+
+    { "source": "/tpd-lawyers-ipswich/", "destination": "/tpd-lawyers-ipswich", "permanent": true },
+
+    { "source": "/ipswich-compensation-claim", "destination": "/personal-injury-lawyers-ipswich", "permanent": true },
+    { "source": "/ipswich-compensation-claim/", "destination": "/personal-injury-lawyers-ipswich", "permanent": true },
 
     { "source": "/no-win-no-fee-lawyers-toowoomba", "destination": "/no-win-no-fee", "permanent": true },
     { "source": "/no-win-no-fee-lawyers-toowoomba/", "destination": "/no-win-no-fee", "permanent": true },
@@ -83,8 +88,7 @@
     { "source": "/car-accident-lawyers-gold-coast", "destination": "/car-accidents", "permanent": true },
     { "source": "/car-accident-lawyers-gold-coast/", "destination": "/car-accidents", "permanent": true },
 
-    { "source": "/car-accident-lawyers-ipswich", "destination": "/car-accidents", "permanent": true },
-    { "source": "/car-accident-lawyers-ipswich/", "destination": "/car-accidents", "permanent": true },
+    { "source": "/car-accident-lawyers-ipswich/", "destination": "/car-accident-lawyers-ipswich", "permanent": true },
 
     { "source": "/car-accident-injury-lawyers-toowoomba", "destination": "/car-accidents", "permanent": true },
     { "source": "/car-accident-injury-lawyers-toowoomba/", "destination": "/car-accidents", "permanent": true },
