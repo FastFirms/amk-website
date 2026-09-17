@@ -89,6 +89,7 @@
     { "source": "/car-accident-lawyers-gold-coast/", "destination": "/car-accidents", "permanent": true },
 
     { "source": "/car-accident-lawyers-ipswich/", "destination": "/car-accident-lawyers-ipswich", "permanent": true },
+    { "source": "/what-to-do-after-a-car-accident-ipswich/", "destination": "/what-to-do-after-a-car-accident-ipswich", "permanent": true },
 
     { "source": "/car-accident-injury-lawyers-toowoomba", "destination": "/car-accidents", "permanent": true },
     { "source": "/car-accident-injury-lawyers-toowoomba/", "destination": "/car-accidents", "permanent": true },
