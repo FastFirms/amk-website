@@ -186,6 +186,10 @@
   ],
   "rewrites": [
     {
+      "source": "/locations/:slug",
+      "destination": "/locations/:slug.html"
+    },
+    {
       "source": "/:slug",
       "destination": "/:slug.html"
     }
