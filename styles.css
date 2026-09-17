@@ -103,6 +103,8 @@ body{
 .nav .logo-wrap,.nav a.logo{flex-shrink:0;}
 .logo-img{display:block;height:36px;width:auto;}
 .footer-top .logo-img{height:32px;filter:brightness(0) invert(1);}.nav-links{display:flex; margin-left:auto;align-items:center;gap: 12px;list-style:none;}
+.nav-links > li + li{border-left:1px solid var(--tonal);padding-left:12px;}
+.nav-links > li:has(a.nav-cta){border-left:none;padding-left:0;}
 .nav-links a{
   font-family:var(--font-body);
   font-weight:500;
