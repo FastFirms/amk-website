@@ -5,6 +5,26 @@
 
 
 /* ---------- Mobile menu ---------- */
+/* ---------- Mobile nav accordion ---------- */
+(function() {
+  function initMobileNavAccordion() {
+    var drops = document.querySelectorAll('.nav-drop');
+    drops.forEach(function(drop) {
+      var trigger = drop.querySelector(':scope > a');
+      if (!trigger) return;
+      trigger.addEventListener('click', function(e) {
+        if (window.innerWidth > 768) return; // desktop: let CSS hover handle it
+        e.preventDefault();
+        var wasOpen = drop.classList.contains('open');
+        // Close all others
+        drops.forEach(function(d) { d.classList.remove('open'); });
+        if (!wasOpen) drop.classList.add('open');
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initMobileNavAccordion);
+})();
+
 function toggleMenu(){
   document.getElementById('navLinks').classList.toggle('open');
 }

@@ -1179,8 +1179,12 @@ a.team-card{text-decoration:none;}
   .mini-stats{grid-template-columns:1fr;gap:28px;}
   .case-row{padding-left:20px;}
   .review-card{flex:0 0 300px;}
-  .nav-drop-menu{position:static;transform:none;display:block;border:none;box-shadow:none;background:transparent;padding:0 0 0 16px;}
-  .mega{position:static;transform:none;display:block;width:auto;border:none;box-shadow:none;background:transparent;padding:0 0 0 12px;}
+  .nav-drop-menu{position:static;transform:none;display:none;border:none;box-shadow:none;background:transparent;padding:0 0 0 16px;}
+  .nav-drop.open .nav-drop-menu{display:block;}
+  .mega{position:static;transform:none;display:none;width:auto;border:none;box-shadow:none;background:transparent;padding:0 0 0 12px;}
+  .nav-mega.open .mega{display:block;}
+  .nav-drop > a::after{content:"+";float:right;margin-right:24px;font-size:18px;line-height:1;transition:transform .2s;}
+  .nav-drop.open > a::after{content:"−";}
   .mega::before{display:none;}
   .mega-grid{grid-template-columns:1fr;gap:2px;padding:6px 0;}
   .mega-label{padding:8px 0 4px;}

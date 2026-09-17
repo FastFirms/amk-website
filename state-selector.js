@@ -236,11 +236,23 @@
     }
   }
 
+  function applyNavState(state) {
+    var links = document.querySelector('.nav-links');
+    if (!links) return;
+    links.querySelectorAll('li.nav-drop').forEach(function(li) {
+      var a = li.querySelector(':scope > a');
+      if (a && a.textContent.trim() === 'Locations') {
+        li.style.display = state === 'nsw' ? 'none' : '';
+      }
+    });
+  }
+
   window.__amkState = function (s) {
     setState(s);
     closeModal();
     addBadge();
     applyPageState(s);
+    applyNavState(s);
     applyRedirect(s);
   };
 
@@ -261,5 +273,6 @@
     }
     addBadge();
     applyPageState(getState() || 'qld');
+    applyNavState(getState() || 'qld');
   });
 })();
