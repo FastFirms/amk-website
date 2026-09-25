@@ -110,7 +110,7 @@
         '<button class="ssm-btn ssm-btn-qld" id="ssm-qld">Queensland</button>' +
         '<button class="ssm-btn ssm-btn-nsw" id="ssm-nsw">New South Wales</button>' +
       '</div>' +
-      '<p class="ssm-note">AMK Lawyers serves QLD and NSW clients.</p>';
+      '<p class="ssm-note">AMK Compensation Lawyers serves QLD and NSW clients.</p>';
     modal.appendChild(overlay);
     modal.appendChild(box);
     document.body.appendChild(modal);

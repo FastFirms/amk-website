@@ -211,7 +211,7 @@ function renderQuestion(step){
           + '</div>'
           + '<label class="wiz-consent">'
           + '<input type="checkbox" id="wiz-consent"' + (wizAnswers.consent ? ' checked' : '') + '>'
-          + '<span>By entering my details, I consent to one of the staff at AMK Lawyers contacting me to discuss a potential claim in a no obligation free consultation.</span>'
+          + '<span>By entering my details, I consent to one of the staff at AMK Compensation Lawyers contacting me to discuss a potential claim in a no obligation free consultation.</span>'
           + '</label>';
   }
   return html;
