@@ -1276,3 +1276,8 @@ a.team-card{text-decoration:none;}
     padding: 0;
   }
 }
+/* Page byline bar */
+.page-byline-bar{padding:12px 0;border-bottom:1px solid var(--border);background:var(--paper);}
+.page-byline-bar .article-byline{max-width:1100px;margin:0 auto;padding:0 24px;}
+.page-byline-bar .article-byline a{color:var(--ink);text-decoration:none;}
+.page-byline-bar .article-byline a:hover{text-decoration:underline;}
