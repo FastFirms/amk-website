@@ -386,17 +386,19 @@ a { color: inherit; }
 </div></div>
 
 <div class="sticky-mob">
-  <a class="sticky-call" href="tel:0731363287" onclick="gtag('event','conversion',{'send_to':'AW-18412730077/6nIsCLn8pvocEN3t78tE'});">Call Now</a>
-  <a class="sticky-form" href="#heroForm">Free Check</a>
+  <a class="sticky-call" href="tel:0731363287" onclick="gtag('event','conversion',{'send_to':'AW-18412730077/6nIsCLn8pvocEN3t78tE'});">&#128222; Call Now</a>
+  <a class="sticky-form" href="#heroForm" id="stickyFormBtn">Check My Claim</a>
 </div>
 
 <script>
 function submitForm(formId, thanksId, e) {
   e.preventDefault();
   var form = document.getElementById(formId);
-  var data = new FormData(form);
-  fetch('https://formspree.io/f/mbdnlbbz', {method:'POST', body:data, headers:{'Accept':'application/json'}})
-    .then(function(r){ if(r.ok){ form.style.display='none'; document.getElementById(thanksId).style.display='block'; gtag('event','conversion',{'send_to':'AW-18412730077/6nIsCLn8pvocEN3t78tE'}); } })
-    .catch(function(){});
+  fetch('https://formspree.io/f/mbdnlbbz', { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+    .finally(function() { window.location.href = 'thank-you.html'; });
 }
+document.getElementById('stickyFormBtn')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  document.getElementById('heroForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
 </script>
