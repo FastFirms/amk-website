@@ -30,15 +30,15 @@ a { color: inherit; }
 .btn-primary { background: var(--butter); color: var(--ink); }
 .btn-primary:hover { background: var(--ink); color: var(--butter); }
 .btn-full { width: 100%; font-size: 16px; padding: 16px; }
-.topbar { background: var(--bone); border-bottom: 1px solid var(--border); padding: 14px var(--pad); display: flex; align-items: center; justify-content: space-between; gap: 16px; position: sticky; top: 0; z-index: 100; }
-.topbar-logo { font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--ink); letter-spacing: -.04em; text-decoration: none; }
-.topbar-logo span { color: var(--soft); opacity: .5; }
+.topbar { background: var(--bone); border-bottom: 1px solid var(--border); padding: 16px var(--pad); display: flex; align-items: center; justify-content: space-between; gap: 16px; position: sticky; top: 0; z-index: 100; }
+.topbar-logo { display: block; text-decoration: none; }
+.topbar-logo img { display: block; height: 40px; width: auto; }
 .topbar-right { display: flex; align-items: center; gap: 20px; }
 .topbar-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); }
 .topbar-phone { font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--ink); text-decoration: none; letter-spacing: -.02em; }
 .topbar-phone:hover { opacity: .6; }
 .topbar-cta { font-size: 14px; padding: 10px 20px; }
-.hero { background: var(--bone); padding: 80px var(--pad) 88px; max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 80px; align-items: start; }
+.hero { background: var(--bone); padding: 80px var(--pad) 88px; display: grid; grid-template-columns: 1fr 440px; gap: 72px; align-items: start; }
 .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--soft); background: var(--tonal); border-radius: 3px; padding: 5px 10px; margin-bottom: 28px; }
 .hero-tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ink); opacity: .4; }
 .hero-headline { font-family: var(--font-display); font-weight: 800; font-size: clamp(38px, 5.5vw, 64px); line-height: .95; letter-spacing: -.045em; color: var(--ink); text-wrap: balance; margin-bottom: 28px; }
@@ -175,7 +175,7 @@ a { color: inherit; }
 </script>
 
 <div class="topbar">
-  <span class="topbar-logo">amk<span>.</span></span>
+  <a class="topbar-logo" href="https://www.amklawyers.com.au/"><img src="amk-logo.png" alt="AMK Compensation Lawyers"></a>
   <div class="topbar-right">
     <span class="topbar-label">Northern NSW &middot; Free &middot; No obligation</span>
     <a class="topbar-phone" href="tel:0731363287" onclick="gtag('event','conversion',{'send_to':'AW-18412730077/6nIsCLn8pvocEN3t78tE'});">07 3136 3287</a>
