@@ -29,43 +29,16 @@
     { "source": "/workers-compensation-lawyer", "destination": "/workers-compensation", "permanent": true },
     { "source": "/workers-compensation-lawyer/", "destination": "/workers-compensation", "permanent": true },
 
-    { "source": "/workers-compensation-lawyers-brisbane", "destination": "/workers-compensation", "permanent": true },
-    { "source": "/workers-compensation-lawyers-brisbane/", "destination": "/workers-compensation", "permanent": true },
-
-    { "source": "/workers-compensation-lawyers-gold-coast", "destination": "/workers-compensation", "permanent": true },
-    { "source": "/workers-compensation-lawyers-gold-coast/", "destination": "/workers-compensation", "permanent": true },
-
-    { "source": "/workcover-lawyers-brisbane", "destination": "/workcover", "permanent": true },
-    { "source": "/workcover-lawyers-brisbane/", "destination": "/workcover", "permanent": true },
-
-    { "source": "/workcover-lawyers-gold-coast", "destination": "/workcover", "permanent": true },
-    { "source": "/workcover-lawyers-gold-coast/", "destination": "/workcover", "permanent": true },
-
     { "source": "/public-liability-lawyers", "destination": "/public-liability", "permanent": true },
     { "source": "/public-liability-lawyers/", "destination": "/public-liability", "permanent": true },
 
-    { "source": "/public-liability-lawyers-brisbane", "destination": "/public-liability", "permanent": true },
-    { "source": "/public-liability-lawyers-brisbane/", "destination": "/public-liability", "permanent": true },
-
     { "source": "/personal-injury-lawyers", "destination": "/personal-injury", "permanent": true },
     { "source": "/personal-injury-lawyers/", "destination": "/personal-injury", "permanent": true },
-
-    { "source": "/personal-injury-lawyers-brisbane", "destination": "/personal-injury", "permanent": true },
-    { "source": "/personal-injury-lawyers-brisbane/", "destination": "/personal-injury", "permanent": true },
-
-    { "source": "/personal-injury-lawyers-gold-coast", "destination": "/personal-injury", "permanent": true },
-    { "source": "/personal-injury-lawyers-gold-coast/", "destination": "/personal-injury", "permanent": true },
-
-    { "source": "/personal-injury-lawyers-toowoomba", "destination": "/personal-injury", "permanent": true },
-    { "source": "/personal-injury-lawyers-toowoomba/", "destination": "/personal-injury", "permanent": true },
 
     { "source": "/personal-injury-lawyers-ipswich/", "destination": "/personal-injury-lawyers-ipswich", "permanent": true },
 
     { "source": "/no-win-no-fee-lawyers", "destination": "/no-win-no-fee", "permanent": true },
     { "source": "/no-win-no-fee-lawyers/", "destination": "/no-win-no-fee", "permanent": true },
-
-    { "source": "/no-win-no-fee-lawyers-gold-coast", "destination": "/no-win-no-fee", "permanent": true },
-    { "source": "/no-win-no-fee-lawyers-gold-coast/", "destination": "/no-win-no-fee", "permanent": true },
 
     { "source": "/no-win-no-fee-lawyers-ipswich/", "destination": "/no-win-no-fee-lawyers-ipswich", "permanent": true },
 
@@ -76,26 +49,11 @@
     { "source": "/ipswich-compensation-claim", "destination": "/personal-injury-lawyers-ipswich", "permanent": true },
     { "source": "/ipswich-compensation-claim/", "destination": "/personal-injury-lawyers-ipswich", "permanent": true },
 
-    { "source": "/no-win-no-fee-lawyers-toowoomba", "destination": "/no-win-no-fee", "permanent": true },
-    { "source": "/no-win-no-fee-lawyers-toowoomba/", "destination": "/no-win-no-fee", "permanent": true },
-
     { "source": "/car-accident-lawyers", "destination": "/car-accidents", "permanent": true },
     { "source": "/car-accident-lawyers/", "destination": "/car-accidents", "permanent": true },
 
-    { "source": "/car-accident-lawyers-brisbane", "destination": "/car-accidents", "permanent": true },
-    { "source": "/car-accident-lawyers-brisbane/", "destination": "/car-accidents", "permanent": true },
-
-    { "source": "/car-accident-lawyers-gold-coast", "destination": "/car-accidents", "permanent": true },
-    { "source": "/car-accident-lawyers-gold-coast/", "destination": "/car-accidents", "permanent": true },
-
     { "source": "/car-accident-lawyers-ipswich/", "destination": "/car-accident-lawyers-ipswich", "permanent": true },
     { "source": "/what-to-do-after-a-car-accident-ipswich/", "destination": "/what-to-do-after-a-car-accident-ipswich", "permanent": true },
-
-    { "source": "/car-accident-injury-lawyers-toowoomba", "destination": "/car-accidents", "permanent": true },
-    { "source": "/car-accident-injury-lawyers-toowoomba/", "destination": "/car-accidents", "permanent": true },
-
-    { "source": "/compensation-lawyers-toowoomba", "destination": "/", "permanent": true },
-    { "source": "/compensation-lawyers-toowoomba/", "destination": "/", "permanent": true },
 
     { "source": "/compensation-calculator", "destination": "/services", "permanent": true },
     { "source": "/compensation-calculator/", "destination": "/services", "permanent": true },
