@@ -1355,3 +1355,11 @@ a.team-card{text-decoration:none;}
   .hero-plain .hero-headline-wrap{padding:0;}
   .hero-plain .hero-cta-card{max-width:none;}
 }
+
+/* Local help note (replaces single-row location sections) */
+.local-note{background:var(--paper);padding:8px 0 48px;}
+.local-note-inner{max-width:880px;margin:0 auto;padding:22px 26px;border:1px solid var(--tonal);border-left:4px solid var(--butter);border-radius:6px;background:var(--bone);}
+.local-note .label{display:block;margin-bottom:6px;}
+.local-note-title{font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-0.02em;color:var(--ink);margin:0 0 6px;}
+.local-note p{margin:0;font-size:15px;line-height:1.6;color:var(--ink-soft);}
+@media (max-width:900px){.local-note{padding:8px 16px 40px;}}
