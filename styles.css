@@ -1439,3 +1439,15 @@ a.team-card{text-decoration:none;}
   .res-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;}
   .res-chip{flex:0 0 auto;}
 }
+
+/* Compensation calculator callout */
+.tool-callout{display:grid;gap:6px;margin:0 0 32px;padding:26px 28px;border-radius:16px;background:var(--ink);color:var(--paper);text-decoration:none;border:2px solid var(--ink);transition:transform .15s;}
+.tool-callout:hover{transform:translateY(-2px);}
+.tool-callout:focus-visible{outline:3px solid var(--butter);outline-offset:3px;}
+.tool-callout-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--butter);}
+.tool-callout-t{font-family:var(--font-display);font-weight:800;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em;}
+.tool-callout-d{color:rgba(251,250,244,.75);font-size:15px;max-width:60ch;}
+.tool-callout-cta{display:inline-block;justify-self:start;margin-top:8px;background:var(--butter);color:var(--ink);font-weight:600;padding:10px 16px;border-radius:8px;}
+.tool-callout-band{background:var(--bone);padding:48px 0 8px;}
+.tool-callout-wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad-x);}
+@media (max-width:900px){.tool-callout-wrap{padding:0 16px;}}

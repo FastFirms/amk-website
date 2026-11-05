@@ -171,16 +171,6 @@
       "permanent": true
     },
     {
-      "source": "/compensation-calculator",
-      "destination": "/services",
-      "permanent": true
-    },
-    {
-      "source": "/compensation-calculator/",
-      "destination": "/services",
-      "permanent": true
-    },
-    {
       "source": "/workplace",
       "destination": "/workers-compensation",
       "permanent": true
