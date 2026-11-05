@@ -84,6 +84,30 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
   color: rgba(251,250,244,.55);
 }
 
+/* Ipswich hero: subject is centred in the photo, so anchor it right and give text a solid panel */
+.hero.hero-ipswich{
+  background-color:var(--ink);
+  background-image:url('../assets/ipswich-hero.webp');
+  background-size:auto 100%;
+  background-position:right center;
+}
+.hero.hero-ipswich::before{
+  background:linear-gradient(90deg,
+    var(--ink) 0%, var(--ink) 34%,
+    rgba(17,17,17,.75) 46%,
+    rgba(17,17,17,.15) 62%,
+    rgba(17,17,17,0) 75%);
+}
+.hero-ipswich .hero-headline-wrap{padding-right:0;max-width:620px;}
+.hero-ipswich .hero-headline{font-size:clamp(44px,5.6vw,84px);}
+.hero-ipswich .hero-cta-card{max-width:440px;}
+.hero-ipswich .hero-ctas .btn{flex:0 0 auto;min-width:0;}
+@media (max-width: 900px){
+  .hero.hero-ipswich{background-size:cover;background-position:70% center;}
+  .hero.hero-ipswich::before{background:linear-gradient(180deg,rgba(17,17,17,.55) 0%,rgba(17,17,17,.85) 100%);}
+  .hero-ipswich .hero-ctas .btn{flex:1;}
+}
+
 /* Inline contact form inside claim-panel */
 .ipswich-form { display: flex; flex-direction: column; gap: 10px; }
 .ipswich-form input,
@@ -400,7 +424,7 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
 
 <!-- 1. HERO -->
 <div class="hero-shell">
-  <section class="hero" id="hero" style="background-image:url('../assets/ipswich-hero.webp');background-position:center 40%;">
+  <section class="hero hero-ipswich" id="hero">
     <div class="hero-inner">
       <div class="hero-headline-wrap">
         <h1 class="hero-headline">Compensation Lawyers Ipswich.</h1>
