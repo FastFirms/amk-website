@@ -325,25 +325,26 @@ wizRender();
 }
 
 function wizFinish(){
-  wizDone = true;
-  document.getElementById('wizProgress').textContent = 'Free Claim Check \u00B7 Complete';
-  document.getElementById('wizNav').style.display = 'none';
-  document.getElementById('wizError').hidden = true;
-
   var payload = Object.assign({}, wizAnswers, {
     _subject: 'New Claim Check \u2014 ' + (wizAnswers.firstName || '') + ' ' + (wizAnswers.lastName || '')
   });
-
-  fetch('https://formspree.io/f/mbdnlbbz', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(payload)
-  }).catch(function(){});
-
-  window.location.href = '/thank-you';
-  document.getElementById('wizBody').innerHTML =
-    '<div class="wiz-done-title">Thanks, ' + esc(wizAnswers.firstName) + ' \u2014 your claim check is in.</div>'
-    + '<p class="wiz-done-body">One of our team will review your answers and be in touch shortly to talk through what your claim could be worth. It\u2019s free, and there\u2019s no obligation.</p>';
+  var nextBtn = document.getElementById('wizNext');
+  var backBtn = document.getElementById('wizBack');
+  var errEl = document.getElementById('wizError');
+  var label = nextBtn ? nextBtn.textContent : '';
+  wizDone = true;
+  if(nextBtn){ nextBtn.disabled = true; nextBtn.textContent = 'Sending\u2026'; }
+  if(backBtn){ backBtn.disabled = true; }
+  errEl.hidden = true;
+  amkSendLead(null, payload, true).then(function(){
+    window.location.href = '/thank-you';
+  }).catch(function(){
+    wizDone = false;
+    if(nextBtn){ nextBtn.disabled = false; nextBtn.textContent = label; }
+    if(backBtn){ backBtn.disabled = false; }
+    errEl.innerHTML = 'Sorry, your claim check didn\u2019t send. Please try again or call <a href="tel:0731363287">07 3136 3287</a>.';
+    errEl.hidden = false;
+  });
 }
 
 function scrollReviews(dir){
@@ -371,16 +372,46 @@ if(document.getElementById("wizBody")){ wizRender(); }
 })();
 
 
+
+/* Reliable lead submission: only confirm once Formspree has accepted the enquiry */
+function amkSendLead(form, body, isJson){
+  var btn = form ? form.querySelector('[type="submit"]') : null;
+  var label = btn ? btn.textContent : '';
+  var err = form ? form.querySelector('.amk-form-error') : null;
+  if(form && !err){
+    err = document.createElement('p');
+    err.className = 'amk-form-error'; err.setAttribute('role','alert'); err.hidden = true;
+    err.style.cssText = 'margin:10px 0 0;padding:10px 12px;border-radius:6px;background:#fdecea;color:#8a1c12;font-size:14px;line-height:1.5;';
+    form.appendChild(err);
+  }
+  if(err){ err.hidden = true; }
+  if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+  var ctrl = ('AbortController' in window) ? new AbortController() : null;
+  var timer = ctrl ? setTimeout(function(){ ctrl.abort(); }, 15000) : null;
+  var opts = { method:'POST', body: isJson ? JSON.stringify(body) : body, headers:{ 'Accept':'application/json' } };
+  if(isJson){ opts.headers['Content-Type'] = 'application/json'; }
+  if(ctrl){ opts.signal = ctrl.signal; }
+  return fetch('https://formspree.io/f/mbdnlbbz', opts).then(function(res){
+    if(timer){ clearTimeout(timer); }
+    if(!res.ok){ throw new Error('Formspree ' + res.status); }
+    return true;
+  }).catch(function(e){
+    if(timer){ clearTimeout(timer); }
+    if(btn){ btn.disabled = false; btn.textContent = label; }
+    if(err){
+      err.innerHTML = 'Sorry, your enquiry didn’t send. Please try again or call <a href="tel:0731363287">07 3136 3287</a>.';
+      err.hidden = false;
+    }
+    throw e;
+  });
+}
+
 /* Lawyer contact form (article sidebar) */
 function submitLawyerContact(e){
   e.preventDefault();
   var form = e.target;
-  fetch('https://formspree.io/f/mbdnlbbz', {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).finally(function() {
+  amkSendLead(form, new FormData(form), false).then(function(){
     window.location.href = '/thank-you';
-  });
+  }).catch(function(){});
   return false;
 }

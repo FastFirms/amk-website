@@ -784,22 +784,19 @@ function toggleMenu(){document.getElementById('navLinks').classList.toggle('open
 function submitIpswichForm(e) {
   e.preventDefault();
   var form = e.target;
-  fetch('https://formspree.io/f/mbdnlbbz', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-    body: JSON.stringify({
+  amkSendLead(form, {
       name: form.name.value,
       phone: form.phone.value,
       email: form.email.value,
       claim_type: form.claim_type.value,
       message: form.message.value,
       source: 'Brisbane Landing Page'
-    })
+    }, true).then(function(){
+    gtag('event', 'conversion', {'send_to': 'AW-18412730077/6nIsCLn8pvocEN3t78tE'});
+    fbq('track', 'Lead');
+    form.style.display = 'none';
+    document.getElementById('ipswichThanks').style.display = 'block';
   }).catch(function(){});
-  gtag('event', 'conversion', {'send_to': 'AW-18412730077/6nIsCLn8pvocEN3t78tE'});
-  fbq('track', 'Lead');
-  form.style.display = 'none';
-  document.getElementById('ipswichThanks').style.display = 'block';
   return false;
 }
 </script>
