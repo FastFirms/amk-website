@@ -1343,3 +1343,16 @@ a.team-card{text-decoration:none;}
 @media (max-width:560px){
   .services-grid{grid-template-columns:1fr;}
 }
+
+/* Text-only variant of the photo hero (practice pages carry no imagery) */
+.hero.hero-plain{min-height:0;background:var(--ink);}
+.hero.hero-plain::before{display:none;}
+.hero-plain .hero-inner{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:48px;padding:72px 56px;}
+.hero-plain .hero-headline-wrap{max-width:none;flex:1 1 auto;}
+.hero-plain .hero-cta-card{flex:0 0 auto;width:auto;max-width:460px;}
+@media (max-width:900px){
+  .hero.hero-plain{background:var(--ink);}
+  .hero-plain .hero-inner{flex-direction:column;align-items:stretch;padding:40px 20px 24px;gap:28px;}
+  .hero-plain .hero-headline-wrap{padding:0;}
+  .hero-plain .hero-cta-card{max-width:none;}
+}
