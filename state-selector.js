@@ -45,9 +45,9 @@
   function applyRedirect(state) {
     var page = getCurrentPage();
     if (state === 'nsw' && pageMap[page]) {
-      window.location.replace(pageMap[page]);
+      window.location.replace('/' + pageMap[page].replace(/\.html$/, ''));
     } else if (state === 'qld' && reverseMap[page]) {
-      window.location.replace(reverseMap[page]);
+      window.location.replace('/' + reverseMap[page].replace(/\.html$/, ''));
     }
   }
 
@@ -263,11 +263,11 @@
     } else {
       var page = getCurrentPage();
       if (state === 'nsw' && pageMap[page]) {
-        window.location.replace(pageMap[page]);
+        window.location.replace('/' + pageMap[page].replace(/\.html$/, ''));
         return;
       }
       if (state === 'qld' && reverseMap[page]) {
-        window.location.replace(reverseMap[page]);
+        window.location.replace('/' + reverseMap[page].replace(/\.html$/, ''));
         return;
       }
     }
