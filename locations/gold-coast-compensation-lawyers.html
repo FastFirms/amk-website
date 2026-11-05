@@ -384,6 +384,24 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
   .services-grid { grid-template-columns: 1fr; }
   .proof-outcomes { grid-template-columns: 1fr; }
 }
+/* Photo as its own layer with a soft left-edge fade, so the blend tracks the image edge */
+.hero.hero-goldcoast{background-image:none;}
+.hero.hero-goldcoast::before{
+  inset:0 -240px 0 auto;
+  height:100%;
+  aspect-ratio:1699/926;
+  background:url('../assets/gold-coast-hero.webp') center/cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 14%,rgba(0,0,0,.8) 28%,#000 42%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 14%,rgba(0,0,0,.8) 28%,#000 42%);
+}
+@media (max-width: 900px){
+  .hero.hero-goldcoast{background-image:url('../assets/gold-coast-hero.webp');}
+  .hero.hero-goldcoast::before{
+    inset:0;aspect-ratio:auto;height:auto;
+    -webkit-mask-image:none;mask-image:none;
+    background:linear-gradient(180deg,rgba(17,17,17,.45) 0%,rgba(17,17,17,.6) 45%,rgba(17,17,17,.9) 100%);
+  }
+}
 </style>
 </head>
 <body>
