@@ -1347,9 +1347,8 @@ a.team-card{text-decoration:none;}
 /* Text-only variant of the photo hero (practice pages carry no imagery) */
 .hero.hero-plain{min-height:0;background:var(--ink);}
 .hero.hero-plain::before{display:none;}
-.hero-plain .hero-inner{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:48px;padding:72px 56px;}
-.hero-plain .hero-headline-wrap{max-width:none;flex:1 1 auto;}
-.hero-plain .hero-cta-card{flex:0 0 auto;width:460px;max-width:460px;}
+.hero-plain .hero-inner{gap:40px;padding:72px 56px 56px;}
+.hero-plain .hero-headline-wrap{max-width:none;flex:0 0 auto;}
 @media (max-width:900px){
   .hero.hero-plain{background:var(--ink);}
   .hero-plain .hero-inner{flex-direction:column;align-items:stretch;padding:40px 20px 24px;gap:28px;}
