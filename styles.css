@@ -1388,3 +1388,5 @@ a.team-card{text-decoration:none;}
 .local-link-item h3{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-0.02em;color:var(--ink);margin:0 0 4px;}
 .local-link-item p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft);}
 .local-note-inner.has-list{align-items:start;}
+.loc-tile.is-base:hover,.loc-tile.is-base:focus-visible{background:var(--ink);border-color:var(--ink);color:var(--paper);}
+.loc-tile.is-base:hover .loc-tile-arrow,.loc-tile.is-base:focus-visible .loc-tile-arrow{background:var(--butter);color:var(--ink);}
