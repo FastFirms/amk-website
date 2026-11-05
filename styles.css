@@ -1281,3 +1281,65 @@ a.team-card{text-decoration:none;}
 .page-byline-bar .article-byline{max-width:1100px;margin:0 auto;padding:0 24px;}
 .page-byline-bar .article-byline a{color:var(--ink);text-decoration:none;}
 .page-byline-bar .article-byline a:hover{text-decoration:underline;}
+
+/* ============================================================
+   PRACTICE PAGE AIDA COMPONENTS (photo hero, situations grid, proof band)
+   ============================================================ */
+.hero.hero-photo{background-image:none;}
+.hero.hero-photo::before{
+  inset:0 var(--hero-off,0px) 0 auto;
+  height:100%;
+  aspect-ratio:1699/926;
+  background:var(--hero-img) center/cover no-repeat;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 14%,rgba(0,0,0,.8) 28%,#000 42%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.35) 14%,rgba(0,0,0,.8) 28%,#000 42%);
+}
+.hero-photo .hero-headline-wrap{padding-right:0;max-width:640px;}
+.hero-photo .hero-headline{font-size:clamp(40px,4.8vw,76px);}
+.hero-photo .hero-headline .nw{white-space:nowrap;}
+.hero-photo .hero-cta-card{max-width:540px;}
+.hero-photo .hero-ctas .btn{flex:0 0 auto;min-width:0;}
+
+.page-intro{background:var(--paper);padding:56px 0 8px;}
+.page-intro-inner{max-width:880px;margin:0 auto;padding:0 24px;}
+.page-intro-inner>p{font-size:18px;line-height:1.6;color:var(--ink-soft);}
+
+.services-band{background:var(--paper);padding:64px 0 72px;}
+.services-band-inner{max-width:1280px;margin:0 auto;padding:0 var(--pad-x);}
+.services-head{margin-bottom:36px;}
+.services-head p{max-width:60ch;margin-top:12px;color:var(--ink-soft);}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--tonal);border:2px solid var(--tonal);border-radius:6px;overflow:hidden;}
+.svc-card{background:var(--bone);padding:28px 26px 24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:background .15s;}
+.svc-card:hover{background:var(--paper);}
+.svc-card-title{font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.02em;color:var(--ink);line-height:1.2;}
+.svc-card-desc{font-size:14px;color:var(--ink-soft);line-height:1.55;flex:1;}
+.svc-card-arrow{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);margin-top:4px;}
+
+.proof-band{background:var(--ink);padding:72px 0;}
+.proof-band-inner{max-width:1280px;margin:0 auto;padding:0 var(--pad-x);}
+.proof-head{margin-bottom:20px;}
+.proof-head .label{color:rgba(251,250,244,.5);}
+.proof-head .h1{color:var(--paper);margin-top:8px;}
+.proof-rating{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
+.proof-rating-num{font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--butter);letter-spacing:-0.03em;}
+.proof-rating-stars{color:#f5c518;font-size:20px;letter-spacing:2px;}
+.proof-rating-txt{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:rgba(251,250,244,.55);}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.proof-card{background:rgba(251,250,244,.06);border:1px solid rgba(251,250,244,.12);border-radius:6px;padding:28px 26px;display:flex;flex-direction:column;gap:16px;}
+.proof-quote{font-size:15px;line-height:1.65;color:rgba(251,250,244,.88);font-style:italic;flex:1;}
+.proof-attr{font-family:var(--font-mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:rgba(251,250,244,.5);border-top:1px solid rgba(251,250,244,.1);padding-top:14px;}
+
+.pull-band .hero-ctas{margin-top:32px;}
+
+@media (max-width:900px){
+  .hero.hero-photo{background-image:var(--hero-img);background-size:cover;background-position:55% center;}
+  .hero.hero-photo::before{inset:0;aspect-ratio:auto;height:auto;-webkit-mask-image:none;mask-image:none;background:linear-gradient(180deg,rgba(17,17,17,.45) 0%,rgba(17,17,17,.6) 45%,rgba(17,17,17,.9) 100%);}
+  .hero-photo .hero-headline{font-size:clamp(28px,8vw,64px);}
+  .hero-photo .hero-ctas{flex-direction:column;gap:10px;}
+  .hero-photo .hero-ctas .btn{width:100%;text-align:center;justify-content:center;}
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .proof-grid{grid-template-columns:1fr;}
+}
+@media (max-width:560px){
+  .services-grid{grid-template-columns:1fr;}
+}
