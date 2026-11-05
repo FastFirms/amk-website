@@ -1391,3 +1391,22 @@ a.team-card{text-decoration:none;}
 .loc-tile.is-base:hover,.loc-tile.is-base:focus-visible{background:var(--ink);border-color:var(--ink);color:var(--paper);}
 .loc-tile.is-base:hover .loc-tile-arrow,.loc-tile.is-base:focus-visible .loc-tile-arrow{background:var(--butter);color:var(--ink);}
 .local-note-sub{font-family:var(--font-display);font-weight:800;font-size:16px;letter-spacing:-0.02em;color:var(--ink);margin:18px 0 6px;}
+
+/* Author / reviewer card (refined page-byline-bar) */
+.page-byline-bar{background:var(--paper);border:0;padding:28px 24px 8px;}
+.page-byline-bar .article-byline{
+  max-width:880px;margin:0 auto;padding:14px 20px 14px 14px;
+  display:flex;align-items:center;gap:16px;
+  background:var(--bone);border:1px solid var(--tonal);border-radius:999px;
+  border-top:1px solid var(--tonal);
+}
+.page-byline-bar .article-byline .av{width:46px;height:46px;box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--tonal);}
+.page-byline-bar .article-byline .nm{font-size:15px;line-height:1.2;}
+.page-byline-bar .article-byline .nm::before{content:"Reviewed by ";font-family:var(--font-body);font-weight:400;color:var(--ink-soft);}
+.page-byline-bar .article-byline .rl{font-size:10.5px;margin-top:4px;}
+.page-byline-bar .article-byline a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--butter);}
+.page-byline-bar .article-byline a:hover{border-bottom-color:var(--ink);text-decoration:none;}
+@media (max-width:600px){
+  .page-byline-bar{padding:20px 16px 4px;}
+  .page-byline-bar .article-byline{border-radius:16px;}
+}
