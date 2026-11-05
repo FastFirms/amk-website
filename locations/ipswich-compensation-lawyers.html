@@ -210,18 +210,152 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
 .smb-call { background: var(--butter); color: var(--ink); border: 1px solid var(--butter); }
 .smb-enquire { color: var(--paper); border: 1px solid rgba(255,255,255,.25); }
 
+/* ── Services grid ── */
+.services-band {
+  background: var(--paper);
+  padding: 72px 0;
+}
+.services-band-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.services-head {
+  margin-bottom: 40px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--tonal);
+  border: 2px solid var(--tonal);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.svc-card {
+  background: var(--bone);
+  padding: 28px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  transition: background .15s;
+}
+.svc-card:hover { background: var(--paper); }
+.svc-card-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.svc-card-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  flex: 1;
+}
+.svc-card-arrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+/* ── Client proof ── */
+.proof-band {
+  background: var(--ink);
+  padding: 72px 0;
+}
+.proof-band-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.proof-head {
+  margin-bottom: 44px;
+}
+.proof-head .label { color: rgba(251,250,244,.5); }
+.proof-head .h1 { color: var(--paper); }
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+.proof-card {
+  background: rgba(251,250,244,.06);
+  border: 1px solid rgba(251,250,244,.12);
+  border-radius: 6px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.proof-quote {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(251,250,244,.88);
+  font-style: italic;
+}
+.proof-attr {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: rgba(251,250,244,.45);
+  border-top: 1px solid rgba(251,250,244,.1);
+  padding-top: 14px;
+}
+.proof-outcomes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: rgba(251,250,244,.08);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.proof-outcome {
+  padding: 28px 24px;
+  background: rgba(251,250,244,.04);
+}
+.proof-outcome-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 32px;
+  letter-spacing: -0.04em;
+  color: var(--butter);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.proof-outcome-desc {
+  font-size: 13px;
+  color: rgba(251,250,244,.6);
+  line-height: 1.4;
+}
+
 @media (max-width: 900px) {
   .stat-strip-inner { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-outcomes { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .stat-strip-inner { grid-template-columns: 1fr 1fr; }
   .hero-phone-link { font-size: 22px; }
   .sticky-mobile-bar { display: flex; }
   body { padding-bottom: 68px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .proof-outcomes { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 480px) {
   .stat-strip-inner { grid-template-columns: 1fr; border-left: none; }
   .stat-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .services-grid { grid-template-columns: 1fr; }
+  .proof-outcomes { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -349,7 +483,92 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
   </div>
 </div>
 
-<!-- 5. SUBSTANTIVE CONTENT -->
+<!-- 5. SERVICES GRID (Interest — what we handle) -->
+<section class="services-band">
+  <div class="services-band-inner">
+    <div class="services-head">
+      <span class="label">Ipswich Compensation Claims</span>
+      <h2 class="h1" style="margin-top:8px;">What We Can Help You With.</h2>
+    </div>
+    <div class="services-grid">
+      <a class="svc-card" href="../ctp-lawyer.html">
+        <div class="svc-card-title">CTP &amp; Car Accident Claims</div>
+        <div class="svc-card-desc">Injured in a motor vehicle accident on the Ipswich Motorway, Warrego Highway or Cunningham Highway? AMK handles CTP statutory benefit claims and common law damages against at-fault drivers.</div>
+        <div class="svc-card-arrow">Learn more &rarr;</div>
+      </a>
+      <a class="svc-card" href="../workcover.html">
+        <div class="svc-card-title">WorkCover &amp; Workplace Injury</div>
+        <div class="svc-card-desc">Injured at an Ipswich worksite, warehouse or distribution centre? AMK manages WorkCover claims from initial lodgement through to common law damages where the injury warrants it.</div>
+        <div class="svc-card-arrow">Learn more &rarr;</div>
+      </a>
+      <a class="svc-card" href="../public-liability.html">
+        <div class="svc-card-title">Public Liability</div>
+        <div class="svc-card-desc">Accident at Riverlink, Orion Springfield or another public place? AMK moves quickly to preserve CCTV and incident report evidence before it is overwritten.</div>
+        <div class="svc-card-arrow">Learn more &rarr;</div>
+      </a>
+      <a class="svc-card" href="../tpd-superannuation.html">
+        <div class="svc-card-title">TPD &amp; Superannuation</div>
+        <div class="svc-card-desc">Permanently unable to return to your previous work? You may have a TPD entitlement inside your superannuation that your insurer has not told you about.</div>
+        <div class="svc-card-arrow">Learn more &rarr;</div>
+      </a>
+      <a class="svc-card" href="../workers-compensation.html">
+        <div class="svc-card-title">Common Law Claims</div>
+        <div class="svc-card-desc">Workers with at least 5% whole-person permanent impairment may pursue common law damages beyond WorkCover — covering future economic loss and general damages for pain and suffering.</div>
+        <div class="svc-card-arrow">Learn more &rarr;</div>
+      </a>
+      <a class="svc-card" href="../personal-injury.html">
+        <div class="svc-card-title">Personal Injury</div>
+        <div class="svc-card-desc">Not sure which type of claim applies? AMK provides a free assessment that covers every available avenue — CTP, WorkCover, public liability and superannuation — in a single consultation.</div>
+        <div class="svc-card-arrow">Free assessment &rarr;</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. CLIENT PROOF (Desire — social proof before substantive content) -->
+<section class="proof-band">
+  <div class="proof-band-inner">
+    <div class="proof-head">
+      <span class="label">Client Results</span>
+      <h2 class="h1" style="margin-top:8px;">What AMK Clients Say.</h2>
+    </div>
+    <div class="proof-grid">
+      <!-- REPLACE with real verified client testimonials before going live -->
+      <div class="proof-card">
+        <div class="proof-quote">"After my accident on the Ipswich Motorway I had no idea what I was entitled to. AMK explained everything clearly and handled the whole claim. I didn't have to pay anything until we settled."</div>
+        <div class="proof-attr">CTP Claimant &mdash; Ipswich</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-quote">"I was injured at work and my employer was pushing me to return before I was ready. AMK stepped in, dealt directly with WorkCover and made sure I received everything I was entitled to."</div>
+        <div class="proof-attr">WorkCover Claimant &mdash; Redbank</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-quote">"I slipped at a shopping centre and wasn't sure I could make a claim. AMK assessed my situation for free, took the case on and I didn't pay a cent until it resolved in my favour."</div>
+        <div class="proof-attr">Public Liability Claimant &mdash; Springfield</div>
+      </div>
+    </div>
+    <div class="proof-outcomes">
+      <div class="proof-outcome">
+        <div class="proof-outcome-num">100%</div>
+        <div class="proof-outcome-desc">No Win, No Fee &mdash; every claim, every client</div>
+      </div>
+      <div class="proof-outcome">
+        <div class="proof-outcome-num">Free</div>
+        <div class="proof-outcome-desc">Initial assessment with no obligation</div>
+      </div>
+      <div class="proof-outcome">
+        <div class="proof-outcome-num">Local</div>
+        <div class="proof-outcome-desc">Based in Ipswich, not a Brisbane referral service</div>
+      </div>
+      <div class="proof-outcome">
+        <div class="proof-outcome-num">1 day</div>
+        <div class="proof-outcome-desc">Response time for new Ipswich enquiries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. SUBSTANTIVE CONTENT -->
 <section class="learn learn-paper">
   <div class="learn-head">
     <div class="fact-chips">
