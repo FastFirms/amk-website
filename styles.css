@@ -1479,3 +1479,7 @@ a.team-card{text-decoration:none;}
 .article-body .calc-inline a.calc-inline-btn:hover{color:var(--paper);}
 .article-body .calc-inline strong,.article-body .calc-inline span{color:var(--ink);}
 .article-body .calc-inline a.calc-inline-btn span{color:inherit;}
+/* calc-promo v2: aligned with body width, placed higher */
+.calc-promo{background:transparent;padding:40px var(--pad-x);}
+.calc-promo-inner{max-width:calc(1280px - var(--pad-x) * 2);padding:36px 40px;}
+@media (max-width:760px){.calc-promo{padding:28px 16px;}.calc-promo-inner{max-width:none;padding:26px 22px;}}
