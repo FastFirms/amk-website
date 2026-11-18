@@ -1483,3 +1483,4 @@ a.team-card{text-decoration:none;}
 .calc-promo{background:transparent;padding:40px var(--pad-x);}
 .calc-promo-inner{max-width:calc(1280px - var(--pad-x) * 2);padding:36px 40px;}
 @media (max-width:760px){.calc-promo{padding:28px 16px;}.calc-promo-inner{max-width:none;padding:26px 22px;}}
+.calc-promo{background:var(--paper);}
