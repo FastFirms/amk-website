@@ -1451,3 +1451,27 @@ a.team-card{text-decoration:none;}
 .tool-callout-band{background:var(--bone);padding:48px 0 8px;}
 .tool-callout-wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad-x);}
 @media (max-width:900px){.tool-callout-wrap{padding:0 16px;}}
+
+/* Compensation calculator promos (site-wide) */
+.mega-calc{font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--butter);text-decoration-thickness:3px;text-underline-offset:4px;align-self:center;}
+.calc-promo{background:var(--bone);padding:0 0 72px;}
+.calc-promo-inner{max-width:1280px;margin:0 auto;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;background:var(--ink);border-radius:24px;position:relative;overflow:hidden;}
+.calc-promo-inner::after{content:"$";position:absolute;right:-10px;top:-60px;font-family:var(--font-display);font-weight:800;font-size:300px;line-height:1;color:var(--butter);opacity:.07;pointer-events:none;}
+.calc-promo-copy{max-width:640px;position:relative;z-index:1;}
+.calc-promo-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--butter);}
+.calc-promo-t{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,3.4vw,44px);letter-spacing:-0.035em;line-height:1.05;color:var(--paper);margin:10px 0 12px;}
+.calc-promo-d{font-size:16px;line-height:1.55;color:rgba(251,250,244,.75);margin:0 0 16px;}
+.calc-promo-pts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.calc-promo-pts li{font-size:13px;color:var(--paper);border:1px solid rgba(251,250,244,.2);border-radius:999px;padding:6px 12px;}
+.calc-promo-pts li::before{content:"\2713";color:var(--butter);margin-right:6px;}
+.calc-promo-btn{position:relative;z-index:1;display:inline-flex;align-items:center;gap:10px;background:var(--butter);color:var(--ink);font-family:var(--font-display);font-weight:800;font-size:18px;padding:18px 28px;border-radius:12px;text-decoration:none;white-space:nowrap;transition:transform .18s;}
+.calc-promo-btn:hover{transform:translateY(-2px);}
+.calc-promo-btn:focus-visible,.calc-inline-btn:focus-visible{outline:3px solid var(--butter);outline-offset:3px;}
+.calc-inline{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:32px 0;padding:20px 22px;background:var(--butter);border-radius:14px;}
+.calc-inline div{display:flex;flex-direction:column;gap:2px;}
+.calc-inline-k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);opacity:.7;}
+.calc-inline-t{font-family:var(--font-display);font-weight:800;font-size:20px;letter-spacing:-0.02em;color:var(--ink);}
+.calc-inline-d{font-size:14px;color:var(--ink);}
+.calc-inline-btn{background:var(--ink);color:var(--butter);font-weight:700;padding:12px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;}
+@media (max-width:760px){.calc-promo{padding:0 12px 48px;}.calc-promo-inner{padding:28px 22px;border-radius:18px;}.calc-promo-btn{width:100%;justify-content:center;}.calc-inline-btn{width:100%;text-align:center;}}
+@media (prefers-reduced-motion:reduce){.calc-promo-btn{transition:none;}}
