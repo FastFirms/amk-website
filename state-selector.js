@@ -13,8 +13,6 @@
     'institutional-abuse.html': 'institutional-abuse-nsw.html',
     'no-win-no-fee.html': 'no-win-no-fee-nsw.html',
     'ctp-lawyer.html': 'ctp-lawyer-nsw.html',
-    'ctp-recent-cases.html': 'ctp-recent-cases-nsw.html',
-    'workcover-recent-cases.html': 'workcover-recent-cases-nsw.html',
     'public-liability-recent-cases.html': 'public-liability-recent-cases-nsw.html',
     'services.html': 'services-nsw.html',
     'why-choose-us.html': 'why-choose-us-nsw.html'
