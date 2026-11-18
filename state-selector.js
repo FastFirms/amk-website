@@ -243,6 +243,11 @@
         li.style.display = state === 'nsw' ? 'none' : '';
       }
     });
+    // NSW CTP and WorkCover case pages are offline pending a verified rebuild
+    links.querySelectorAll('a[href="/ctp-recent-cases"], a[href="/workcover-recent-cases"]').forEach(function(a) {
+      var li = a.closest('li');
+      if (li) li.style.display = state === 'nsw' ? 'none' : '';
+    });
   }
 
   window.__amkState = function (s) {
