@@ -65,6 +65,24 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<style>
+.hero-plain .svc-hero-intro{color:rgba(251,250,244,.78);font-size:17px;line-height:1.55;max-width:60ch;margin-top:20px;}
+.svc-trust{max-width:1680px;margin:16px auto 0;padding:0 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.svc-trust-item{background:var(--paper);border:1px solid var(--tonal);border-radius:12px;padding:14px 16px;font-size:14px;line-height:1.4;color:var(--ink-soft);}
+.svc-trust-item strong{display:block;font-family:var(--font-display);font-weight:800;font-size:17px;letter-spacing:-0.02em;color:var(--ink);}
+.svc-grid-lead{margin-top:8px;color:var(--ink-soft);}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.svc-grid-card{display:flex;flex-direction:column;gap:10px;background:var(--bone);border:1px solid var(--tonal);border-radius:16px;padding:26px 24px;}
+.svc-grid-title{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-0.02em;line-height:1.15;color:var(--ink);margin:0;}
+.svc-grid-q{font-weight:600;color:var(--ink);margin:0;}
+.svc-grid-copy{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin:0;flex:1;}
+.svc-grid-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
+.svc-grid-btns .btn{flex:1 1 auto;text-align:center;justify-content:center;}
+@media (max-width:1000px){.svc-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:900px){.svc-trust{grid-template-columns:1fr 1fr;padding:0 12px;}}
+@media (max-width:620px){.svc-grid{grid-template-columns:1fr;}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does No Win, No Fee mean?", "acceptedAnswer": {"@type": "Answer", "text": "If your case isn't successful, you won't pay our legal fees. We only get paid when you do. No hidden costs, no surprises."}}, {"@type": "Question", "name": "How much does the first assessment cost?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing. Tell us what happened and we'll assess your situation for free and tell you exactly where you stand, with no obligation."}}, {"@type": "Question", "name": "What types of compensation claims does AMK handle?", "acceptedAnswer": {"@type": "Answer", "text": "Motor vehicle accidents and CTP claims, workplace accidents and WorkCover claims, public liability claims, medical negligence, institutional abuse, and TPD and superannuation claims."}}, {"@type": "Question", "name": "Where are AMK's offices?", "acceptedAnswer": {"@type": "Answer", "text": "Augustine Heights (15/20 Success Circuit), Surfers Paradise (Level 13, 50 Cavill Avenue) and South Toowoomba (58–62 Water Street). We also act by phone, video and home or hospital visits across Queensland."}}, {"@type": "Question", "name": "How do I start a claim?", "acceptedAnswer": {"@type": "Answer", "text": "Use the free claim check on this page or call 07 3136 3287. We'll assess your situation, then gather evidence, manage paperwork and deal with insurers on your behalf."}}]}</script>
 </head>
 <body>
 
@@ -139,23 +157,41 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
 </nav>
 
 <main>
-<!-- SERVICES HERO -->
-  <section class="svc-hero">
-    <div class="svc-hero-inner">
-      <span class="label">Services</span>
-      <h1 class="headline">Compensation Law Services Queensland — No Win, No Fee.</h1>
-      <p>Whatever happened to you — at work, on the road, or in someone's care — we've been here before. Here's how we help.</p>
+<div class="hero-shell">
+  <section class="hero hero-photo hero-plain" id="hero">
+    <div class="hero-inner">
+      <div class="hero-headline-wrap">
+        <span class="label" style="color:rgba(251,250,244,.6);margin-bottom:18px;">Services</span>
+        <h1 class="hero-headline">Compensation Law Services Queensland — No Win, No Fee.</h1>
+        <p class="svc-hero-intro">Whatever happened to you — at work, on the road, or in someone's care — we've been here before. Here's how we help.</p>
+      </div>
+      <div class="hero-cta-card">
+        <h2 class="h2">Check Your Claim For Free</h2>
+        <div class="hero-ctas">
+          <a class="btn btn-butter" href="#claim-check">Check My Claim</a>
+          <a class="btn btn-tonal" href="tel:0731363287" onclick="gtag('event', 'conversion', {'send_to': 'AW-18412730077/6nIsCLn8pvocEN3t78tE'});">Call 07 3136 3287</a>
+        </div>
+      </div>
     </div>
   </section>
+</div>
 
-  <!-- FULL SERVICES DETAIL -->
-  
-  <!-- FREE CLAIM CHECK -->
-  <section class="claim-section" id="claim-check">
-    <div class="claim-grid">
-      <div class="claim-intro">
-        <span class="label">Free Claim Check</span>
-        <h2 class="h1">Find Out Where You Stand In Under 2 Minutes.</h2>
+<div class="svc-trust" role="list">
+  <div class="svc-trust-item" role="listitem"><strong>100%</strong> No Win, No Fee</div>
+  <div class="svc-trust-item" role="listitem"><strong>5.0</strong> from 115 Google reviews</div>
+  <div class="svc-trust-item" role="listitem"><strong>Offices</strong> Augustine Heights · Surfers Paradise · Toowoomba</div>
+  <div class="svc-trust-item" role="listitem"><strong>Free</strong>, confidential assessment</div>
+</div>
+
+<section class="services-band svc-grid-band">
+  <div class="services-band-inner">
+    <div class="services-head">
+      <span class="label">How We Can Help</span>
+      <p class="svc-grid-lead">Choose the situation closest to yours.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-grid-card">
+        <h2 class="svc-grid-title">Find Out Where You Stand In Under 2 Minutes.</h2>
         <p>Answer a few quick questions about what happened. We'll tell you what your claim could be worth — free, and with no obligation.</p>
       </div>
       <div class="claim-panel">
@@ -184,87 +220,162 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
       <div class="svc-text">
         <span class="ghost-num">01</span>
         <h2 class="h1">Motor Vehicle Accidents</h2>
-        <p class="question">Were you hurt in a car, truck or motorcycle accident?</p>
-        <p class="copy">You have rights after a road accident — even if the other driver disputes fault or is uninsured. Queensland's CTP scheme covers more than most people realise. We assess your situation for free and tell you exactly what you're entitled to.</p>
-        <div class="svc-btns">
-          <a class="btn btn-ink" href="/contact">Check my claim →</a>
+        <p class="svc-grid-q">Were you hurt in a car, truck or motorcycle accident?</p>
+        <p class="svc-grid-copy">You have rights after a road accident — even if the other driver disputes fault or is uninsured. Queensland's CTP scheme covers more than most people realise. We assess your situation for free and tell you exactly what you're entitled to.</p>
+        <div class="svc-grid-btns">
+          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
           <a class="btn btn-tonal" href="/car-accidents">Find out more</a>
         </div>
-      </div>
-    </div>
-
-    <div class="svc-row">
-      <div class="svc-text">
-        <span class="ghost-num">02</span>
-        <h2 class="h1">Workplace Accidents</h2>
-        <p class="question">Did you get hurt or fall sick because of work?</p>
-        <p class="copy">WorkCover claims are complicated, slow, and often contested. We take the entire process off your plate — lodging the claim, gathering medical evidence, and pushing back on insurers — so you can focus on getting better.</p>
-        <div class="svc-btns">
-          <a class="btn btn-ink" href="/contact">Check my claim →</a>
+      </article>
+      <article class="svc-grid-card">
+        <h2 class="svc-grid-title">Workplace Accidents</h2>
+        <p class="svc-grid-q">Did you get hurt or fall sick because of work?</p>
+        <p class="svc-grid-copy">WorkCover claims are complicated, slow, and often contested. We take the entire process off your plate — lodging the claim, gathering medical evidence, and pushing back on insurers — so you can focus on getting better.</p>
+        <div class="svc-grid-btns">
+          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
           <a class="btn btn-tonal" href="/workers-compensation">Find out more</a>
         </div>
-      </div>
-    </div>
-
-    <div class="svc-row">
-      <div class="svc-text">
-        <span class="ghost-num">03</span>
-        <h2 class="h1">Public Liability Claims</h2>
-        <p class="question">Were you injured somewhere that should have been safe?</p>
-        <p class="copy">If a business, council, or property owner failed their duty of care and you were hurt as a result, you have the right to hold them accountable. Slips, falls, dangerous premises — we've handled them all.</p>
-        <div class="svc-btns">
-          <a class="btn btn-ink" href="/contact">Check my claim →</a>
+      </article>
+      <article class="svc-grid-card">
+        <h2 class="svc-grid-title">Public Liability Claims</h2>
+        <p class="svc-grid-q">Were you injured somewhere that should have been safe?</p>
+        <p class="svc-grid-copy">If a business, council, or property owner failed their duty of care and you were hurt as a result, you have the right to hold them accountable. Slips, falls, dangerous premises — we've handled them all.</p>
+        <div class="svc-grid-btns">
+          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
           <a class="btn btn-tonal" href="/public-liability">Find out more</a>
         </div>
-      </div>
-    </div>
-
-    <div class="svc-row">
-      <div class="svc-text">
-        <span class="ghost-num">04</span>
-        <h2 class="h1">Medical Negligence</h2>
-        <p class="question">Did a doctor, hospital or healthcare provider make things worse?</p>
-        <p class="copy">When medical treatment causes harm, the consequences can be life-altering. We help you understand who was responsible, what standard of care should have been met, and what you can claim for.</p>
-        <div class="svc-btns">
-          <a class="btn btn-ink" href="/contact">Check my claim →</a>
+      </article>
+      <article class="svc-grid-card">
+        <h2 class="svc-grid-title">Medical Negligence</h2>
+        <p class="svc-grid-q">Did a doctor, hospital or healthcare provider make things worse?</p>
+        <p class="svc-grid-copy">When medical treatment causes harm, the consequences can be life-altering. We help you understand who was responsible, what standard of care should have been met, and what you can claim for.</p>
+        <div class="svc-grid-btns">
+          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
           <a class="btn btn-tonal" href="/medical-negligence">Find out more</a>
         </div>
-      </div>
-    </div>
-
-    <div class="svc-row">
-      <div class="svc-text">
-        <span class="ghost-num">05</span>
-        <h2 class="h1">Institutional Abuse</h2>
-        <p class="question">Were you harmed in a school, church, or care facility?</p>
-        <p class="copy">Coming forward takes real courage. We create a safe, non-judgemental space to tell your story, explain your options clearly, and stand with you every step of the way toward justice and recognition.</p>
-        <div class="svc-btns">
-          <a class="btn btn-ink" href="/contact">Check my claim →</a>
+      </article>
+      <article class="svc-grid-card">
+        <h2 class="svc-grid-title">Institutional Abuse</h2>
+        <p class="svc-grid-q">Were you harmed in a school, church, or care facility?</p>
+        <p class="svc-grid-copy">Coming forward takes real courage. We create a safe, non-judgemental space to tell your story, explain your options clearly, and stand with you every step of the way toward justice and recognition.</p>
+        <div class="svc-grid-btns">
+          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
           <a class="btn btn-tonal" href="/institutional-abuse">Find out more</a>
         </div>
+      </article>
+      <article class="svc-grid-card">
+        <h2 class="svc-grid-title">TPD &amp; Superannuation</h2>
+        <p class="svc-grid-q">Has an injury or illness stopped you from working?</p>
+        <p class="svc-grid-copy">A Total &amp; Permanent Disability benefit may be sitting in your superannuation fund right now, unclaimed. We check for free, handle the insurer directly, and only get paid if your claim succeeds.</p>
+        <div class="svc-grid-btns">
+          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
+          <a class="btn btn-tonal" href="/tpd-superannuation">Find out more</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+    <div class="reviews-head">
+      <div>
+        <h2 class="h1">What People Are Saying</h2>
+        <div class="reviews-rating">
+          <span class="stars">★★★★★</span>
+          <span>Rated 5.0 from 115 Google reviews</span>
+        </div>
+      </div>
+      <div class="carousel-arrows">
+        <button class="arrow" aria-label="Scroll reviews left" onclick="scrollReviews(-1)">←</button>
+        <button class="arrow" aria-label="Scroll reviews right" onclick="scrollReviews(1)">→</button>
       </div>
     </div>
+    <div class="reviews-strip" id="reviewsStrip">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Compassionate, caring and over-delivered</div>
+          <p class="review-text">"I won't trust anyone else other than AMK Compensation Lawyers. They are compassionate, caring and provide a personal, human touch in tough situations. They made sure to provide the best outcome and actually over-achieved and got a better result due to their knowledge and long standing within the industry."</p>
+          <div class="review-name">Scott Martin · 5 months ago</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">I can't believe how lucky I was</div>
+          <p class="review-text">"I truly believe that if it was not for Michael and his team at AMK Compensation Lawyers, I might not be here writing this review today. Michael is an incredibly smart man and has worked as a defence lawyer for the insurers before starting his own firm. He foresaw and knew every tactic they used before they used it. To this day I am still blown away how Michael and AMK Compensation Lawyers got the insurer to a really good settlement when I was backed into a corner. I am forever grateful."</p>
+          <div class="review-name">Witty · 5 months ago</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Knowledge that got me a good result</div>
+          <p class="review-text">"Thank you to all the team at AMK Compensation Lawyers for all your support. Michael has a ton of knowledge and has led and guided me throughout the whole process. Thank you Michael — your knowledge allowed me to get a good result. Highly recommend."</p>
+          <div class="review-name">Emily Seuala · 2 months ago</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">In a league of their own</div>
+          <p class="review-text">"Michael Singh was an incredible help during a very difficult recovery. He was patient, kind, and professional, providing a no-nonsense assessment that honestly accounted for both the physical injuries and the mental health toll. It's rare to find a lawyer who handles every single detail personally. If we could give more than 5 stars, we would do it in a heartbeat."</p>
+          <div class="review-name">Rebecca Shah · 5 months ago</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Clear communication at every step</div>
+          <p class="review-text">"AMK Compensation Lawyers were very supportive in my matter. The teamwork across the firm was excellent. Their communication was clear at every step and I would be more than happy to work with them again."</p>
+          <div class="review-name">Girish Rokka Chettri · 5 months ago</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Outstanding from day one</div>
+          <p class="review-text">"When I had a motor vehicle accident, I was very scared and confused. After I talked to Mr. Michael Singh, I knew I'd be in good hands. From day one the level of communication and guidance was really outstanding. I am eternally grateful to Michael, Michelle and the team for everything they did. Moving forward after the accident feels easy with AMK Compensation Lawyers."</p>
+          <div class="review-name">Arnil Arboleda · 2 years ago</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Very honest and humble — highly recommend</div>
+          <p class="review-text">"Michael Singh is very friendly and patient, even with my limited English background. Such amazing help with my work injury. Very, very honest and humble man. I am very grateful to him and his team for their immense help and the outcome they helped me bring about. Highly recommend for anyone needing help with work or car injuries."</p>
+          <div class="review-name">Saiful Islam · 2 years ago</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-title">Very professional with quick turnarounds</div>
+          <p class="review-text">"Have been using AMK Compensation Lawyers for the last 18 months for my business, and they are very professional with quick turnarounds."</p>
+          <div class="review-name">Christian Grady</div>
+        </div>
+    </div>
+  </section>
 
-    <div class="svc-row">
-      <div class="svc-text">
-        <span class="ghost-num">06</span>
-        <h2 class="h1">TPD &amp; Superannuation</h2>
-        <p class="question">Has an injury or illness stopped you from working?</p>
-        <p class="copy">A Total &amp; Permanent Disability benefit may be sitting in your superannuation fund right now, unclaimed. We check for free, handle the insurer directly, and only get paid if your claim succeeds.</p>
-        <div class="svc-btns">
-          <a class="btn btn-ink" href="/contact">Check my claim →</a>
-          <a class="btn btn-tonal" href="/tpd-superannuation">Find out more</a>
+  <!-- FREE CLAIM CHECK -->
+  <section class="claim-section" id="claim-check">
+    <div class="claim-grid">
+      <div class="claim-intro">
+        <span class="label">Free Claim Check</span>
+        <h2 class="h1">Find Out Where You Stand In Under 2 Minutes.</h2>
+        <p>Answer a few quick questions about what happened. We'll tell you what your claim could be worth — free, and with no obligation.</p>
+      </div>
+      <div class="claim-panel">
+        <div class="wizard" id="wizard">
+          <div class="wiz-progress label" id="wizProgress"></div>
+          <div id="wizBody"></div>
+          <div class="wiz-error" id="wizError" hidden>This field is required.</div>
+          <div class="wiz-nav" id="wizNav">
+            <button class="btn btn-tonal wiz-back" id="wizBack" type="button" onclick="wizBack()">Back</button>
+            <button class="btn btn-butter wiz-next" id="wizNext" type="button" onclick="wizNext()">Continue</button>
+          </div>
         </div>
       </div>
     </div>
-
   </section>
+  <section class="tool-callout-band"><div class="tool-callout-wrap"><a class="tool-callout" href="/compensation-calculator">
+      <span class="tool-callout-k">Free tool</span>
+      <span class="tool-callout-t">What could your claim be worth?</span>
+      <span class="tool-callout-d">Answer a few quick questions and get an instant, indicative estimate. Free and confidential.</span>
+      <span class="tool-callout-cta">Use the compensation calculator &rarr;</span>
+    </a>
+    </div></section>
 
   <!-- NO WIN NO FEE -->
   <section class="nwnf">
     <h2 class="headline">No Win. No Fee.</h2>
     <p>If your case isn't successful, you won't pay our legal fees. We only get paid when you do. No hidden costs, no surprises.</p>
-    <a class="btn btn-ink" href="/contact">Book a Free Consultation</a>
+    <a class="btn btn-ink" href="#claim-check">Book a Free Consultation</a>
   </section>
 
   <!-- PROCESS -->
@@ -295,11 +406,77 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
     </div>
   </section>
 
+<section class="local-note" aria-labelledby="local-help-title">
+  <div class="local-note-inner">
+    <div class="local-note-copy">
+      <span class="label">Serving Queensland</span>
+      <h2 class="local-note-title" id="local-help-title">Compensation Lawyers Across Queensland.</h2>
+      <p>Meet us at our offices in Augustine Heights, Surfers Paradise or South Toowoomba, or we handle your claim by phone, video and home or hospital visits wherever you are. Choose your area below.</p>
+      <div class="local-note-meta"><span>No Win, No Fee</span><span>Free claim check</span><span>Queensland-wide</span></div>
+    </div>
+    <nav class="loc-grid" aria-label="AMK service locations">
+      <a class="loc-tile is-base" href="/locations/ipswich-compensation-lawyers">
+        <span class="loc-tile-arrow" aria-hidden="true">&rarr;</span>
+        <span class="loc-tile-tag">Local office</span>
+        <span class="loc-tile-name">Ipswich</span>
+        <span class="loc-tile-desc">Augustine Heights. Meet us in person or we come to you.</span>
+      </a>
+      <a class="loc-tile " href="/locations/brisbane-compensation-lawyers">
+        <span class="loc-tile-arrow" aria-hidden="true">&rarr;</span>
+        <span class="loc-tile-tag">Phone, video, home visits</span>
+        <span class="loc-tile-name">Brisbane</span>
+        <span class="loc-tile-desc">Our Augustine Heights office is south-west of Brisbane.</span>
+      </a>
+      <a class="loc-tile " href="/locations/gold-coast-compensation-lawyers">
+        <span class="loc-tile-arrow" aria-hidden="true">&rarr;</span>
+        <span class="loc-tile-tag">Local office</span>
+        <span class="loc-tile-name">Gold Coast</span>
+        <span class="loc-tile-desc">Level 13, 50 Cavill Avenue, Surfers Paradise. Meet us in person or we come to you.</span>
+      </a>
+      <a class="loc-tile " href="/locations/toowoomba-compensation-lawyers">
+        <span class="loc-tile-arrow" aria-hidden="true">&rarr;</span>
+        <span class="loc-tile-tag">Local office</span>
+        <span class="loc-tile-name">Toowoomba</span>
+        <span class="loc-tile-desc">58–62 Water Street, South Toowoomba. Meet us in person or we come to you.</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq-head">
+    <span class="label">FAQ</span>
+    <h2 class="h1">Frequently Asked Questions.</h2>
+  </div>
+  <div class="acc">
+      <details>
+        <summary>What does No Win, No Fee mean?</summary>
+        <div class="acc-body"><p>If your case isn't successful, you won't pay our legal fees. We only get paid when you do. No hidden costs, no surprises.</p></div>
+      </details>
+      <details>
+        <summary>How much does the first assessment cost?</summary>
+        <div class="acc-body"><p>Nothing. Tell us what happened and we'll assess your situation for free and tell you exactly where you stand, with no obligation.</p></div>
+      </details>
+      <details>
+        <summary>What types of compensation claims does AMK handle?</summary>
+        <div class="acc-body"><p>Motor vehicle accidents and CTP claims, workplace accidents and WorkCover claims, public liability claims, medical negligence, institutional abuse, and TPD and superannuation claims.</p></div>
+      </details>
+      <details>
+        <summary>Where are AMK's offices?</summary>
+        <div class="acc-body"><p>Augustine Heights (15/20 Success Circuit), Surfers Paradise (Level 13, 50 Cavill Avenue) and South Toowoomba (58–62 Water Street). We also act by phone, video and home or hospital visits across Queensland.</p></div>
+      </details>
+      <details>
+        <summary>How do I start a claim?</summary>
+        <div class="acc-body"><p>Use the free claim check on this page or call 07 3136 3287. We'll assess your situation, then gather evidence, manage paperwork and deal with insurers on your behalf.</p></div>
+      </details>
+  </div>
+</section>
+
   <!-- BOTTOM CTA -->
   <section class="svc-cta on-dark">
     <h2 class="headline">Ready To Take The Next Step?</h2>
     <p>Talk to us today. It's free.</p>
-    <a class="btn btn-butter" href="/contact">Book a Consultation</a>
+    <a class="btn btn-butter" href="#claim-check">Book a Consultation</a>
   </section>
 </main>
 
