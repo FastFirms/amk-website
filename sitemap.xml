@@ -181,11 +181,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.amklawyers.com.au/ctp-recent-cases-nsw</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.amklawyers.com.au/public-liability-recent-cases</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -199,11 +194,6 @@
     <loc>https://www.amklawyers.com.au/workcover-recent-cases</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.amklawyers.com.au/workcover-recent-cases-nsw</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.amklawyers.com.au/personal-injury-lawyers-ipswich</loc>

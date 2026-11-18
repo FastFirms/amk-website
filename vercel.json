@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/ctp-recent-cases-nsw",
+      "destination": "/ctp-lawyer-nsw",
+      "permanent": false
+    },
+    {
+      "source": "/workcover-recent-cases-nsw",
+      "destination": "/workcover-nsw",
+      "permanent": false
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
