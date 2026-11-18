@@ -980,7 +980,9 @@ function fccSubmit(e) {
   data.append('injury', fccAnswers.injured || '');
   data.append('source', 'free-claim-check');
   amkSendLead(form, data, false).then(function() {
-    window.location.href = '/thank-you';
+    return amkTrackLead('free_claim_check', form).then(function() {
+      window.location.href = '/thank-you';
+    });
   }).catch(function(){});
 }
 </script>

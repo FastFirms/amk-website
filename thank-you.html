@@ -79,11 +79,7 @@
     gtag('js', new Date());
     gtag('config', 'G-1DJKFEKQPV');
   gtag('config', 'AW-18412730077');
-    // Conversion events — fire on page load (redirect-based tracking)
-    gtag('event', 'generate_lead', {
-      'event_category': 'form',
-      'event_label': 'claim_submission'
-    });
+    // generate_lead is sent from the form submit handler once Formspree accepts the enquiry (see script.js amkTrackLead)
   </script>
 <script>
   gtag('config', 'AW-18412730077/6nIsCLn8pvocEN3t78tE', {

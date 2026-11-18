@@ -812,6 +812,7 @@ function submitToowoombaForm(e) {
       message: form.message.value,
       source: 'Toowoomba Landing Page'
     }, true).then(function(){
+    amkTrackLead('location_form', form);
     gtag('event', 'conversion', {'send_to': 'AW-18412730077/6nIsCLn8pvocEN3t78tE'});
     fbq('track', 'Lead');
     form.style.display = 'none';

@@ -341,10 +341,16 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     }
   });
   if (!valid) return;
+  if (form.dataset.amkSending === '1') return;
+  form.dataset.amkSending = '1';
   fetch(form.action, {method:'POST', body: new FormData(form), headers:{'Accept':'application/json'}})
     .then(function(r) {
-      if (r.ok) { window.location.href = 'thank-you.html'; }
-    }).catch(function(){});
+      if (r.ok) {
+        var go = function(){ window.location.href = 'thank-you.html'; };
+        return (typeof amkTrackLead === 'function') ? amkTrackLead('contact_page', form).then(go) : go();
+      }
+      form.dataset.amkSending = '';
+    }).catch(function(){ form.dataset.amkSending = ''; });
 });
 </script>
 <script src="script.js"></script>

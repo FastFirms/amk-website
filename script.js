@@ -337,7 +337,9 @@ function wizFinish(){
   if(backBtn){ backBtn.disabled = true; }
   errEl.hidden = true;
   amkSendLead(null, payload, true).then(function(){
-    window.location.href = '/thank-you';
+    return amkTrackLead('claim_check_wizard', null).then(function(){
+      window.location.href = '/thank-you';
+    });
   }).catch(function(){
     wizDone = false;
     if(nextBtn){ nextBtn.disabled = false; nextBtn.textContent = label; }
@@ -405,13 +407,38 @@ function amkSendLead(form, body, isJson){
     throw e;
   });
 }
+/* GA4 lead: send ONLY after Formspree has accepted the enquiry. No PII (no name, email, phone or message). */
+var amkLeadSent = false;
+function amkTrackLead(formName, formEl){
+  return new Promise(function(resolve){
+    var finished = false;
+    function finish(){ if(!finished){ finished = true; resolve(); } }
+    if(amkLeadSent || typeof window.gtag !== 'function'){ finish(); return; }
+    amkLeadSent = true;
+    try {
+      gtag('event', 'generate_lead', {
+        form_name: formName,
+        form_id: (formEl && formEl.id) || '',
+        page_location: window.location.origin + window.location.pathname,
+        event_category: 'form',
+        event_label: 'claim_submission',
+        transport_type: 'beacon',
+        event_callback: finish,
+        event_timeout: 1000
+      });
+    } catch(e){ finish(); return; }
+    setTimeout(finish, 1000);
+  });
+}
 
 /* Lawyer contact form (article sidebar) */
 function submitLawyerContact(e){
   e.preventDefault();
   var form = e.target;
   amkSendLead(form, new FormData(form), false).then(function(){
-    window.location.href = '/thank-you';
+    return amkTrackLead('article_sidebar', form).then(function(){
+      window.location.href = '/thank-you';
+    });
   }).catch(function(){});
   return false;
 }
