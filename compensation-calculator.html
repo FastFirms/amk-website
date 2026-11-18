@@ -583,10 +583,10 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
       }
       var payload=Object.assign({},a,{firstName:f.firstName.value,phone:f.phone.value,email:f.email.value,consent:'yes',estimate:fig.replace('&ndash;','-'),source:'Compensation Calculator',_subject:'New Calculator Lead — '+f.firstName.value});
       amkSendLead(f,payload,true).then(function(){
-        if(typeof amkTrackLead==='function')amkTrackLead('compensation_calculator',f);
         if(window.gtag)gtag('event','conversion',{'send_to':'AW-18412730077/6nIsCLn8pvocEN3t78tE'});
         if(window.fbq)fbq('track','Lead');
-        document.getElementById('calcLead').innerHTML='<p class="calc-thanks" role="status">Thanks, '+esc(f.firstName.value)+'. A lawyer will review your estimate and be in touch shortly. It’s free, and there’s no obligation.</p>';
+        var go=function(){ window.location.href='/thank-you'; };
+        return (typeof amkTrackLead==='function') ? amkTrackLead('compensation_calculator',f).then(go) : go();
       }).catch(function(){});
     });
   }
