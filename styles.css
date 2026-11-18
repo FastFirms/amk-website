@@ -1475,3 +1475,7 @@ a.team-card{text-decoration:none;}
 .calc-inline-btn{background:var(--ink);color:var(--butter);font-weight:700;padding:12px 18px;border-radius:10px;text-decoration:none;white-space:nowrap;}
 @media (max-width:760px){.calc-promo{padding:0 12px 48px;}.calc-promo-inner{padding:28px 22px;border-radius:18px;}.calc-promo-btn{width:100%;justify-content:center;}.calc-inline-btn{width:100%;text-align:center;}}
 @media (prefers-reduced-motion:reduce){.calc-promo-btn{transition:none;}}
+.article-body .calc-inline a.calc-inline-btn,.article-body .calc-inline a.calc-inline-btn:visited{color:var(--butter);text-decoration:none;border:0;background:var(--ink);}
+.article-body .calc-inline a.calc-inline-btn:hover{color:var(--paper);}
+.article-body .calc-inline strong,.article-body .calc-inline span{color:var(--ink);}
+.article-body .calc-inline a.calc-inline-btn span{color:inherit;}
