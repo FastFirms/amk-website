@@ -81,6 +81,31 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
 @media (max-width:1000px){.svc-grid{grid-template-columns:1fr 1fr;}}
 @media (max-width:900px){.svc-trust{grid-template-columns:1fr 1fr;padding:0 12px;}}
 @media (max-width:620px){.svc-grid{grid-template-columns:1fr;}}
+
+/* Services ads page refinements */
+.svc-page .hero-headline,.hero-plain .hero-headline{font-size:clamp(34px,4vw,60px);line-height:1.02;}
+.svc-chips{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+.svc-chips li{font-size:13px;color:rgba(251,250,244,.78);border:1px solid rgba(251,250,244,.18);border-radius:999px;padding:7px 13px;}
+.svc-chips strong{color:var(--butter);font-weight:700;margin-right:4px;}
+.svc-grid-card{text-decoration:none;color:inherit;gap:8px;padding:26px 24px 22px;transition:border-color .18s,transform .18s,background .18s;}
+.svc-grid-card:hover,.svc-grid-card:focus-visible{border-color:var(--ink);background:var(--paper);transform:translateY(-2px);}
+.svc-grid-card:focus-visible{outline:3px solid var(--butter);outline-offset:2px;}
+.svc-grid-title{font-size:20px;}
+.svc-grid-q{font-weight:600;color:var(--ink);font-size:15px;line-height:1.4;margin:0;}
+.svc-grid-copy{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin:0;flex:1;}
+.svc-grid-more{margin-top:8px;font-family:var(--font-mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);border-top:1px solid var(--tonal);padding-top:14px;}
+.svc-grid-card:hover .svc-grid-more{text-decoration:underline;text-decoration-color:var(--butter);text-decoration-thickness:3px;text-underline-offset:4px;}
+.svc-grid-cta{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--butter);border-radius:16px;padding:22px 26px;}
+.svc-grid-cta p{margin:0;font-size:16px;color:var(--ink);max-width:60ch;}
+.svc-grid-cta-btns,.svc-cta-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.svc-cta-btns{justify-content:center;margin-top:22px;}
+.btn-ghost-light{background:transparent;color:var(--paper);border:1px solid rgba(251,250,244,.4);}
+.btn-ghost-light:hover{border-color:var(--paper);}
+.svc-calc-link{margin-top:14px;font-size:14px;color:var(--ink-soft);}
+.svc-calc-link a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--butter);text-decoration-thickness:3px;text-underline-offset:3px;}
+.nwnf{padding-top:72px;padding-bottom:72px;}
+@media (prefers-reduced-motion:reduce){.svc-grid-card{transition:none;}.svc-grid-card:hover{transform:none;}}
+@media (max-width:620px){.svc-grid-cta{padding:20px;}.svc-grid-cta-btns .btn,.svc-cta-btns .btn{flex:1 1 100%;text-align:center;justify-content:center;}.svc-chips li{font-size:12px;}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does No Win, No Fee mean?", "acceptedAnswer": {"@type": "Answer", "text": "If your case isn't successful, you won't pay our legal fees. We only get paid when you do. No hidden costs, no surprises."}}, {"@type": "Question", "name": "How much does the first assessment cost?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing. Tell us what happened and we'll assess your situation for free and tell you exactly where you stand, with no obligation."}}, {"@type": "Question", "name": "What types of compensation claims does AMK handle?", "acceptedAnswer": {"@type": "Answer", "text": "Motor vehicle accidents and CTP claims, workplace accidents and WorkCover claims, public liability claims, medical negligence, institutional abuse, and TPD and superannuation claims."}}, {"@type": "Question", "name": "Where are AMK's offices?", "acceptedAnswer": {"@type": "Answer", "text": "Augustine Heights (15/20 Success Circuit), Surfers Paradise (Level 13, 50 Cavill Avenue) and South Toowoomba (58–62 Water Street). We also act by phone, video and home or hospital visits across Queensland."}}, {"@type": "Question", "name": "How do I start a claim?", "acceptedAnswer": {"@type": "Answer", "text": "Use the free claim check on this page or call 07 3136 3287. We'll assess your situation, then gather evidence, manage paperwork and deal with insurers on your behalf."}}]}</script>
 </head>
@@ -165,6 +190,12 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
         <h1 class="hero-headline">Compensation Law Services Queensland — No Win, No Fee.</h1>
         <p class="svc-hero-intro">Whatever happened to you — at work, on the road, or in someone's care — we've been here before. Here's how we help.</p>
       </div>
+              <ul class="svc-chips" aria-label="Why AMK">
+          <li><strong>100%</strong> No Win, No Fee</li>
+          <li><strong>5.0</strong> from 115 Google reviews</li>
+          <li><strong>Offices</strong> Augustine Heights · Surfers Paradise · Toowoomba</li>
+          <li><strong>Free</strong>, confidential assessment</li>
+        </ul>
       <div class="hero-cta-card">
         <h2 class="h2">Check Your Claim For Free</h2>
         <div class="hero-ctas">
@@ -176,13 +207,6 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
   </section>
 </div>
 
-<div class="svc-trust" role="list">
-  <div class="svc-trust-item" role="listitem"><strong>100%</strong> No Win, No Fee</div>
-  <div class="svc-trust-item" role="listitem"><strong>5.0</strong> from 115 Google reviews</div>
-  <div class="svc-trust-item" role="listitem"><strong>Offices</strong> Augustine Heights · Surfers Paradise · Toowoomba</div>
-  <div class="svc-trust-item" role="listitem"><strong>Free</strong>, confidential assessment</div>
-</div>
-
 <section class="services-band svc-grid-band">
   <div class="services-band-inner">
     <div class="services-head">
@@ -190,60 +214,49 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
       <p class="svc-grid-lead">Choose the situation closest to yours.</p>
     </div>
     <div class="svc-grid">
-      <article class="svc-grid-card">
+      <a class="svc-grid-card" href="/car-accidents">
         <h2 class="svc-grid-title">Motor Vehicle Accidents</h2>
         <p class="svc-grid-q">Were you hurt in a car, truck or motorcycle accident?</p>
         <p class="svc-grid-copy">You have rights after a road accident — even if the other driver disputes fault or is uninsured. Queensland's CTP scheme covers more than most people realise. We assess your situation for free and tell you exactly what you're entitled to.</p>
-        <div class="svc-grid-btns">
-          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
-          <a class="btn btn-tonal" href="/car-accidents">Find out more</a>
-        </div>
-      </article>
-      <article class="svc-grid-card">
+        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      <a class="svc-grid-card" href="/workers-compensation">
         <h2 class="svc-grid-title">Workplace Accidents</h2>
         <p class="svc-grid-q">Did you get hurt or fall sick because of work?</p>
         <p class="svc-grid-copy">WorkCover claims are complicated, slow, and often contested. We take the entire process off your plate — lodging the claim, gathering medical evidence, and pushing back on insurers — so you can focus on getting better.</p>
-        <div class="svc-grid-btns">
-          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
-          <a class="btn btn-tonal" href="/workers-compensation">Find out more</a>
-        </div>
-      </article>
-      <article class="svc-grid-card">
+        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      <a class="svc-grid-card" href="/public-liability">
         <h2 class="svc-grid-title">Public Liability Claims</h2>
         <p class="svc-grid-q">Were you injured somewhere that should have been safe?</p>
         <p class="svc-grid-copy">If a business, council, or property owner failed their duty of care and you were hurt as a result, you have the right to hold them accountable. Slips, falls, dangerous premises — we've handled them all.</p>
-        <div class="svc-grid-btns">
-          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
-          <a class="btn btn-tonal" href="/public-liability">Find out more</a>
-        </div>
-      </article>
-      <article class="svc-grid-card">
+        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      <a class="svc-grid-card" href="/medical-negligence">
         <h2 class="svc-grid-title">Medical Negligence</h2>
         <p class="svc-grid-q">Did a doctor, hospital or healthcare provider make things worse?</p>
         <p class="svc-grid-copy">When medical treatment causes harm, the consequences can be life-altering. We help you understand who was responsible, what standard of care should have been met, and what you can claim for.</p>
-        <div class="svc-grid-btns">
-          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
-          <a class="btn btn-tonal" href="/medical-negligence">Find out more</a>
-        </div>
-      </article>
-      <article class="svc-grid-card">
+        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      <a class="svc-grid-card" href="/institutional-abuse">
         <h2 class="svc-grid-title">Institutional Abuse</h2>
         <p class="svc-grid-q">Were you harmed in a school, church, or care facility?</p>
         <p class="svc-grid-copy">Coming forward takes real courage. We create a safe, non-judgemental space to tell your story, explain your options clearly, and stand with you every step of the way toward justice and recognition.</p>
-        <div class="svc-grid-btns">
-          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
-          <a class="btn btn-tonal" href="/institutional-abuse">Find out more</a>
-        </div>
-      </article>
-      <article class="svc-grid-card">
+        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+      <a class="svc-grid-card" href="/tpd-superannuation">
         <h2 class="svc-grid-title">TPD &amp; Superannuation</h2>
         <p class="svc-grid-q">Has an injury or illness stopped you from working?</p>
         <p class="svc-grid-copy">A Total &amp; Permanent Disability benefit may be sitting in your superannuation fund right now, unclaimed. We check for free, handle the insurer directly, and only get paid if your claim succeeds.</p>
-        <div class="svc-grid-btns">
-          <a class="btn btn-ink" href="#claim-check">Check my claim →</a>
-          <a class="btn btn-tonal" href="/tpd-superannuation">Find out more</a>
-        </div>
-      </article>
+        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </div>
+    <div class="svc-grid-cta">
+      <p><strong>Not sure which applies to you?</strong> Answer a few questions and we'll tell you where you stand. Free, in about 2 minutes.</p>
+      <div class="svc-grid-cta-btns">
+        <a class="btn btn-ink" href="#claim-check">Check My Claim</a>
+        <a class="btn btn-tonal" href="tel:0731363287" onclick="gtag('event', 'conversion', {'send_to': 'AW-18412730077/6nIsCLn8pvocEN3t78tE'});">Call 07 3136 3287</a>
+      </div>
     </div>
   </div>
 </section>
@@ -321,6 +334,7 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
         <span class="label">Free Claim Check</span>
         <h2 class="h1">Find Out Where You Stand In Under 2 Minutes.</h2>
         <p>Answer a few quick questions about what happened. We'll tell you what your claim could be worth — free, and with no obligation.</p>
+        <p class="svc-calc-link">Prefer a quick dollar estimate? <a href="/compensation-calculator">Try our compensation calculator &rarr;</a></p>
       </div>
       <div class="claim-panel">
         <div class="wizard" id="wizard">
@@ -335,19 +349,11 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
       </div>
     </div>
   </section>
-  <section class="tool-callout-band"><div class="tool-callout-wrap"><a class="tool-callout" href="/compensation-calculator">
-      <span class="tool-callout-k">Free tool</span>
-      <span class="tool-callout-t">What could your claim be worth?</span>
-      <span class="tool-callout-d">Answer a few quick questions and get an instant, indicative estimate. Free and confidential.</span>
-      <span class="tool-callout-cta">Use the compensation calculator &rarr;</span>
-    </a>
-    </div></section>
 
   <!-- NO WIN NO FEE -->
   <section class="nwnf">
     <h2 class="headline">No Win. No Fee.</h2>
     <p>If your case isn't successful, you won't pay our legal fees. We only get paid when you do. No hidden costs, no surprises.</p>
-    <a class="btn btn-ink" href="#claim-check">Book a Free Consultation</a>
   </section>
 
   <!-- PROCESS -->
@@ -448,7 +454,10 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
   <section class="svc-cta on-dark">
     <h2 class="headline">Ready To Take The Next Step?</h2>
     <p>Talk to us today. It's free.</p>
-    <a class="btn btn-butter" href="#claim-check">Book a Consultation</a>
+    <div class="svc-cta-btns">
+      <a class="btn btn-butter" href="#claim-check">Book a Consultation</a>
+      <a class="btn btn-ghost-light" href="tel:0731363287" onclick="gtag('event', 'conversion', {'send_to': 'AW-18412730077/6nIsCLn8pvocEN3t78tE'});">Call 07 3136 3287</a>
+    </div>
   </section>
 </main>
 
