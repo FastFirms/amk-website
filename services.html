@@ -109,6 +109,24 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
 .hero-plain .hero-headline .nw{white-space:nowrap;}
 @media (max-width:620px){.hero-plain .hero-headline{font-size:clamp(28px,8.4vw,40px);}}
 .svc-star{color:#f5c518;margin-left:1px;}
+
+/* Services cards v3: scannable */
+.svc-grid{gap:16px;}
+.svc-grid-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:28px 26px 26px;background:var(--paper);border:1.5px solid var(--tonal);border-radius:18px;min-height:250px;}
+.svc-grid-title{font-size:24px;letter-spacing:-0.03em;line-height:1.1;margin:0;padding-right:52px;}
+.svc-grid-q{font-size:17px;font-weight:600;line-height:1.35;color:var(--ink);margin:0;}
+.svc-grid-copy{font-size:15px;line-height:1.5;color:var(--ink-soft);margin:0;flex:0 0 auto;}
+.svc-grid-tags{list-style:none;margin:auto 0 0;padding:12px 0 0;display:flex;flex-wrap:wrap;gap:6px;}
+.svc-grid-tags li{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--tonal);color:var(--ink);padding:6px 9px;border-radius:999px;}
+.svc-grid-go{position:absolute;top:24px;right:22px;width:40px;height:40px;border-radius:50%;background:var(--butter);color:var(--ink);display:grid;place-items:center;font-size:18px;transition:transform .2s;}
+.svc-grid-card:hover,.svc-grid-card:focus-visible{background:var(--ink);border-color:var(--ink);transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,17,17,.14);}
+.svc-grid-card:hover .svc-grid-title,.svc-grid-card:focus-visible .svc-grid-title{color:var(--butter);}
+.svc-grid-card:hover .svc-grid-q,.svc-grid-card:focus-visible .svc-grid-q{color:var(--paper);}
+.svc-grid-card:hover .svc-grid-copy,.svc-grid-card:focus-visible .svc-grid-copy{color:rgba(251,250,244,.7);}
+.svc-grid-card:hover .svc-grid-tags li,.svc-grid-card:focus-visible .svc-grid-tags li{background:rgba(251,250,244,.12);color:var(--paper);}
+.svc-grid-card:hover .svc-grid-go{transform:translateX(3px);}
+@media (max-width:620px){.svc-grid-card{min-height:0;padding:22px 20px;}.svc-grid-title{font-size:21px;}.svc-grid-q{font-size:16px;}}
+@media (prefers-reduced-motion:reduce){.svc-grid-go{transition:none;}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What does No Win, No Fee mean?", "acceptedAnswer": {"@type": "Answer", "text": "If your case isn't successful, you won't pay our legal fees. We only get paid when you do. No hidden costs, no surprises."}}, {"@type": "Question", "name": "How much does the first assessment cost?", "acceptedAnswer": {"@type": "Answer", "text": "Nothing. Tell us what happened and we'll assess your situation for free and tell you exactly where you stand, with no obligation."}}, {"@type": "Question", "name": "What types of compensation claims does AMK handle?", "acceptedAnswer": {"@type": "Answer", "text": "Motor vehicle accidents and CTP claims, workplace accidents and WorkCover claims, public liability claims, medical negligence, institutional abuse, and TPD and superannuation claims."}}, {"@type": "Question", "name": "Where are AMK's offices?", "acceptedAnswer": {"@type": "Answer", "text": "Augustine Heights (15/20 Success Circuit), Surfers Paradise (Level 13, 50 Cavill Avenue) and South Toowoomba (58–62 Water Street). We also act by phone, video and home or hospital visits across Queensland."}}, {"@type": "Question", "name": "How do I start a claim?", "acceptedAnswer": {"@type": "Answer", "text": "Use the free claim check on this page or call 07 3136 3287. We'll assess your situation, then gather evidence, manage paperwork and deal with insurers on your behalf."}}]}</script>
 </head>
@@ -220,38 +238,44 @@ src="https://www.facebook.com/tr?id=1201321504917945&ev=PageView&noscript=1"
       <a class="svc-grid-card" href="/car-accidents">
         <h2 class="svc-grid-title">Motor Vehicle Accidents</h2>
         <p class="svc-grid-q">Were you hurt in a car, truck or motorcycle accident?</p>
-        <p class="svc-grid-copy">You have rights after a road accident — even if the other driver disputes fault or is uninsured. Queensland's CTP scheme covers more than most people realise. We assess your situation for free and tell you exactly what you're entitled to.</p>
-        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+        <p class="svc-grid-copy">Even if the other driver disputes fault or is uninsured.</p>
+        <ul class="svc-grid-tags"><li>Car</li><li>Motorcycle</li><li>CTP</li><li>Hit-and-run</li></ul>
+        <span class="svc-grid-go" aria-hidden="true">&rarr;</span>
       </a>
       <a class="svc-grid-card" href="/workers-compensation">
         <h2 class="svc-grid-title">Workplace Accidents</h2>
         <p class="svc-grid-q">Did you get hurt or fall sick because of work?</p>
-        <p class="svc-grid-copy">WorkCover claims are complicated, slow, and often contested. We take the entire process off your plate — lodging the claim, gathering medical evidence, and pushing back on insurers — so you can focus on getting better.</p>
-        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+        <p class="svc-grid-copy">We handle the WorkCover claim and push back on insurers.</p>
+        <ul class="svc-grid-tags"><li>WorkCover</li><li>Common law</li><li>Psychological</li></ul>
+        <span class="svc-grid-go" aria-hidden="true">&rarr;</span>
       </a>
       <a class="svc-grid-card" href="/public-liability">
         <h2 class="svc-grid-title">Public Liability Claims</h2>
         <p class="svc-grid-q">Were you injured somewhere that should have been safe?</p>
-        <p class="svc-grid-copy">If a business, council, or property owner failed their duty of care and you were hurt as a result, you have the right to hold them accountable. Slips, falls, dangerous premises — we've handled them all.</p>
-        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+        <p class="svc-grid-copy">Slips, falls and dangerous premises: we've handled them all.</p>
+        <ul class="svc-grid-tags"><li>Slip &amp; fall</li><li>Shops</li><li>Council land</li></ul>
+        <span class="svc-grid-go" aria-hidden="true">&rarr;</span>
       </a>
       <a class="svc-grid-card" href="/medical-negligence">
         <h2 class="svc-grid-title">Medical Negligence</h2>
         <p class="svc-grid-q">Did a doctor, hospital or healthcare provider make things worse?</p>
-        <p class="svc-grid-copy">When medical treatment causes harm, the consequences can be life-altering. We help you understand who was responsible, what standard of care should have been met, and what you can claim for.</p>
-        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+        <p class="svc-grid-copy">Find out who was responsible and what you can claim.</p>
+        <ul class="svc-grid-tags"><li>Hospitals</li><li>Surgery</li><li>Misdiagnosis</li></ul>
+        <span class="svc-grid-go" aria-hidden="true">&rarr;</span>
       </a>
       <a class="svc-grid-card" href="/institutional-abuse">
         <h2 class="svc-grid-title">Institutional Abuse</h2>
         <p class="svc-grid-q">Were you harmed in a school, church, or care facility?</p>
-        <p class="svc-grid-copy">Coming forward takes real courage. We create a safe, non-judgemental space to tell your story, explain your options clearly, and stand with you every step of the way toward justice and recognition.</p>
-        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+        <p class="svc-grid-copy">A safe, confidential space to tell your story.</p>
+        <ul class="svc-grid-tags"><li>Schools</li><li>Churches</li><li>Care facilities</li></ul>
+        <span class="svc-grid-go" aria-hidden="true">&rarr;</span>
       </a>
       <a class="svc-grid-card" href="/tpd-superannuation">
         <h2 class="svc-grid-title">TPD &amp; Superannuation</h2>
         <p class="svc-grid-q">Has an injury or illness stopped you from working?</p>
-        <p class="svc-grid-copy">A Total &amp; Permanent Disability benefit may be sitting in your superannuation fund right now, unclaimed. We check for free, handle the insurer directly, and only get paid if your claim succeeds.</p>
-        <span class="svc-grid-more">Learn more <span aria-hidden="true">&rarr;</span></span>
+        <p class="svc-grid-copy">A TPD benefit may be sitting unclaimed in your super.</p>
+        <ul class="svc-grid-tags"><li>TPD</li><li>Income protection</li><li>Super</li></ul>
+        <span class="svc-grid-go" aria-hidden="true">&rarr;</span>
       </a>
     </div>
     <div class="svc-grid-cta">
