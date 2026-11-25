@@ -162,6 +162,23 @@ a { color: inherit; }
   .claim-card { padding: 32px 24px; }
   .hero-headline { font-size: 38px; }
 }
+
+.rvs{background:var(--paper);padding:72px 0 24px;overflow:hidden;border-top:1px solid var(--border);}
+.rvs-head{max-width:1200px;margin:0 auto;padding:0 var(--pad);display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.rvs-h{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:14px;}
+.rvs-rating{display:flex;align-items:center;gap:14px;font-size:15px;color:var(--soft);}
+.rvs-stars{font-size:20px;letter-spacing:5px;color:var(--butter);-webkit-text-stroke:1px #111;}
+.rvs-arrows{display:flex;gap:14px;}
+.rvs-arrow{width:48px;height:48px;border-radius:50%;background:var(--tonal);border:1px solid var(--tonal);color:var(--ink);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease;}
+.rvs-arrow:hover{background:var(--ink);color:var(--paper);}
+.rvs-strip{touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:40px var(--pad) 48px;scrollbar-width:none;}
+.rvs-strip::-webkit-scrollbar{display:none;}
+.rvs-card{flex:0 0 350px;background:var(--tonal);border-radius:20px;padding:32px 28px;scroll-snap-align:start;display:flex;flex-direction:column;}
+.rvs-card .rvs-stars{font-size:15px;letter-spacing:4px;margin-bottom:18px;}
+.rvs-title{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px;}
+.rvs-text{font-size:14px;line-height:1.6;color:var(--soft);flex:1;}
+.rvs-name{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-top:22px;}
+@media (max-width:640px){.rvs-head{padding:0 20px;}.rvs-strip{padding:32px 20px 40px;}.rvs-card{flex:0 0 300px;}}
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -247,6 +264,72 @@ a { color: inherit; }
   <div class="reassure-item"><div class="reassure-label">Claim check</div><div class="reassure-value">Free · 2 minutes</div></div>
   <div class="reassure-item"><div class="reassure-label">Available</div><div class="reassure-value">24 hours, 7 days</div></div>
 </div></div>
+<section class="rvs">
+    <div class="rvs-head">
+      <div>
+        <h2 class="rvs-h">Over 100, 5 Star Client Reviews</h2>
+        <div class="rvs-rating">
+          <span class="rvs-stars">★★★★★</span>
+          <span>Rated 5.0 on Google</span>
+        </div>
+      </div>
+      <div class="rvs-arrows">
+        <button class="rvs-arrow" aria-label="Scroll reviews left" onclick="rvsScroll(-1)">←</button>
+        <button class="rvs-arrow" aria-label="Scroll reviews right" onclick="rvsScroll(1)">→</button>
+      </div>
+    </div>
+    <div class="rvs-strip" id="rvsStrip">
+        <div class="rvs-card">
+          <div class="rvs-stars">★★★★★</div>
+          <div class="rvs-title">Compassionate, caring and over-delivered</div>
+          <p class="rvs-text">"I won't trust anyone else other than AMK Compensation Lawyers. They are compassionate, caring and provide a personal, human touch in tough situations. They made sure to provide the best outcome and actually over-achieved and got a better result due to their knowledge and long standing within the industry."</p>
+          <div class="rvs-name">Scott Martin · 5 months ago</div>
+        </div>
+        <div class="rvs-card">
+          <div class="rvs-stars">★★★★★</div>
+          <div class="rvs-title">I can't believe how lucky I was</div>
+          <p class="rvs-text">"I truly believe that if it was not for Michael and his team at AMK Compensation Lawyers, I might not be here writing this review today. Michael is an incredibly smart man and has worked as a defence lawyer for the insurers before starting his own firm. He foresaw and knew every tactic they used before they used it. To this day I am still blown away how Michael and AMK Compensation Lawyers got the insurer to a really good settlement when I was backed into a corner. I am forever grateful."</p>
+          <div class="rvs-name">Witty · 5 months ago</div>
+        </div>
+        <div class="rvs-card">
+          <div class="rvs-stars">★★★★★</div>
+          <div class="rvs-title">Knowledge that got me a good result</div>
+          <p class="rvs-text">"Thank you to all the team at AMK Compensation Lawyers for all your support. Michael has a ton of knowledge and has led and guided me throughout the whole process. Thank you Michael — your knowledge allowed me to get a good result. Highly recommend."</p>
+          <div class="rvs-name">Emily Seuala · 2 months ago</div>
+        </div>
+        <div class="rvs-card">
+          <div class="rvs-stars">★★★★★</div>
+          <div class="rvs-title">In a league of their own</div>
+          <p class="rvs-text">"Michael Singh was an incredible help during a very difficult recovery. He was patient, kind, and professional, providing a no-nonsense assessment that honestly accounted for both the physical injuries and the mental health toll. It's rare to find a lawyer who handles every single detail personally. If we could give more than 5 stars, we would do it in a heartbeat."</p>
+          <div class="rvs-name">Rebecca Shah · 5 months ago</div>
+        </div>
+        <div class="rvs-card">
+          <div class="rvs-stars">★★★★★</div>
+          <div class="rvs-title">Clear communication at every step</div>
+          <p class="rvs-text">"AMK Compensation Lawyers were very supportive in my matter. The teamwork across the firm was excellent. Their communication was clear at every step and I would be more than happy to work with them again."</p>
+          <div class="rvs-name">Girish Rokka Chettri · 5 months ago</div>
+        </div>
+        <div class="rvs-card">
+          <div class="rvs-stars">★★★★★</div>
+          <div class="rvs-title">Outstanding from day one</div>
+          <p class="rvs-text">"When I had a motor vehicle accident, I was very scared and confused. After I talked to Mr. Michael Singh, I knew I'd be in good hands. From day one the level of communication and guidance was really outstanding. I am eternally grateful to Michael, Michelle and the team for everything they did. Moving forward after the accident feels easy with AMK Compensation Lawyers."</p>
+          <div class="rvs-name">Arnil Arboleda · 2 years ago</div>
+        </div>
+        <div class="rvs-card">
+          <div class="rvs-stars">★★★★★</div>
+          <div class="rvs-title">Very honest and humble — highly recommend</div>
+          <p class="rvs-text">"Michael Singh is very friendly and patient, even with my limited English background. Such amazing help with my work injury. Very, very honest and humble man. I am very grateful to him and his team for their immense help and the outcome they helped me bring about. Highly recommend for anyone needing help with work or car injuries."</p>
+          <div class="rvs-name">Saiful Islam · 2 years ago</div>
+        </div>
+        <div class="rvs-card">
+          <div class="rvs-stars">★★★★★</div>
+          <div class="rvs-title">Very professional with quick turnarounds</div>
+          <p class="rvs-text">"Have been using AMK Compensation Lawyers for the last 18 months for my business, and they are very professional with quick turnarounds."</p>
+          <div class="rvs-name">Christian Grady</div>
+        </div>
+    </div>
+  </section>
+
 
 <section class="sec" style="background:var(--bone);">
   <div class="sec-inner">
@@ -319,23 +402,6 @@ a { color: inherit; }
   </div>
 </section>
 
-<section class="sec" style="background:var(--paper);border-top:1px solid var(--border);">
-  <div class="sec-inner">
-    <div class="reviews-header">
-      <div><div class="sec-eyebrow">What our clients say</div><h2 class="sec-title" style="margin-bottom:0;">Real people.<br>Real outcomes.</h2></div>
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <div class="reviews-rating-block"><span class="reviews-stars">★★★★★</span><div><div class="reviews-rating-text">5.0 on Google</div><div class="reviews-rating-sub">Rated 5 stars from Google reviews</div></div></div>
-        <span class="reviews-count-pill">100+ Five-Star Reviews</span>
-      </div>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card"><div class="review-card-stars">★★★★★</div><div class="review-card-title">When I had a motor vehicle accident, I was very scared and confused</div><p class="review-card-text">"After I talked to Mr. Michael Singh, I knew I'd be in good hands. From day one the level of communication and guidance was really outstanding. I am eternally grateful to Michael, Michelle and the team for everything they did. Moving forward after the accident feels easy with AMK Compensation Lawyers."</p><div class="review-card-name">Arnil Arboleda · 2 years ago</div></div>
-      <div class="review-card"><div class="review-card-stars">★★★★★</div><div class="review-card-title">Compassionate, caring and over-delivered</div><p class="review-card-text">"I won't trust anyone else other than AMK Compensation Lawyers. They are compassionate, caring and provide a personal, human touch in tough situations. They made sure to provide the best outcome and actually over-achieved and got a better result due to their knowledge and long standing within the industry."</p><div class="review-card-name">Scott Martin · 5 months ago</div></div>
-      <div class="review-card"><div class="review-card-stars">★★★★★</div><div class="review-card-title">In a league of their own</div><p class="review-card-text">"Michael Singh was an incredible help during a very difficult recovery. He was patient, kind, and professional, providing a no-nonsense assessment that honestly accounted for both the physical injuries and the mental health toll. It's rare to find a lawyer who handles every single detail personally. If we could give more than 5 stars, we would do it in a heartbeat."</p><div class="review-card-name">Rebecca Shah · 5 months ago</div></div>
-      <div class="review-card"><div class="review-card-stars">★★★★★</div><div class="review-card-title">Very honest and humble — highly recommend</div><p class="review-card-text">"Michael Singh is very friendly and patient, even with my limited English background. Such amazing help with my work injury. Very, very honest and humble man. I am very grateful to him and his team for their immense help and the outcome they helped me bring about. Highly recommend for anyone needing help with work or car injuries."</p><div class="review-card-name">Saiful Islam · 2 years ago</div></div>
-    </div>
-  </div>
-</section>
 
 <div class="cta2"><div class="cta2-inner">
   <div>
@@ -448,6 +514,7 @@ function amkTrackLead(formName, formEl){
     setTimeout(finish, 1000);
   });
 }
+function rvsScroll(d){var s=document.getElementById('rvsStrip');if(s){s.scrollBy({left:d*380,behavior:'smooth'});}}
 function submitForm(formId, thanksId, e) {
   e.preventDefault();
   var form = document.getElementById(formId);

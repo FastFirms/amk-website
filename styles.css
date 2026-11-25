@@ -1484,3 +1484,7 @@ a.team-card{text-decoration:none;}
 .calc-promo-inner{max-width:calc(1280px - var(--pad-x) * 2);padding:36px 40px;}
 @media (max-width:760px){.calc-promo{padding:28px 16px;}.calc-promo-inner{max-width:none;padding:26px 22px;}}
 .calc-promo{background:var(--paper);}
+
+/* Reviews slider placed directly under hero */
+.reviews.reviews-top{padding:72px 0 24px;border-top:1px solid var(--tonal);}
+@media (max-width:768px){.reviews.reviews-top{padding:56px 0 12px;}}
