@@ -1488,3 +1488,7 @@ a.team-card{text-decoration:none;}
 /* Reviews slider placed directly under hero */
 .reviews.reviews-top{padding:72px 0 24px;border-top:1px solid var(--tonal);}
 @media (max-width:768px){.reviews.reviews-top{padding:56px 0 12px;}}
+
+/* Footer: lawyers by location */
+.footer-locs{border-top:1px solid rgba(232,229,216,0.15);padding-top:48px;}
+.footer-locs .footer-col a{font-size:13px;}
