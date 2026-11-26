@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/workers-compensation-investigations/",
+      "destination": "/workers-compensation-investigations",
+      "permanent": true
+    },
+    {
       "source": "/ctp-recent-cases-nsw",
       "destination": "/ctp-lawyer-nsw",
       "permanent": false
@@ -388,16 +393,6 @@
     {
       "source": "/who-is-at-fault-in-a-car-accident/",
       "destination": "/not-at-fault-car-accidents",
-      "permanent": true
-    },
-    {
-      "source": "/workers-compensation-investigations",
-      "destination": "/workers-compensation",
-      "permanent": true
-    },
-    {
-      "source": "/workers-compensation-investigations/",
-      "destination": "/workers-compensation",
       "permanent": true
     },
     {
